@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bintware — SipAiGateway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:           oklch(0.16 0.015 260);
+    --bg-2:         oklch(0.20 0.018 260);
+    --bg-3:         oklch(0.23 0.02 260);
+    --ink:          oklch(0.96 0.008 80);
+    --ink-dim:      oklch(0.72 0.015 80);
+    --ink-mute:     oklch(0.52 0.015 80);
+    --line:         oklch(0.30 0.02 260);
+    --line-soft:    oklch(0.24 0.018 260);
+    --accent:       oklch(0.78 0.16 55);   /* warm amber */
+    --accent-dim:   oklch(0.58 0.12 55);
+    --cool:         oklch(0.72 0.12 240);  /* tech cool blue */
+    --ok:           oklch(0.78 0.14 155);
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute)}
+  .display{font-family:var(--display);font-weight:500;letter-spacing:-0.02em;line-height:0.98}
+  .wrap{max-width:1360px;margin:0 auto;padding:0 48px}
+  .rule{height:1px;background:var(--line-soft);width:100%}
+
+  /* NAV */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter: blur(16px);
+    background: color-mix(in oklch, var(--bg) 72%, transparent);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;max-width:1360px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.01em}
+  .logo-mark{width:22px;height:22px;position:relative}
+  .logo-mark::before,.logo-mark::after{content:'';position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:2px}
+  .logo-mark::after{transform:translate(4px,4px);border-color:var(--accent);mix-blend-mode:screen}
+  nav .links{display:flex;gap:36px;font-size:13px;color:var(--ink-dim)}
+  nav .links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border-radius:999px;
+    font-size:13px;font-weight:500;font-family:var(--sans);
+    border:1px solid var(--line);background:transparent;color:var(--ink);
+    cursor:pointer;transition:all .2s ease;
+  }
+  .btn:hover{border-color:var(--ink);background:color-mix(in oklch, var(--ink) 6%, transparent)}
+  .btn.primary{background:var(--accent);color:oklch(0.2 0.02 55);border-color:var(--accent);font-weight:600}
+  .btn.primary:hover{background:oklch(0.84 0.16 55);border-color:oklch(0.84 0.16 55)}
+  .btn .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+  /* HERO */
+  .hero{position:relative;padding:160px 0 80px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns: 1.15fr 1fr;gap:80px;align-items:end}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim)}
+  .eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklch,var(--accent) 70%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+  h1.hero-title{font-size:clamp(56px, 8vw, 116px);margin:28px 0 0;font-family:var(--display);font-weight:500;letter-spacing:-0.035em;line-height:0.92}
+  h1 em{font-style:normal;color:var(--accent);font-weight:400}
+  h1 .stroke{-webkit-text-stroke:1px var(--ink-dim);color:transparent;font-weight:400}
+  .hero-lede{margin-top:36px;font-size:18px;line-height:1.55;color:var(--ink-dim);max-width:46ch;font-weight:300}
+  .hero-cta{display:flex;gap:12px;margin-top:44px;flex-wrap:wrap}
+  .hero-meta{display:flex;gap:48px;margin-top:64px;padding-top:32px;border-top:1px solid var(--line-soft)}
+  .hero-meta .m .mono{display:block;margin-bottom:6px}
+  .hero-meta .m .val{font-family:var(--display);font-size:28px;font-weight:500;letter-spacing:-0.02em}
+  .hero-meta .m .val small{color:var(--ink-mute);font-weight:400;font-size:14px;margin-left:2px}
+
+  /* VOICE WAVE PANEL */
+  .voice-panel{
+    position:relative;border:1px solid var(--line);border-radius:16px;
+    background:linear-gradient(180deg, var(--bg-2), var(--bg));
+    padding:24px;min-height:560px;display:flex;flex-direction:column;gap:20px;
+    overflow:hidden;
+  }
+  .voice-head{display:flex;align-items:center;justify-content:space-between}
+  .voice-head .tag{display:flex;align-items:center;gap:8px}
+  .voice-head .tag .live{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok)}
+  .voice-head .tag .t{font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:0.08em;text-transform:uppercase}
+  .voice-head .time{font-family:var(--mono);font-size:11px;color:var(--ink-mute)}
+
+  .waveform{height:140px;position:relative;display:flex;align-items:center;gap:3px;padding:0 4px}
+  .waveform .bar{flex:1;background:linear-gradient(180deg, var(--accent), var(--accent-dim));border-radius:2px;min-height:6px;transform-origin:center;animation: wave var(--d,1.2s) ease-in-out infinite alternate;opacity:.9}
+  @keyframes wave{0%{transform:scaleY(0.15)}100%{transform:scaleY(var(--h,1))}}
+
+  .transcript{flex:1;display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.45}
+  .msg{display:flex;gap:12px;align-items:flex-start;opacity:0;transform:translateY(6px);animation:msgIn .5s ease forwards}
+  .msg .who{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);width:62px;flex-shrink:0;padding-top:3px}
+  .msg.ai .who{color:var(--accent)}
+  .msg .bubble{color:var(--ink);max-width:100%}
+  .msg.ai .bubble{color:var(--ink)}
+  .msg.caller .bubble{color:var(--ink-dim)}
+  @keyframes msgIn{to{opacity:1;transform:none}}
+
+  .voice-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:8px;overflow:hidden}
+  .voice-foot .cell{background:var(--bg-2);padding:12px;display:flex;flex-direction:column;gap:4px}
+  .voice-foot .cell .k{font-family:var(--mono);font-size:10px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase}
+  .voice-foot .cell .v{font-family:var(--display);font-size:18px;color:var(--ink)}
+  .voice-foot .cell .v.ok{color:var(--ok)}
+
+  /* backdrop glow */
+  .hero::before{
+    content:'';position:absolute;inset:-20% -10% auto auto;
+    width:60vw;height:60vw;pointer-events:none;
+    background: radial-gradient(closest-side, color-mix(in oklch, var(--accent) 20%, transparent), transparent 70%);
+    filter:blur(40px);opacity:.5;
+  }
+
+  /* SECTIONS */
+  section.block{padding:120px 0;position:relative;border-top:1px solid var(--line-soft)}
+  .section-head{display:grid;grid-template-columns: 1.3fr 2fr;gap:48px;align-items:end;margin-bottom:64px}
+  .section-head .idx{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.14em;text-transform:uppercase}
+  .section-head h2{font-family:var(--display);font-size:clamp(40px,5vw,68px);line-height:0.98;letter-spacing:-0.03em;font-weight:500;margin:14px 0 0;max-width:18ch}
+  .section-head .lede{color:var(--ink-dim);font-size:17px;line-height:1.55;max-width:52ch}
+
+  /* FEATURE CARDS — big editorial numbered blocks */
+  .feature{display:grid;grid-template-columns: 1fr 1.2fr;gap:72px;padding:80px 0;border-top:1px solid var(--line-soft);align-items:start}
+  .feature:first-of-type{border-top:none}
+  .feature .f-head{position:sticky;top:100px}
+  .feature .f-num{font-family:var(--display);font-size:120px;line-height:1;font-weight:500;letter-spacing:-0.04em;color:transparent;-webkit-text-stroke:1px var(--ink-dim);margin-bottom:8px}
+  .feature h3{font-family:var(--display);font-size:36px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin:0 0 12px}
+  .feature .f-kicker{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:18px}
+  .feature .f-desc{color:var(--ink-dim);font-size:15px;line-height:1.6;max-width:44ch}
+  .feature .f-list{margin-top:32px;display:flex;flex-direction:column;gap:20px}
+  .feature .f-list .item{display:grid;grid-template-columns:auto 1fr;gap:18px;padding-top:20px;border-top:1px solid var(--line-soft)}
+  .feature .f-list .item:first-child{border-top:none;padding-top:0}
+  .feature .f-list .ic{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+  .feature .f-list .t{font-family:var(--display);font-size:17px;font-weight:500;margin-bottom:6px}
+  .feature .f-list .d{font-size:14px;line-height:1.55;color:var(--ink-dim)}
+
+  /* ------ bespoke visuals per feature ------ */
+  .viz{
+    background: linear-gradient(180deg, var(--bg-2), var(--bg));
+    border:1px solid var(--line-soft);border-radius:16px;
+    padding:28px;min-height:460px;position:relative;overflow:hidden;
+  }
+  .viz-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+
+  /* Viz 1: conversation flow */
+  .conv{display:flex;flex-direction:column;gap:14px}
+  .conv .line{display:flex;gap:14px;align-items:flex-start}
+  .conv .line .avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;flex-shrink:0;border:1px solid var(--line)}
+  .conv .line.ai .avatar{background:color-mix(in oklch,var(--accent) 20%, var(--bg));color:var(--accent);border-color:color-mix(in oklch,var(--accent) 40%, transparent)}
+  .conv .line.u .avatar{background:var(--bg-3);color:var(--ink)}
+  .conv .line .body{flex:1;padding:12px 14px;background:var(--bg-3);border-radius:10px;font-size:13.5px;line-height:1.5;position:relative}
+  .conv .line.ai .body{background:color-mix(in oklch,var(--accent) 10%, var(--bg-3))}
+  .conv .line .meta{font-family:var(--mono);font-size:10px;color:var(--ink-mute);margin-top:6px;letter-spacing:0.06em;text-transform:uppercase}
+  .conv .line .tag{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:4px;background:color-mix(in oklch,var(--cool) 20%, transparent);color:var(--cool);font-family:var(--mono);font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase}
+  .conv .line .tag.warn{background:color-mix(in oklch,var(--accent) 20%, transparent);color:var(--accent)}
+
+  /* Viz 2: channels grid */
+  .channels{display:grid;grid-template-columns: repeat(3, 1fr);gap:10px;margin-bottom:24px}
+  .ch{padding:16px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+  .ch .ch-icon{width:28px;height:28px;color:var(--ink);opacity:.9}
+  .ch .ch-name{font-family:var(--display);font-size:14px;font-weight:500}
+  .ch .ch-stat{font-family:var(--mono);font-size:10px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase}
+  .ch .dot-live{position:absolute;top:14px;right:14px;width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 6px var(--ok)}
+  .core-brain{
+    border:1px solid var(--line);border-radius:12px;padding:20px;background:linear-gradient(135deg, color-mix(in oklch, var(--accent) 12%, var(--bg-2)), var(--bg-2));
+    position:relative;
+  }
+  .core-brain .c-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .core-brain .c-title .t{font-family:var(--display);font-size:16px;font-weight:600}
+  .core-brain .c-title .badge{font-family:var(--mono);font-size:10px;padding:3px 8px;background:var(--accent);color:oklch(0.2 0.02 55);border-radius:4px;font-weight:600;letter-spacing:0.08em}
+  .core-brain .personas{display:flex;gap:8px;flex-wrap:wrap}
+  .core-brain .persona{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border:1px solid var(--line-soft);border-radius:999px;font-size:12.5px}
+  .core-brain .persona .swatch{width:8px;height:8px;border-radius:50%}
+
+  /* Viz 3: function-calling timeline */
+  .tool-call{display:flex;flex-direction:column;gap:8px;position:relative;padding-left:24px}
+  .tool-call::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--line)}
+  .tool-call .step{display:flex;align-items:flex-start;gap:14px;position:relative}
+  .tool-call .step .node{position:absolute;left:-24px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--line)}
+  .tool-call .step.done .node{border-color:var(--ok);background:var(--ok)}
+  .tool-call .step.active .node{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklch,var(--accent) 30%,transparent)}
+  .tool-call .step .card{flex:1;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px;padding:12px 14px}
+  .tool-call .step .card .tool-name{font-family:var(--mono);font-size:11px;color:var(--cool);letter-spacing:0.08em;margin-bottom:4px}
+  .tool-call .step .card .tool-desc{font-size:13px;color:var(--ink)}
+  .tool-call .step .card .tool-meta{font-family:var(--mono);font-size:10px;color:var(--ink-mute);margin-top:6px;display:flex;gap:12px}
+  .tool-call .step .card code{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);background:var(--bg);padding:1px 5px;border-radius:3px}
+
+  /* Viz 4: data extraction */
+  .data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .data-card{background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px;padding:16px}
+  .data-card .h{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
+  .data-card .tx-chunk{font-size:12.5px;line-height:1.5;color:var(--ink-dim);padding:10px;background:var(--bg-2);border-radius:6px;border-left:2px solid var(--accent)}
+  .data-card .fields{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .data-card .field{display:grid;grid-template-columns:90px 1fr;gap:10px;font-size:12.5px;padding:6px 10px;background:var(--bg-2);border-radius:6px}
+  .data-card .field .k{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute)}
+  .data-card .field .v{color:var(--ink);font-family:var(--mono);font-size:11.5px}
+  .data-card .field .v.hl{color:var(--accent)}
+  .chart{display:flex;align-items:flex-end;gap:6px;height:100px;margin-top:10px;padding:8px 0;border-top:1px dashed var(--line-soft)}
+  .chart .bar{flex:1;background:linear-gradient(180deg,var(--accent),var(--accent-dim));border-radius:2px 2px 0 0;opacity:.9}
+
+  /* --- Architecture diagram --- */
+  .arch{display:grid;grid-template-columns: repeat(12, 1fr);gap:14px}
+  .arch .box{background:var(--bg-2);border:1px solid var(--line-soft);border-radius:12px;padding:18px;position:relative;overflow:hidden;min-height:120px}
+  .arch .box.accent{border-color:color-mix(in oklch,var(--accent) 50%,var(--line-soft));background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 10%,var(--bg-2)),var(--bg-2))}
+  .arch .box .label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
+  .arch .box .name{font-family:var(--display);font-size:18px;font-weight:500;margin-bottom:4px;letter-spacing:-0.01em}
+  .arch .box .sub{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+  .arch .box .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .arch .box .tag{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:4px;background:var(--bg-3);color:var(--ink-dim);border:1px solid var(--line-soft)}
+
+  .col-4{grid-column:span 4}
+  .col-3{grid-column:span 3}
+  .col-6{grid-column:span 6}
+  .col-12{grid-column:span 12}
+
+  .stack-layer{display:flex;flex-direction:column;gap:10px;padding:18px 22px;border:1px solid var(--line-soft);border-radius:12px;background:var(--bg-2)}
+  .stack-layer.hot{background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 10%,var(--bg-2)),var(--bg-2));border-color:color-mix(in oklch,var(--accent) 40%,var(--line-soft))}
+  .stack-layer .layer-title{display:flex;align-items:center;gap:10px;justify-content:space-between}
+  .stack-layer .layer-title .t{font-family:var(--display);font-size:18px;font-weight:500}
+  .stack-layer .items{display:flex;gap:8px;flex-wrap:wrap}
+  .stack-layer .chip{padding:6px 12px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:999px;font-size:12.5px;display:flex;align-items:center;gap:8px}
+  .stack-layer .chip .swatch{width:8px;height:8px;border-radius:50%}
+
+  /* USE CASES */
+  .use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden}
+  .use{background:var(--bg);padding:40px 36px;position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s ease;cursor:default}
+  .use:hover{background:var(--bg-2)}
+  .use .use-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase}
+  .use h4{font-family:var(--display);font-size:28px;font-weight:500;letter-spacing:-0.02em;margin:12px 0 10px;line-height:1.1}
+  .use .use-desc{font-size:14.5px;color:var(--ink-dim);line-height:1.55;max-width:42ch}
+  .use .use-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+  .use .use-tags .t{font-family:var(--mono);font-size:10px;padding:4px 9px;border:1px solid var(--line-soft);border-radius:4px;color:var(--ink-dim);letter-spacing:0.08em;text-transform:uppercase}
+
+  /* METRICS / WHY US */
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:start}
+  .metric .num{font-family:var(--display);font-size:clamp(64px,9vw,128px);font-weight:500;letter-spacing:-0.04em;line-height:0.9;color:var(--accent)}
+  .metric .num .unit{color:var(--ink);font-size:0.35em;margin-left:4px;vertical-align:top;letter-spacing:-0.01em}
+  .metric .title{font-family:var(--display);font-size:22px;font-weight:500;margin:16px 0 10px}
+  .metric .desc{color:var(--ink-dim);font-size:14.5px;line-height:1.55;max-width:36ch}
+
+  /* CTA + CONTACT */
+  .cta{padding:140px 0;border-top:1px solid var(--line-soft);position:relative;overflow:hidden}
+  .cta::before{
+    content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);
+    width:140%;height:100%;pointer-events:none;
+    background:radial-gradient(ellipse at center top, color-mix(in oklch,var(--accent) 22%, transparent), transparent 60%);
+    opacity:.6;
+  }
+  .cta-inner{text-align:center;position:relative}
+  .cta h2{font-family:var(--display);font-size:clamp(48px,7vw,104px);letter-spacing:-0.03em;line-height:0.95;font-weight:500;margin:0;max-width:18ch;margin-inline:auto}
+  .cta p{color:var(--ink-dim);max-width:52ch;margin:28px auto 40px;font-size:17px;line-height:1.55}
+
+  .contact-block{display:grid;grid-template-columns: 1fr 1fr;gap:0;border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;margin-top:80px}
+  .contact-card{padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px;background:var(--bg-2);border-right:1px solid var(--line-soft)}
+  .contact-card:last-child{border-right:none}
+  .contact-card .role{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.14em;text-transform:uppercase}
+  .contact-card .name{font-family:var(--display);font-size:32px;font-weight:500;letter-spacing:-0.02em;margin:10px 0 6px}
+  .contact-card .email{color:var(--accent);font-family:var(--mono);font-size:14px;margin-top:20px;display:inline-flex;align-items:center;gap:8px}
+  .contact-card .email:hover{text-decoration:underline}
+
+  /* FOOTER */
+  footer.foot{padding:60px 0 48px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--ink-mute)}
+  footer .inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px){
+    .wrap{padding:0 28px}
+    nav.top .inner{padding:14px 28px}
+    nav .links{display:none}
+    .hero{padding:120px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:56px}
+    .section-head{grid-template-columns:1fr;gap:24px}
+    .feature{grid-template-columns:1fr;gap:40px}
+    .feature .f-head{position:static}
+    .use-grid{grid-template-columns:1fr}
+    .metrics{grid-template-columns:1fr;gap:40px}
+    .contact-block{grid-template-columns:1fr}
+    .contact-card{border-right:none;border-bottom:1px solid var(--line-soft)}
+    .col-4,.col-3,.col-6{grid-column:span 12}
+    .hero-meta{gap:32px;flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span>Bintware</span>
+    </div>
+    <div class="links">
+      <a href="#prodotto">Prodotto</a>
+      <a href="#capacita">Capacità</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#casi">Casi d'uso</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a href="#contatti" class="btn primary"><span class="dot"></span>Richiedi demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="eyebrow"><span class="pulse"></span>SipAiGateway · Conversational AI Enterprise</span>
+        <h1 class="hero-title">
+          La voce<br>
+          della tua azienda,<br>
+          <em>senza attese.</em>
+        </h1>
+        <p class="hero-lede">
+          Un ecosistema di Intelligenza Artificiale Conversazionale che ascolta, ragiona, agisce. Costruito su Google Cloud e Vertex AI. Conforme GDPR. Progettato per risolvere — non solo per rispondere.
+        </p>
+        <div class="hero-cta">
+          <a href="#contatti" class="btn primary"><span class="dot"></span>Prenota una demo</a>
+          <a href="#prodotto" class="btn">Scopri la piattaforma →</a>
+        </div>
+        <div class="hero-meta">
+          <div class="m"><span class="mono">Latenza media</span><span class="val">~380<small>ms</small></span></div>
+          <div class="m"><span class="mono">Automazione</span><span class="val">80<small>%</small></span></div>
+          <div class="m"><span class="mono">Disponibilità</span><span class="val">24/7</span></div>
+          <div class="m"><span class="mono">Canali nativi</span><span class="val">4</span></div>
+        </div>
+      </div>
+
+      <!-- Live voice panel -->
+      <div class="voice-panel">
+        <div class="voice-head">
+          <div class="tag"><span class="live"></span><span class="t">Chiamata attiva — Assistente Sanitario</span></div>
+          <div class="time" id="callTimer">00:42</div>
+        </div>
+        <div class="waveform" id="wave"></div>
+
+        <div class="transcript" id="transcript">
+          <div class="msg caller" style="animation-delay:.2s">
+            <span class="who">Chiamante</span>
+            <span class="bubble">Buongiorno, avrei bisogno di prenotare una visita cardiologica, magari questa settimana…</span>
+          </div>
+          <div class="msg ai" style="animation-delay:.7s">
+            <span class="who">Agente AI</span>
+            <span class="bubble">Certo, vedo subito. Mi confermi il codice fiscale per recuperare la sua cartella?</span>
+          </div>
+          <div class="msg caller" style="animation-delay:1.3s">
+            <span class="who">Chiamante</span>
+            <span class="bubble">Sì, è RSSMRA80… anzi scusi, preferirei giovedì pomeriggio.</span>
+          </div>
+          <div class="msg ai" style="animation-delay:1.9s">
+            <span class="who">Agente AI</span>
+            <span class="bubble">Nessun problema, adatto subito la ricerca. Sto verificando le disponibilità di giovedì…<span class="tag warn">function_call</span></span>
+          </div>
+        </div>
+
+        <div class="voice-foot">
+          <div class="cell"><span class="k">Intent</span><span class="v">Prenotazione</span></div>
+          <div class="cell"><span class="k">Sentiment</span><span class="v ok">● Positivo</span></div>
+          <div class="cell"><span class="k">Tool</span><span class="v">calendar.search</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PRODOTTO — Intro -->
+<section class="block" id="prodotto">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Il prodotto — 00</span>
+        <h2>Non un centralino. Non un chatbot. <em style="font-style:normal;color:var(--accent)">Un collaboratore.</em></h2>
+      </div>
+      <p class="lede">
+        SipAiGateway è una piattaforma di Conversational AI di livello enterprise che unisce voce in tempo reale, ragionamento multimodale e integrazione profonda con i tuoi sistemi. Risolve, esegue, orchestra — in totale autonomia, su ogni canale.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 01 — Real-time -->
+<section class="block" id="capacita" style="padding-top:0;border-top:none">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="f-head">
+        <div class="f-num">01</div>
+        <div class="f-kicker">Real-Time Audio</div>
+        <h3>Naturale come una conversazione tra persone.</h3>
+        <p class="f-desc">Dimentica gli IVR a menu, i silenzi tra un turno e l'altro, le voci robotiche. SipAiGateway ascolta, elabora e risponde in frazioni di secondo — e sa quando tacere.</p>
+        <div class="f-list">
+          <div class="item">
+            <div class="ic">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h2m12 0h2M12 4v2m0 12v2m3-10v4m-6-4v4m3-7v10"/></svg>
+            </div>
+            <div><div class="t">Zero latenza percepita</div><div class="d">Dialogo fluido sotto i 400ms — l'utente non capisce di parlare con una macchina.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7l16 0M4 12l8 0M4 17l12 0"/></svg>
+            </div>
+            <div><div class="t">Ascolto attivo e interruzioni</div><div class="d">Se l'utente interviene, l'AI si ferma, riadatta il contesto e riparte senza perdere il filo.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M9 14s1 2 3 2 3-2 3-2M9 10h.01M15 10h.01"/></svg>
+            </div>
+            <div><div class="t">Intelligenza emotiva</div><div class="d">Modulazione di tono e ritmo in base allo stato del chiamante — empatia, non eco.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viz: conversation with interrupt -->
+      <div class="viz">
+        <div class="viz-head">
+          <span class="mono">Turno di dialogo · 01:24</span>
+          <span class="mono" style="color:var(--accent)">● LIVE</span>
+        </div>
+        <div class="conv">
+          <div class="line ai">
+            <div class="avatar">AI</div>
+            <div class="body">
+              Perfetto. Le sto riassumendo la policy di rimborso: entro 14 giorni ha diritto a…
+              <div class="meta">Turno AI · interrotto</div>
+            </div>
+          </div>
+          <div class="line u">
+            <div class="avatar">U</div>
+            <div class="body">
+              Scusi, ma la fattura è intestata a mia moglie.
+              <div class="meta">Interruzione rilevata a 0.4s</div>
+            </div>
+          </div>
+          <div class="line ai">
+            <div class="avatar">AI</div>
+            <div class="body">
+              Capito, nessun problema. Allora il rimborso può essere richiesto direttamente da lei, a suo nome. Posso avere il codice fiscale della titolare?
+              <div class="meta">Contesto riadattato <span class="tag">state.update</span></div>
+            </div>
+          </div>
+          <div class="line u">
+            <div class="avatar">U</div>
+            <div class="body">
+              Aspetti un attimo, non la trovo… ah eccola.
+              <div class="meta">Pausa naturale 2.1s <span class="tag warn">affective: paziente</span></div>
+            </div>
+          </div>
+          <div class="line ai">
+            <div class="avatar">AI</div>
+            <div class="body">
+              Con calma. Sono qui quando ce l'ha.
+              <div class="meta">Risposta empatica generata</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 02 — Flessibilità -->
+    <div class="feature">
+      <div class="f-head">
+        <div class="f-num">02</div>
+        <div class="f-kicker">Un cervello · Infiniti scenari</div>
+        <h3>Flessibile come il tuo business. Modulare per design.</h3>
+        <p class="f-desc">Non un software pacchettizzato per un settore. Un motore cognitivo configurabile — omnicanale, multi-tenant, infinitamente personalizzabile.</p>
+        <div class="f-list">
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h4l3 3h7a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/></svg></div>
+            <div><div class="t">Omnicanalità nativa</div><div class="d">Telefono, WhatsApp, SMS, Email — il contesto del cliente segue ogni canale senza strappi.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <div><div class="t">Multi-tenancy</div><div class="d">Ogni brand con la propria voce, le proprie regole, la propria personalità. Un'unica console.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="7" height="14" rx="1"/><rect x="14" y="5" width="7" height="9" rx="1"/></svg></div>
+            <div><div class="t">Un volto visivo</div><div class="d">App native per Android e Windows — operatori e clienti vedono stato e dati in tempo reale.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viz: channels + personas -->
+      <div class="viz">
+        <div class="viz-head">
+          <span class="mono">Configurazione tenant · demo-clinic-01</span>
+          <span class="mono">4 canali attivi</span>
+        </div>
+        <div class="channels">
+          <div class="ch">
+            <span class="dot-live"></span>
+            <svg class="ch-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4a2 2 0 012-2h1l2 4-2 1a11 11 0 006 6l1-2 4 2v1a2 2 0 01-2 2h-1A15 15 0 014 5V4z"/></svg>
+            <div class="ch-name">Voce · SIP</div>
+            <div class="ch-stat">142 attive</div>
+          </div>
+          <div class="ch">
+            <span class="dot-live"></span>
+            <svg class="ch-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v5a4 4 0 01-4 4H9l-5 4V8z"/></svg>
+            <div class="ch-name">WhatsApp</div>
+            <div class="ch-stat">87 chat</div>
+          </div>
+          <div class="ch">
+            <span class="dot-live"></span>
+            <svg class="ch-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div class="ch-name">Email + SMS</div>
+            <div class="ch-stat">31 ticket</div>
+          </div>
+        </div>
+
+        <div class="core-brain">
+          <div class="c-title">
+            <span class="t">Core · Orchestratore intelligente</span>
+            <span class="badge">SHARED</span>
+          </div>
+          <div style="font-size:13px;color:var(--ink-dim);line-height:1.5;margin-bottom:14px">
+            Un unico cervello. Quattro personalità. Stesso stato condiviso.
+          </div>
+          <div class="personas">
+            <div class="persona"><span class="swatch" style="background:var(--accent)"></span>Aria · Concierge</div>
+            <div class="persona"><span class="swatch" style="background:var(--cool)"></span>Dott. Vox · Triage</div>
+            <div class="persona"><span class="swatch" style="background:var(--ok)"></span>Noa · Sales</div>
+            <div class="persona"><span class="swatch" style="background:oklch(0.75 0.14 320)"></span>Max · Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 03 — Azioni -->
+    <div class="feature">
+      <div class="f-head">
+        <div class="f-num">03</div>
+        <div class="f-kicker">Function Calling · Azioni reali</div>
+        <h3>L'AI che non chiacchiera. Lavora per te.</h3>
+        <p class="f-desc">Tramite integrazione profonda, l'assistente si collega ai tuoi sistemi — CRM, ERP, calendari, knowledge base — e compie azioni concrete in millisecondi.</p>
+        <div class="f-list">
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
+            <div><div class="t">Dati in tempo reale</div><div class="d">Si collega a CRM, ERP, Wiki aziendali. Recupera storico, verifica ordini, legge documentazione in millisecondi.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l16 0M4 12l10 0M4 18l14 0"/><circle cx="19" cy="12" r="2"/></svg></div>
+            <div><div class="t">RAG su misura</div><div class="d">Progettiamo sistemi di Retrieval-Augmented Generation che interrogano l'intera knowledge base privata della tua azienda.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div><div class="t">Gestione dell'attesa</div><div class="d">Intermezzi vocali naturali mentre il sistema lavora. Mai silenzi imbarazzanti.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viz: tool call timeline -->
+      <div class="viz">
+        <div class="viz-head">
+          <span class="mono">Trace · turn #14</span>
+          <span class="mono" style="color:var(--ok)">● 312ms total</span>
+        </div>
+        <div class="tool-call">
+          <div class="step done">
+            <div class="node"></div>
+            <div class="card">
+              <div class="tool-name">crm.lookup_customer()</div>
+              <div class="tool-desc">Recupero profilo cliente e storico ordini</div>
+              <div class="tool-meta"><span>args: <code>{phone:"+39…"}</code></span><span>42ms</span></div>
+            </div>
+          </div>
+          <div class="step done">
+            <div class="node"></div>
+            <div class="card">
+              <div class="tool-name">rag.search_kb()</div>
+              <div class="tool-desc">Ricerca semantica su 1.274 documenti tecnici</div>
+              <div class="tool-meta"><span>query: <code>"errore firmware v2.3"</code></span><span>128ms</span></div>
+            </div>
+          </div>
+          <div class="step active">
+            <div class="node"></div>
+            <div class="card">
+              <div class="tool-name">calendar.check_availability()</div>
+              <div class="tool-desc">Verifica slot liberi del tecnico specializzato</div>
+              <div class="tool-meta"><span>range: <code>giovedì · 14–18</code></span><span style="color:var(--accent)">in corso…</span></div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="node"></div>
+            <div class="card" style="opacity:.55">
+              <div class="tool-name">sms.send_confirmation()</div>
+              <div class="tool-desc">Conferma con link e modulo pre-compilato</div>
+              <div class="tool-meta"><span>in attesa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:22px;padding:14px;border-radius:10px;border:1px dashed var(--line);display:flex;gap:14px;align-items:center">
+          <div style="width:36px;height:36px;border-radius:50%;background:color-mix(in oklch,var(--accent) 20%,transparent);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--display);font-size:14px">Intermezzo vocale generato</div>
+            <div style="font-size:12.5px;color:var(--ink-mute);font-style:italic">"Mi dia solo un attimo, sto verificando a sistema…"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 04 — Data -->
+    <div class="feature">
+      <div class="f-head">
+        <div class="f-num">04</div>
+        <div class="f-kicker">Dati · Conoscenza continua</div>
+        <h3>Ogni conversazione diventa patrimonio.</h3>
+        <p class="f-desc">La chiamata non finisce quando si chiude. Il dialogo viene compreso, strutturato, indicizzato — e diventa il dataset proprietario su cui costruire il tuo vantaggio competitivo.</p>
+        <div class="f-list">
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h14l2 2v14H4z"/><path d="M8 10h8M8 14h6M8 18h4"/></svg></div>
+            <div><div class="t">Tracciabilità assoluta</div><div class="d">Ogni dialogo trascritto, indicizzato, esplorabile. Trend, lamentele, opportunità emergono da soli.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
+            <div><div class="t">Struttura + vettori</div><div class="d">L'AI estrae entità in SQL relazionale e indicizza embedding per ricerca semantica.</div></div>
+          </div>
+          <div class="item">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-8 6 6"/></svg></div>
+            <div><div class="t">Fondamenta per il ML</div><div class="d">Dataset proprietari di alta qualità. Modelli predittivi che anticipano i tuoi clienti.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viz: data extraction -->
+      <div class="viz">
+        <div class="viz-head">
+          <span class="mono">Pipeline · conversations → warehouse</span>
+          <span class="mono">+148 oggi</span>
+        </div>
+        <div class="data-grid">
+          <div class="data-card">
+            <div class="h">Input · trascritto</div>
+            <div class="tx-chunk">"…allora volevo disdire l'abbonamento fiber 100 attivato a Firenze il mese scorso, il numero è 055 122 3…"</div>
+          </div>
+          <div class="data-card">
+            <div class="h">Output · entità estratte</div>
+            <div class="fields">
+              <div class="field"><span class="k">intent</span><span class="v hl">churn_request</span></div>
+              <div class="field"><span class="k">product</span><span class="v">fiber_100</span></div>
+              <div class="field"><span class="k">city</span><span class="v">Firenze</span></div>
+              <div class="field"><span class="k">phone</span><span class="v">055-1223…</span></div>
+              <div class="field"><span class="k">sentiment</span><span class="v" style="color:var(--accent)">frustrazione</span></div>
+            </div>
+          </div>
+          <div class="data-card" style="grid-column:span 2">
+            <div class="h">Trend · intent per ora (ultime 24h)</div>
+            <div class="chart" id="chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECNOLOGIA / ARCHITECTURE -->
+<section class="block" id="tecnologia">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Architettura — 05</span>
+        <h2>Costruita sulla spina dorsale di <em style="font-style:normal;color:var(--accent)">Google Cloud.</em></h2>
+      </div>
+      <p class="lede">
+        Progettiamo ecosistemi cloud completi su Google Cloud Platform e Vertex AI — con cluster GKE, macchine virtuali, database gestiti e piena conformità GDPR. I tuoi dati restano in Europa. Le chiavi restano blindate.
+      </p>
+    </div>
+
+    <div class="arch">
+      <!-- Layer 1: channels -->
+      <div class="stack-layer col-12">
+        <div class="layer-title">
+          <span class="t">Canali di contatto</span>
+          <span class="mono">01 — INGRESS</span>
+        </div>
+        <div class="items">
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Telefonia SIP</span>
+          <span class="chip"><span class="swatch" style="background:var(--ok)"></span>WhatsApp Business API</span>
+          <span class="chip"><span class="swatch" style="background:var(--cool)"></span>SMS gateway</span>
+          <span class="chip"><span class="swatch" style="background:oklch(0.75 0.14 320)"></span>Email (SMTP/IMAP)</span>
+          <span class="chip"><span class="swatch" style="background:var(--ink-dim)"></span>App Android / Windows</span>
+        </div>
+      </div>
+
+      <!-- Layer 2: core brain -->
+      <div class="box accent col-4">
+        <div class="label">02 · Cognitive</div>
+        <div class="name">Vertex AI</div>
+        <div class="sub">Modelli Gemini multimodali, audio real-time, ragionamento avanzato.</div>
+        <div class="tags">
+          <span class="tag">Gemini 2.x</span>
+          <span class="tag">Audio RT</span>
+          <span class="tag">Affective</span>
+        </div>
+      </div>
+      <div class="box col-4">
+        <div class="label">03 · Orchestration</div>
+        <div class="name">GKE Cluster</div>
+        <div class="sub">Google Kubernetes Engine — scaling automatico, multi-region.</div>
+        <div class="tags">
+          <span class="tag">Autoscale</span>
+          <span class="tag">Multi-tenant</span>
+          <span class="tag">HPA</span>
+        </div>
+      </div>
+      <div class="box col-4">
+        <div class="label">04 · Realtime</div>
+        <div class="name">Compute Engine · VM</div>
+        <div class="sub">VM ad alte prestazioni per media pipeline e inference low-latency.</div>
+        <div class="tags">
+          <span class="tag">Low-lat</span>
+          <span class="tag">GPU pool</span>
+        </div>
+      </div>
+
+      <!-- Layer 3: data -->
+      <div class="box col-4">
+        <div class="label">05 · Relational</div>
+        <div class="name">AlloyDB · PostgreSQL</div>
+        <div class="sub">Database relazionale gestito per entità strutturate e transazioni.</div>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">ACID</span>
+          <span class="tag">Managed</span>
+        </div>
+      </div>
+      <div class="box col-4">
+        <div class="label">06 · Vector / RAG</div>
+        <div class="name">Vertex Vector Search</div>
+        <div class="sub">Indicizzazione semantica della knowledge base aziendale.</div>
+        <div class="tags">
+          <span class="tag">Embeddings</span>
+          <span class="tag">kNN</span>
+          <span class="tag">Semantic</span>
+        </div>
+      </div>
+      <div class="box col-4">
+        <div class="label">07 · Integrations</div>
+        <div class="name">Function Calling Hub</div>
+        <div class="sub">Connettori verso CRM, ERP, calendari, ticketing, wiki aziendali.</div>
+        <div class="tags">
+          <span class="tag">REST</span>
+          <span class="tag">Webhook</span>
+          <span class="tag">OAuth2</span>
+        </div>
+      </div>
+
+      <!-- Layer 4: security -->
+      <div class="stack-layer hot col-12">
+        <div class="layer-title">
+          <span class="t">Sicurezza · Privacy · Compliance</span>
+          <span class="mono">08 — FOUNDATION</span>
+        </div>
+        <div class="items">
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Secret Manager</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>VPC privata · zero trust</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>IAM granulare</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Residenza dati EU</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>GDPR compliant</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Audit log completo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="block" id="casi">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Casi d'uso — 06</span>
+        <h2>Stesso motore. <em style="font-style:normal;color:var(--accent)">Mille settori.</em></h2>
+      </div>
+      <p class="lede">
+        La natura modulare della piattaforma la rende adattabile a qualsiasi processo che richieda intelligenza, empatia e integrazione con sistemi esistenti. Ecco quattro scenari dove i nostri clienti sono già in produzione.
+      </p>
+    </div>
+
+    <div class="use-grid">
+      <div class="use">
+        <div>
+          <span class="use-num">Caso · 01</span>
+          <h4>Virtual Triage & Booking</h4>
+          <p class="use-desc">Un assistente virtuale empatico che risponde ai pazienti, comprende le necessità grazie all'<em>Affective Dialog</em>, verifica disponibilità nel gestionale e fissa appuntamenti — azzerando le code telefoniche.</p>
+        </div>
+        <div class="use-tags">
+          <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Calendar API</span>
+        </div>
+      </div>
+      <div class="use">
+        <div>
+          <span class="use-num">Caso · 02</span>
+          <h4>Centralino di nuova generazione</h4>
+          <p class="use-desc">Un concierge, non uno smistatore. L'AI comprende, recupera lo storico dal CRM, risolve in prima battuta e passa all'operatore umano — con riassunto automatico della conversazione.</p>
+        </div>
+        <div class="use-tags">
+          <span class="t">Customer care</span><span class="t">CRM</span><span class="t">Warm transfer</span>
+        </div>
+      </div>
+      <div class="use">
+        <div>
+          <span class="use-num">Caso · 03</span>
+          <h4>Helpdesk IT · Sistema RAG</h4>
+          <p class="use-desc">Agente di primo livello H24. Interroga in millisecondi migliaia di pagine di manuali tecnici, guida l'utente passo-passo o apre ticket categorizzati e dettagliati.</p>
+        </div>
+        <div class="use-tags">
+          <span class="t">IT Support</span><span class="t">RAG</span><span class="t">Ticketing</span>
+        </div>
+      </div>
+      <div class="use">
+        <div>
+          <span class="use-num">Caso · 04</span>
+          <h4>Concierge Hotellerie</h4>
+          <p class="use-desc">Assistente su telefono e WhatsApp che risponde a FAQ, gestisce richieste in stanza, illustra servizi e prenota extra (ristoranti, spa) integrandosi col gestionale alberghiero.</p>
+        </div>
+        <div class="use-tags">
+          <span class="t">Hospitality</span><span class="t">WhatsApp</span><span class="t">PMS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US / METRICS -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Perché sceglierci — 07</span>
+        <h2>Il ROI non è una promessa. È il punto di partenza.</h2>
+      </div>
+      <p class="lede">Tre metriche che i nostri clienti vedono entro le prime otto settimane di produzione.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="num">−80<span class="unit">%</span></div>
+        <div class="title">Costi operativi</div>
+        <div class="desc">Automatizziamo fino all'80% delle interazioni ripetitive. Il team umano si concentra su ciò che conta davvero.</div>
+      </div>
+      <div class="metric">
+        <div class="num">24<span class="unit">/7</span></div>
+        <div class="title">Sempre al lavoro</div>
+        <div class="desc">Mai in pausa, mai impaziente. Standard di qualità impeccabili su ogni singola interazione.</div>
+      </div>
+      <div class="metric">
+        <div class="num">+3,2<span class="unit">×</span></div>
+        <div class="title">Customer satisfaction</div>
+        <div class="desc">Risposte immediate e risoluzione al primo contatto — clienti più felici, tassi di conversione più alti.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + CONTACT -->
+<section class="cta" id="contatti">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="mono">Contatti — 08</span>
+      <h2 style="margin-top:24px">Portiamo la tua azienda <em style="font-style:normal;color:var(--accent)">nel futuro.</em></h2>
+      <p>L'intelligenza artificiale non è più fantascienza. È il tuo prossimo vantaggio competitivo. Parliamone — organizziamo una demo personalizzata sulla tua base di conoscenza e sui tuoi processi.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/cdn-cgi/l/email-protection#ef9dc18d8e838b8e8c8c86af8d86819b988e9d8ac18c8082" class="btn primary"><span class="dot"></span>Richiedi una demo</a>
+        <a href="#tecnologia" class="btn">Vedi l'architettura →</a>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-card">
+          <div>
+            <span class="role">Co-founder · Sales & Strategy</span>
+            <div class="name">Riccardo Baldacci</div>
+            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per demo personalizzate, preventivi e valutazioni del tuo caso d'uso specifico.</div>
+          </div>
+          <a href="/cdn-cgi/l/email-protection#57257935363b333634343e17353e3923203625327934383a" class="email">
+            <span class="__cf_email__" data-cfemail="3b4915595a575f5a5858527b5952554f4c5a495e15585456">[email&#160;protected]</span> →
+          </a>
+        </div>
+        <div class="contact-card">
+          <div>
+            <span class="role">Co-founder · Tech & Architecture</span>
+            <div class="name">Luca Baldacci</div>
+            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per approfondimenti tecnici, integrazioni e progetti di architettura cloud su misura.</div>
+          </div>
+          <a href="/cdn-cgi/l/email-protection#5a3674383b363e3b3939331a3833342e2d3b283f74393537" class="email">
+            <span class="__cf_email__" data-cfemail="b0dc9ed2d1dcd4d1d3d3d9f0d2d9dec4c7d1c2d59ed3dfdd">[email&#160;protected]</span> →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span>Bintware</span>
+      </div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span>© 2026 Bintware S.r.l.</span>
+        <span>Google Cloud Partner</span>
+        <span>GDPR compliant</span>
+        <span>Fatto in Italia · Servito globalmente</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // WAVEFORM
+  (function(){
+    const wave = document.getElementById('wave');
+    if(!wave) return;
+    const N = 64;
+    for(let i=0;i<N;i++){
+      const b = document.createElement('span');
+      b.className = 'bar';
+      const center = Math.abs(i - N/2) / (N/2);
+      const h = Math.max(0.25, (1 - center*center) * (0.5 + Math.random()*0.8));
+      b.style.setProperty('--h', h.toFixed(2));
+      b.style.setProperty('--d', (0.6 + Math.random()*1.1).toFixed(2) + 's');
+      b.style.animationDelay = (-Math.random()*2) + 's';
+      wave.appendChild(b);
+    }
+  })();
+
+  // CALL TIMER
+  (function(){
+    const el = document.getElementById('callTimer');
+    if(!el) return;
+    let s = 42;
+    setInterval(()=>{
+      s++;
+      const m = String(Math.floor(s/60)).padStart(2,'0');
+      const ss = String(s%60).padStart(2,'0');
+      el.textContent = `${m}:${ss}`;
+    },1000);
+  })();
+
+  // CHART BARS
+  (function(){
+    const c = document.getElementById('chart');
+    if(!c) return;
+    const N = 24;
+    for(let i=0;i<N;i++){
+      const b = document.createElement('span');
+      b.className = 'bar';
+      const h = 20 + Math.round(40 + Math.sin(i/2)*30 + Math.random()*20);
+      b.style.height = Math.min(h,100) + '%';
+      b.style.opacity = (0.35 + (h/120)).toFixed(2);
+      c.appendChild(b);
+    }
+  })();
+
+  // Smooth scroll for hash links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href').slice(1);
+      if(!id) return;
+      const el = document.getElementById(id);
+      if(el){e.preventDefault(); window.scrollTo({top: el.offsetTop - 70, behavior:'smooth'})}
+    });
+  });
+</script>
+
+</body>
+</html>
