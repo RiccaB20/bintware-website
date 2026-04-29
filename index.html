@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Bintware — SipAiGateway</title>
+<title>Bintware · Studio di Architettura AI Cloud · Vertex AI · GKE</title>
+<meta name="description" content="Studio specialistico italiano di architettura AI cloud su Google Cloud Platform. Progettiamo sistemi di AI conversazionale enterprise con Vertex AI, Gemini Live, GKE, AlloyDB.">
+<meta property="og:title" content="Bintware · Studio di Architettura AI Cloud">
+<meta property="og:description" content="Progettiamo l'infrastruttura dell'AI conversazionale enterprise. Su Google Cloud. In Italia.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -242,6 +246,21 @@
   .metric .title{font-family:var(--display);font-size:22px;font-weight:500;margin:16px 0 10px}
   .metric .desc{color:var(--ink-dim);font-size:14.5px;line-height:1.55;max-width:36ch}
 
+  /* COME LAVORIAMO */
+  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .work-card{padding:32px 26px;border:1px solid var(--line-soft);border-radius:14px;background:var(--bg-2);display:flex;flex-direction:column;gap:14px;min-height:380px;position:relative;transition:border-color .25s ease, transform .25s ease}
+  .work-card:hover{border-color:var(--line);transform:translateY(-2px)}
+  .work-card.featured{background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 10%,var(--bg-2)),var(--bg-2));border-color:color-mix(in oklch,var(--accent) 35%,var(--line-soft))}
+  .work-card .num{font-family:var(--display);font-size:48px;font-weight:500;letter-spacing:-0.03em;color:transparent;-webkit-text-stroke:1px var(--ink-dim);line-height:1}
+  .work-card.featured .num{-webkit-text-stroke:1px var(--accent)}
+  .work-card .w-title{font-family:var(--display);font-size:22px;font-weight:500;letter-spacing:-0.01em;line-height:1.1}
+  .work-card .w-meta{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .work-card .w-meta .duration{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .work-card .w-meta .price{font-family:var(--display);font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-0.01em}
+  .work-card .w-desc{flex:1;font-size:13.5px;color:var(--ink-dim);line-height:1.55}
+  .work-card .w-cta{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;padding-top:6px;display:inline-block}
+  .work-card .w-cta:hover{text-decoration:underline}
+
   /* CTA + CONTACT */
   .cta{padding:140px 0;border-top:1px solid var(--line-soft);position:relative;overflow:hidden}
   .cta::before{
@@ -278,6 +297,7 @@
     .feature .f-head{position:static}
     .use-grid{grid-template-columns:1fr}
     .metrics{grid-template-columns:1fr;gap:40px}
+    .work-grid{grid-template-columns:1fr;gap:14px}
     .contact-block{grid-template-columns:1fr}
     .contact-card{border-right:none;border-bottom:1px solid var(--line-soft)}
     .col-4,.col-3,.col-6{grid-column:span 12}
@@ -295,13 +315,14 @@
       <span>Bintware</span>
     </div>
     <div class="links">
-      <a href="#prodotto">Prodotto</a>
+      <a href="#prodotto">Manifesto</a>
       <a href="#capacita">Capacità</a>
-      <a href="#tecnologia">Tecnologia</a>
-      <a href="#casi">Casi d'uso</a>
+      <a href="#tecnologia">Architettura</a>
+      <a href="#casi">Scenari</a>
+      <a href="#lavoriamo">Lavoriamo</a>
       <a href="#contatti">Contatti</a>
     </div>
-    <a href="#contatti" class="btn primary"><span class="dot"></span>Richiedi demo</a>
+    <a href="#contatti" class="btn primary"><span class="dot"></span>Discovery call</a>
   </div>
 </nav>
 
@@ -310,31 +331,31 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
-        <span class="eyebrow"><span class="pulse"></span>SipAiGateway · Conversational AI Enterprise</span>
+        <span class="eyebrow"><span class="pulse"></span>Studio · Architettura AI Cloud · Italia</span>
         <h1 class="hero-title">
-          La voce<br>
-          della tua azienda,<br>
-          <em>senza attese.</em>
+          Architetti<br>
+          dell'AI conversazionale.<br>
+          <em>Su Google Cloud.</em>
         </h1>
         <p class="hero-lede">
-          Un ecosistema di Intelligenza Artificiale Conversazionale che ascolta, ragiona, agisce. Costruito su Google Cloud e Vertex AI. Conforme GDPR. Progettato per risolvere — non solo per rispondere.
+          Studio specialistico fondato per portare l'AI vocale enterprise — Vertex AI, Gemini Live, GKE, AlloyDB — dentro le aziende italiane. Con la cura di un boutique e la profondità tecnica di chi questi sistemi li costruisce ogni giorno.
         </p>
         <div class="hero-cta">
-          <a href="#contatti" class="btn primary"><span class="dot"></span>Prenota una demo</a>
-          <a href="#prodotto" class="btn">Scopri la piattaforma →</a>
+          <a href="#contatti" class="btn primary"><span class="dot"></span>Prenota una call</a>
+          <a href="#tecnologia" class="btn">Vedi l'architettura →</a>
         </div>
         <div class="hero-meta">
-          <div class="m"><span class="mono">Latenza media</span><span class="val">~380<small>ms</small></span></div>
-          <div class="m"><span class="mono">Automazione</span><span class="val">80<small>%</small></span></div>
-          <div class="m"><span class="mono">Disponibilità</span><span class="val">24/7</span></div>
-          <div class="m"><span class="mono">Canali nativi</span><span class="val">4</span></div>
+          <div class="m"><span class="mono">Studio · Anno</span><span class="val">2026</span></div>
+          <div class="m"><span class="mono">Stack core</span><span class="val">GCP</span></div>
+          <div class="m"><span class="mono">Latenza target</span><span class="val">&lt;400<small>ms</small></span></div>
+          <div class="m"><span class="mono">Residenza dati</span><span class="val">UE</span></div>
         </div>
       </div>
 
       <!-- Live voice panel -->
       <div class="voice-panel">
         <div class="voice-head">
-          <div class="tag"><span class="live"></span><span class="t">Chiamata attiva — Assistente Sanitario</span></div>
+          <div class="tag"><span class="live"></span><span class="t">DEMO · Assistente Sanitario · esempio</span></div>
           <div class="time" id="callTimer">00:42</div>
         </div>
         <div class="waveform" id="wave"></div>
@@ -373,11 +394,11 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Il prodotto — 00</span>
+        <span class="mono">Manifesto — 00</span>
         <h2>Non un centralino. Non un chatbot. <em style="font-style:normal;color:var(--accent)">Un collaboratore.</em></h2>
       </div>
       <p class="lede">
-        SipAiGateway è una piattaforma di Conversational AI di livello enterprise che unisce voce in tempo reale, ragionamento multimodale e integrazione profonda con i tuoi sistemi. Risolve, esegue, orchestra — in totale autonomia, su ogni canale.
+        SipAiGateway è la nostra reference architecture: il blueprint dell'AI conversazionale enterprise che progettiamo e implementiamo per i clienti, sullo stack Google Cloud. Voce in tempo reale, ragionamento multimodale, integrazione profonda con i sistemi esistenti — risolve, esegue, orchestra su ogni canale.
       </p>
     </div>
   </div>
@@ -668,7 +689,7 @@
         <h2>Costruita sulla spina dorsale di <em style="font-style:normal;color:var(--accent)">Google Cloud.</em></h2>
       </div>
       <p class="lede">
-        Progettiamo ecosistemi cloud completi su Google Cloud Platform e Vertex AI — con cluster GKE, macchine virtuali, database gestiti e piena conformità GDPR. I tuoi dati restano in Europa. Le chiavi restano blindate.
+        Progettiamo ecosistemi cloud completi su Google Cloud Platform e Vertex AI — cluster GKE, macchine virtuali, database gestiti, progettazione GDPR-by-design. I tuoi dati restano in Europa. Le chiavi restano blindate.
       </p>
     </div>
 
@@ -762,7 +783,7 @@
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>VPC privata · zero trust</span>
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>IAM granulare</span>
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Residenza dati EU</span>
-          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>GDPR compliant</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>GDPR-by-design</span>
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Audit log completo</span>
         </div>
       </div>
@@ -775,18 +796,18 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Casi d'uso — 06</span>
-        <h2>Stesso motore. <em style="font-style:normal;color:var(--accent)">Mille settori.</em></h2>
+        <span class="mono">Scenari — 06</span>
+        <h2>Stessa architettura. <em style="font-style:normal;color:var(--accent)">Quattro mondi.</em></h2>
       </div>
       <p class="lede">
-        La natura modulare della piattaforma la rende adattabile a qualsiasi processo che richieda intelligenza, empatia e integrazione con sistemi esistenti. Ecco quattro scenari dove i nostri clienti sono già in produzione.
+        La natura modulare dell'architettura la rende adattabile a qualsiasi processo che richieda intelligenza, empatia e integrazione con sistemi esistenti. Ecco quattro scenari che progettiamo regolarmente — ogni implementazione è custom, il pattern architetturale è ripetibile.
       </p>
     </div>
 
     <div class="use-grid">
       <div class="use">
         <div>
-          <span class="use-num">Caso · 01</span>
+          <span class="use-num">Scenario · 01</span>
           <h4>Virtual Triage & Booking</h4>
           <p class="use-desc">Un assistente virtuale empatico che risponde ai pazienti, comprende le necessità grazie all'<em>Affective Dialog</em>, verifica disponibilità nel gestionale e fissa appuntamenti — azzerando le code telefoniche.</p>
         </div>
@@ -796,7 +817,7 @@
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Caso · 02</span>
+          <span class="use-num">Scenario · 02</span>
           <h4>Centralino di nuova generazione</h4>
           <p class="use-desc">Un concierge, non uno smistatore. L'AI comprende, recupera lo storico dal CRM, risolve in prima battuta e passa all'operatore umano — con riassunto automatico della conversazione.</p>
         </div>
@@ -806,7 +827,7 @@
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Caso · 03</span>
+          <span class="use-num">Scenario · 03</span>
           <h4>Helpdesk IT · Sistema RAG</h4>
           <p class="use-desc">Agente di primo livello H24. Interroga in millisecondi migliaia di pagine di manuali tecnici, guida l'utente passo-passo o apre ticket categorizzati e dettagliati.</p>
         </div>
@@ -816,7 +837,7 @@
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Caso · 04</span>
+          <span class="use-num">Scenario · 04</span>
           <h4>Concierge Hotellerie</h4>
           <p class="use-desc">Assistente su telefono e WhatsApp che risponde a FAQ, gestisce richieste in stanza, illustra servizi e prenota extra (ristoranti, spa) integrandosi col gestionale alberghiero.</p>
         </div>
@@ -828,32 +849,90 @@
   </div>
 </section>
 
-<!-- WHY US / METRICS -->
+<!-- COME LAVORIAMO -->
+<section class="block" id="lavoriamo">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Come lavoriamo — 07</span>
+        <h2>Quattro modi di iniziare. <em style="font-style:normal;color:var(--accent)">Trasparenti.</em></h2>
+      </div>
+      <p class="lede">
+        Ogni progetto è diverso, ma il percorso è chiaro. Si parte sempre con una conversazione gratuita, si scala solo quando ha senso. Niente preventivi sorpresa, niente impegni nascosti.
+      </p>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="num">01</div>
+        <div class="w-title">Discovery Call</div>
+        <div class="w-meta">
+          <span class="duration">30 minuti</span>
+          <span class="price">Gratuita</span>
+        </div>
+        <div class="w-desc">Capiamo se ha senso. Ti raccontiamo come affronteremmo il tuo caso d'uso, quali tecnologie useremmo, quali rischi vediamo. Senza impegno.</div>
+        <a href="mailto:riccardo@bintware.it?subject=Discovery%20call" class="w-cta">Prenota →</a>
+      </div>
+      <div class="work-card featured">
+        <div class="num">02</div>
+        <div class="w-title">Architecture Review</div>
+        <div class="w-meta">
+          <span class="duration">2 – 3 giorni</span>
+          <span class="price">da € 1.500</span>
+        </div>
+        <div class="w-desc">Analizziamo il tuo caso d'uso e produciamo un documento di architettura GCP completo: stack, costi mensili stimati, timeline, rischi. Tu lo possiedi.</div>
+        <a href="mailto:riccardo@bintware.it?subject=Architecture%20Review" class="w-cta">Richiedi →</a>
+      </div>
+      <div class="work-card">
+        <div class="num">03</div>
+        <div class="w-title">Prototipo · Pilot</div>
+        <div class="w-meta">
+          <span class="duration">4 – 6 settimane</span>
+          <span class="price">da € 15.000</span>
+        </div>
+        <div class="w-desc">Costruiamo un MVP funzionante con i tuoi dati. Operativo su un perimetro definito — un canale, un caso d'uso, un team. Misurabile.</div>
+        <a href="mailto:riccardo@bintware.it?subject=Pilot" class="w-cta">Parliamone →</a>
+      </div>
+      <div class="work-card">
+        <div class="num">04</div>
+        <div class="w-title">Production Build</div>
+        <div class="w-meta">
+          <span class="duration">3 – 6 mesi</span>
+          <span class="price">Su misura</span>
+        </div>
+        <div class="w-desc">Implementazione completa: integrazione coi sistemi esistenti, training del team, documentazione, SLA. Engagement continuativo opzionale.</div>
+        <a href="mailto:riccardo@bintware.it?subject=Production%20Build" class="w-cta">Parliamone →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME OPERIAMO / PRINCIPI -->
 <section class="block">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Perché sceglierci — 07</span>
-        <h2>Il ROI non è una promessa. È il punto di partenza.</h2>
+        <span class="mono">Come operiamo — 08</span>
+        <h2>Tre principi. <em style="font-style:normal;color:var(--accent)">Non negoziabili.</em></h2>
       </div>
-      <p class="lede">Tre metriche che i nostri clienti vedono entro le prime otto settimane di produzione.</p>
+      <p class="lede">Come ci differenziamo da una grande consulenza, da un freelance singolo, da una SaaS pacchettizzata. Senza sconti.</p>
     </div>
 
     <div class="metrics">
       <div class="metric">
-        <div class="num">−80<span class="unit">%</span></div>
-        <div class="title">Costi operativi</div>
-        <div class="desc">Automatizziamo fino all'80% delle interazioni ripetitive. Il team umano si concentra su ciò che conta davvero.</div>
+        <div class="num">01</div>
+        <div class="title">Founder-led</div>
+        <div class="desc">Ogni progetto è seguito personalmente da un architetto. Niente junior, niente delega, niente sorprese in produzione. Parli sempre con chi costruisce.</div>
       </div>
       <div class="metric">
-        <div class="num">24<span class="unit">/7</span></div>
-        <div class="title">Sempre al lavoro</div>
-        <div class="desc">Mai in pausa, mai impaziente. Standard di qualità impeccabili su ogni singola interazione.</div>
+        <div class="num">02</div>
+        <div class="title">Architecture-first</div>
+        <div class="desc">Prima del codice scriviamo un documento di architettura. Tu sai cosa stiamo costruendo, perché, e quanto costa — prima che parta una sola riga.</div>
       </div>
       <div class="metric">
-        <div class="num">+3,2<span class="unit">×</span></div>
-        <div class="title">Customer satisfaction</div>
-        <div class="desc">Risposte immediate e risoluzione al primo contatto — clienti più felici, tassi di conversione più alti.</div>
+        <div class="num">03</div>
+        <div class="title">Open & owned</div>
+        <div class="desc">La nostra reference architecture è pubblica. Il codice del tuo sistema lo possiedi tu — Terraform, repo, documentazione. Niente lock-in.</div>
       </div>
     </div>
   </div>
@@ -863,33 +942,33 @@
 <section class="cta" id="contatti">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="mono">Contatti — 08</span>
+      <span class="mono">Contatti — 09</span>
       <h2 style="margin-top:24px">Portiamo la tua azienda <em style="font-style:normal;color:var(--accent)">nel futuro.</em></h2>
-      <p>L'intelligenza artificiale non è più fantascienza. È il tuo prossimo vantaggio competitivo. Parliamone — organizziamo una demo personalizzata sulla tua base di conoscenza e sui tuoi processi.</p>
+      <p>L'intelligenza artificiale non è più fantascienza. È il tuo prossimo vantaggio competitivo. Parliamone — partiamo da una discovery call di 30 minuti, gratuita. Ti raccontiamo come affronteremmo il tuo caso d'uso. Senza impegno.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="/cdn-cgi/l/email-protection#ef9dc18d8e838b8e8c8c86af8d86819b988e9d8ac18c8082" class="btn primary"><span class="dot"></span>Richiedi una demo</a>
+        <a href="mailto:riccardo@bintware.it?subject=Discovery%20call%20·%20Bintware" class="btn primary"><span class="dot"></span>Prenota la discovery call</a>
         <a href="#tecnologia" class="btn">Vedi l'architettura →</a>
       </div>
 
       <div class="contact-block">
         <div class="contact-card">
           <div>
-            <span class="role">Co-founder · Sales & Strategy</span>
+            <span class="role">Co-founder · Strategia & Architettura</span>
             <div class="name">Riccardo Baldacci</div>
-            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per demo personalizzate, preventivi e valutazioni del tuo caso d'uso specifico.</div>
+            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per discovery call, valutazioni del tuo caso d'uso e architecture review.</div>
           </div>
-          <a href="/cdn-cgi/l/email-protection#57257935363b333634343e17353e3923203625327934383a" class="email">
-            <span class="__cf_email__" data-cfemail="3b4915595a575f5a5858527b5952554f4c5a495e15585456">[email&#160;protected]</span> →
+          <a href="mailto:riccardo@bintware.it" class="email">
+            riccardo@bintware.it →
           </a>
         </div>
         <div class="contact-card">
           <div>
-            <span class="role">Co-founder · Tech & Architecture</span>
+            <span class="role">Co-founder · Engineering & Cloud</span>
             <div class="name">Luca Baldacci</div>
             <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per approfondimenti tecnici, integrazioni e progetti di architettura cloud su misura.</div>
           </div>
-          <a href="/cdn-cgi/l/email-protection#5a3674383b363e3b3939331a3833342e2d3b283f74393537" class="email">
-            <span class="__cf_email__" data-cfemail="b0dc9ed2d1dcd4d1d3d3d9f0d2d9dec4c7d1c2d59ed3dfdd">[email&#160;protected]</span> →
+          <a href="mailto:luca@bintware.it" class="email">
+            luca@bintware.it →
           </a>
         </div>
       </div>
@@ -906,16 +985,17 @@
         <span>Bintware</span>
       </div>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
-        <span>© 2026 Bintware S.r.l.</span>
-        <span>Google Cloud Partner</span>
-        <span>GDPR compliant</span>
-        <span>Fatto in Italia · Servito globalmente</span>
+        <span>© 2026 Bintware · di Riccardo Baldacci</span>
+        <span>P.IVA IT 0000000000</span>
+        <span>Stack: Google Cloud · Vertex AI</span>
+        <span>Progettato secondo principi GDPR · Dati in UE</span>
+        <span>Fatto in Italia</span>
       </div>
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // WAVEFORM
   (function(){
     const wave = document.getElementById('wave');
