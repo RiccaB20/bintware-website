@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Bintware · Studio di Architettura AI Cloud · Vertex AI · GKE</title>
-<meta name="description" content="Studio specialistico italiano di architettura AI cloud su Google Cloud Platform. Progettiamo sistemi di AI conversazionale enterprise con Vertex AI, Gemini Live, GKE, AlloyDB.">
-<meta property="og:title" content="Bintware · Studio di Architettura AI Cloud">
-<meta property="og:description" content="Progettiamo l'infrastruttura dell'AI conversazionale enterprise. Su Google Cloud. In Italia.">
+<title>Bintware · Applicativi AI su Google Cloud</title>
+<meta name="description" content="Studio italiano di sviluppo applicativi AI su Google Cloud — voce, conversazioni, documenti, processi. Vertex AI, GKE, AlloyDB. Due professionisti, lavoro su misura.">
+<meta property="og:title" content="Bintware · Applicativi AI su Google Cloud">
+<meta property="og:description" content="Sviluppiamo applicativi che portano l'AI di Google Cloud dentro i processi delle aziende. In Italia.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,6 +79,7 @@
   .hero-meta .m .mono{display:block;margin-bottom:6px}
   .hero-meta .m .val{font-family:var(--display);font-size:28px;font-weight:500;letter-spacing:-0.02em}
   .hero-meta .m .val small{color:var(--ink-mute);font-weight:400;font-size:14px;margin-left:2px}
+  .hero-extend{margin-top:16px;font-size:14.5px;line-height:1.6;color:var(--ink-mute);max-width:52ch;font-weight:300}
 
   /* VOICE WAVE PANEL */
   .voice-panel{
@@ -229,6 +230,21 @@
   .stack-layer .chip{padding:6px 12px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:999px;font-size:12.5px;display:flex;align-items:center;gap:8px}
   .stack-layer .chip .swatch{width:8px;height:8px;border-radius:50%}
 
+  /* ARCHITECTURE EXPLAINER */
+  .arch-explainer{margin:0 0 56px;padding:36px;border:1px solid var(--line-soft);border-radius:16px;background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 7%,var(--bg-2)),var(--bg-2))}
+  .aex-head{margin-bottom:24px}
+  .aex-tag{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+  .aex-title{font-family:var(--display);font-size:clamp(26px,3vw,36px);font-weight:500;letter-spacing:-0.02em;line-height:1.15;margin:0;color:var(--ink)}
+  .aex-grid{display:flex;flex-direction:column;gap:24px}
+  .aex-intro{font-size:15.5px;line-height:1.6;color:var(--ink-dim);max-width:78ch;margin:0}
+  .aex-flows{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .aex-flow{padding:20px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:12px}
+  .aex-flow-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;margin-bottom:8px;text-transform:uppercase}
+  .aex-flow p{font-size:14px;line-height:1.6;color:var(--ink-dim);margin:0}
+  .aex-foot{font-size:15px;line-height:1.6;color:var(--ink-dim);margin:0;padding-top:18px;border-top:1px dashed var(--line-soft)}
+  .aex-foot em{font-style:normal;color:var(--accent);font-weight:500}
+  @media (max-width:768px){.aex-flows{grid-template-columns:1fr}}
+
   /* USE CASES */
   .use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden}
   .use{background:var(--bg);padding:40px 36px;position:relative;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s ease;cursor:default}
@@ -238,6 +254,11 @@
   .use .use-desc{font-size:14.5px;color:var(--ink-dim);line-height:1.55;max-width:42ch}
   .use .use-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
   .use .use-tags .t{font-family:var(--mono);font-size:10px;padding:4px 9px;border:1px solid var(--line-soft);border-radius:4px;color:var(--ink-dim);letter-spacing:0.08em;text-transform:uppercase}
+  .use .use-result{display:flex;align-items:center;gap:10px;margin-top:18px;padding:11px 14px;background:color-mix(in oklch,var(--accent) 8%,var(--bg-3));border:1px solid color-mix(in oklch,var(--accent) 28%,var(--line-soft));border-radius:8px;font-family:var(--mono);font-size:11.5px;color:var(--ink);letter-spacing:0.04em;line-height:1.45}
+  .use .use-result .arrow{color:var(--accent);font-weight:700;font-size:13px}
+  .use-rest{margin-top:48px;padding:36px 32px;border:1px dashed var(--line);border-radius:14px;text-align:center;background:var(--bg-2)}
+  .use-rest p{font-size:15.5px;color:var(--ink-dim);max-width:62ch;margin:0 auto 22px;line-height:1.55}
+  .use-rest .em{color:var(--ink);font-weight:500}
 
   /* METRICS / WHY US */
   .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:start}
@@ -261,6 +282,84 @@
   .work-card .w-cta{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;padding-top:6px;display:inline-block}
   .work-card .w-cta:hover{text-decoration:underline}
 
+  .work-card .price-link{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block}
+  .work-card .price-link:hover{text-decoration:underline}
+
+  /* PRICE LIST */
+  .price-stack{display:flex;flex-direction:column;gap:18px}
+  .price-row{display:grid;grid-template-columns:48px 1fr;gap:24px;padding:32px;border:1px solid var(--line-soft);border-radius:14px;background:var(--bg-2);align-items:start}
+  .price-row.featured{border-color:color-mix(in oklch,var(--accent) 35%,var(--line-soft));background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 8%,var(--bg-2)),var(--bg-2))}
+  .price-row.enterprise{background:var(--bg);border-color:var(--line)}
+  .price-row-num{font-family:var(--display);font-size:38px;font-weight:500;letter-spacing:-0.03em;color:transparent;-webkit-text-stroke:1px var(--ink-dim);line-height:1;padding-top:4px}
+  .price-row.featured .price-row-num{-webkit-text-stroke:1px var(--accent)}
+  .price-row-body{display:flex;flex-direction:column;gap:24px;min-width:0}
+  .price-row-head{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+  .price-row-title{font-family:var(--display);font-size:24px;font-weight:500;letter-spacing:-0.02em;margin:0 0 8px}
+  .price-row-desc{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-dim);max-width:62ch}
+  .price-tag{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;padding:14px 18px;background:var(--bg);border:1px solid var(--line-soft);border-radius:10px;min-width:170px}
+  .price-row.featured .price-tag{background:var(--bg-3);border-color:color-mix(in oklch,var(--accent) 25%,var(--line-soft))}
+  .price-tag-label{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .price-tag-value{font-family:var(--display);font-size:28px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+  .price-tag-value small{font-size:14px;color:var(--ink-mute);font-weight:400;margin-left:2px}
+
+  .price-base{padding:20px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px}
+  .price-base-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:16px;flex-wrap:wrap}
+  .price-base-head .mono{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .price-base-value{font-family:var(--display);font-size:18px;font-weight:500;color:var(--ink)}
+  .price-base p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-dim)}
+
+  .price-upgrades{display:flex;flex-direction:column;gap:14px}
+  .price-upgrades-head{padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+  .price-upgrades-head .mono{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .price-upgrade-note{padding:12px 16px;background:color-mix(in oklch,var(--accent) 8%,var(--bg-3));border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:13px;line-height:1.55;color:var(--ink-dim)}
+  .price-upgrade-note strong{color:var(--ink);font-weight:500}
+  .price-upgrade-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .price-upgrade{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line-soft);border-radius:10px;background:var(--bg-3);text-align:left;cursor:pointer;transition:border-color .2s ease, background .2s ease;font-family:inherit;color:inherit}
+  .price-upgrade:hover{border-color:var(--line)}
+  .price-upgrade.active{border-color:var(--accent);background:color-mix(in oklch,var(--accent) 12%,var(--bg-3))}
+  .price-upgrade-toprow{display:flex;justify-content:space-between;align-items:center}
+  .price-upgrade-name{font-family:var(--display);font-size:16px;font-weight:500;color:var(--ink)}
+  .price-upgrade-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);position:relative;flex-shrink:0;transition:all .2s ease}
+  .price-upgrade.active .price-upgrade-check{border-color:var(--accent);background:var(--accent)}
+  .price-upgrade.active .price-upgrade-check::after{content:'';position:absolute;left:5px;top:2px;width:5px;height:9px;border:solid oklch(0.2 0.02 55);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+  .price-upgrade-amount{font-family:var(--display);font-size:18px;font-weight:500;color:var(--accent)}
+  .price-upgrade-amount small{font-size:12.5px;color:var(--ink-mute);font-weight:400;margin-left:2px}
+  .price-upgrade p{margin:0;font-size:13px;line-height:1.55;color:var(--ink-dim)}
+
+  .price-pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .price-pack{position:relative;padding:24px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:12px;display:flex;flex-direction:column;gap:16px}
+  .price-pack.recommended{border-color:color-mix(in oklch,var(--accent) 50%,var(--line-soft));background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 12%,var(--bg-3)),var(--bg-3))}
+  .price-pack-tag{position:absolute;top:-10px;right:18px;font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;background:var(--accent);color:oklch(0.2 0.02 55);padding:4px 10px;border-radius:4px;font-weight:600}
+  .price-pack-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+  .price-pack-name{font-family:var(--display);font-size:17px;font-weight:500;color:var(--ink)}
+  .price-pack-amount{font-family:var(--display);font-size:24px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;flex-shrink:0;line-height:1}
+  .price-pack.recommended .price-pack-amount{color:var(--accent)}
+  .price-pack-amount small{font-size:13px;color:var(--ink-mute);font-weight:400;margin-left:2px}
+  .price-pack-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .price-pack-list li{font-size:13.5px;line-height:1.55;color:var(--ink-dim);padding-left:20px;position:relative}
+  .price-pack-list li::before{content:'';position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .price-pack-list li strong{color:var(--ink);font-weight:500}
+
+  .price-perdiem{padding:20px;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:10px}
+  .price-perdiem-head{padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--line-soft)}
+  .price-perdiem-head .mono{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .price-perdiem-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-soft);gap:16px}
+  .price-perdiem-row:last-child{border-bottom:none}
+  .price-perdiem-role{font-size:14px;color:var(--ink)}
+  .price-perdiem-amount{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+
+  .price-disclaimer{margin-top:8px;padding:18px 20px;border:1px dashed var(--line-soft);border-radius:10px;font-size:13px;line-height:1.55;color:var(--ink-mute);background:transparent}
+
+  @media (max-width:900px){
+    .price-row{grid-template-columns:1fr;gap:18px;padding:24px}
+    .price-row-num{font-size:28px;padding-top:0}
+    .price-row-head{flex-direction:column;gap:18px;align-items:stretch}
+    .price-tag{align-items:flex-start;width:auto;min-width:0}
+    .price-upgrade-grid{grid-template-columns:1fr}
+    .price-pack-grid{grid-template-columns:1fr}
+    .price-perdiem-row{flex-direction:column;align-items:flex-start;gap:4px}
+  }
+
   /* CTA + CONTACT */
   .cta{padding:140px 0;border-top:1px solid var(--line-soft);position:relative;overflow:hidden}
   .cta::before{
@@ -280,6 +379,17 @@
   .contact-card .name{font-family:var(--display);font-size:32px;font-weight:500;letter-spacing:-0.02em;margin:10px 0 6px}
   .contact-card .email{color:var(--accent);font-family:var(--mono);font-size:14px;margin-top:20px;display:inline-flex;align-items:center;gap:8px}
   .contact-card .email:hover{text-decoration:underline}
+  .contact-card .founder-bio{font-size:13.5px;line-height:1.6;color:var(--ink-dim);margin:14px 0;max-width:42ch}
+  .contact-card .founder-role-note{color:var(--ink-mute);font-size:13px;line-height:1.55;max-width:42ch}
+  .contact-card .contact-links{display:flex;flex-direction:column;gap:10px;align-items:flex-start;margin-top:24px}
+  .contact-card .contact-links .email{margin-top:0}
+  .contact-card .linkedin{color:var(--cool);font-family:var(--mono);font-size:13px;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:8px}
+  .contact-card .linkedin:hover{text-decoration:underline}
+
+  /* REVEAL ON SCROLL */
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1)}
+  .fade-in.is-visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.fade-in{opacity:1 !important;transform:none !important;transition:none !important}}
 
   /* FOOTER */
   footer.foot{padding:60px 0 48px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--ink-mute)}
@@ -303,11 +413,73 @@
     .col-4,.col-3,.col-6{grid-column:span 12}
     .hero-meta{gap:32px;flex-wrap:wrap}
   }
+
+  /* BLOG INDEX */
+  .blog-hero{padding:160px 0 60px;border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden}
+  .blog-hero::before{content:'';position:absolute;inset:-20% -10% auto auto;width:50vw;height:50vw;pointer-events:none;background:radial-gradient(closest-side,color-mix(in oklch,var(--accent) 14%,transparent),transparent 70%);filter:blur(40px);opacity:.5}
+  .blog-hero .wrap{position:relative}
+  .blog-hero-title{font-family:var(--display);font-size:clamp(48px,7vw,96px);font-weight:500;letter-spacing:-0.035em;line-height:0.95;margin:24px 0 0}
+  .blog-hero-lede{margin-top:28px;font-size:17px;line-height:1.55;color:var(--ink-dim);max-width:62ch;font-weight:300}
+
+  .blog-index{padding:80px 0 120px}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .blog-card{padding:28px;border:1px solid var(--line-soft);border-radius:14px;background:var(--bg-2);display:flex;flex-direction:column;gap:14px;transition:border-color .25s ease, transform .25s ease}
+  .blog-card:hover{border-color:var(--line);transform:translateY(-3px)}
+  .blog-card .meta{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase}
+  .blog-card .category{color:var(--accent)}
+  .blog-card .date::before{content:'·';margin-right:8px;color:var(--ink-mute)}
+  .blog-card h3{font-family:var(--display);font-size:22px;font-weight:500;line-height:1.15;letter-spacing:-0.01em;margin:0;color:var(--ink)}
+  .blog-card .desc{font-size:14px;line-height:1.55;color:var(--ink-dim);flex:1;margin:0}
+  .blog-card .read{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;margin-top:auto;text-decoration:none;align-self:flex-start}
+  .blog-card .read:hover{text-decoration:underline}
+
+  /* BLOG ARTICLE */
+  .article-hero{padding:160px 0 60px;border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden}
+  .article-hero::before{content:'';position:absolute;inset:-20% auto auto -10%;width:50vw;height:50vw;pointer-events:none;background:radial-gradient(closest-side,color-mix(in oklch,var(--accent) 12%,transparent),transparent 70%);filter:blur(40px);opacity:.5}
+  .article-hero .wrap{position:relative;max-width:920px}
+  .article-meta{display:flex;gap:14px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px;flex-wrap:wrap}
+  .article-meta .category{color:var(--accent)}
+  .article-meta .sep{color:var(--ink-mute);opacity:.5}
+  .article-hero h1{font-family:var(--display);font-size:clamp(40px,6vw,76px);font-weight:500;letter-spacing:-0.03em;line-height:1.0;margin:0 0 24px}
+  .article-dek{font-size:19px;line-height:1.55;color:var(--ink-dim);max-width:65ch;font-weight:300;margin:0}
+  .article-author-row{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid var(--line-soft);flex-wrap:wrap;gap:16px}
+  .article-author{display:flex;align-items:center;gap:12px}
+  .article-author .author-name{font-family:var(--display);font-weight:500;font-size:15px;color:var(--ink)}
+  .article-author .author-role{font-size:13px;color:var(--ink-mute);font-family:var(--mono);letter-spacing:0.06em;margin-top:2px;text-transform:uppercase}
+  .article-read-time{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+
+  .article-body{padding:80px 0 120px}
+  .article-body .wrap{max-width:760px}
+  .article-body p,.article-body ul,.article-body ol{font-size:17px;line-height:1.75;color:var(--ink);max-width:65ch;margin:0 0 28px;font-weight:300}
+  .article-body h2{font-family:var(--display);font-size:32px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;margin:64px 0 18px}
+  .article-body h3{font-family:var(--display);font-size:22px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;margin:48px 0 14px}
+  .article-body strong{color:var(--ink);font-weight:500}
+  .article-body em{font-style:italic;color:var(--ink)}
+  .article-body a{color:var(--accent);border-bottom:1px solid color-mix(in oklch,var(--accent) 35%,transparent)}
+  .article-body a:hover{border-bottom-color:var(--accent)}
+  .article-body code{font-family:var(--mono);font-size:14px;background:var(--bg-2);color:var(--accent);padding:2px 7px;border-radius:4px;border:1px solid var(--line-soft)}
+  .article-body pre{font-family:var(--mono);font-size:13px;line-height:1.6;background:var(--bg-2);color:var(--ink-dim);padding:20px 22px;border-radius:10px;border:1px solid var(--line-soft);overflow-x:auto;margin:28px 0}
+  .article-body pre code{background:transparent;border:none;padding:0;color:inherit}
+  .article-body blockquote{margin:32px 0;padding:18px 22px;border-left:3px solid var(--accent);background:color-mix(in oklch,var(--accent) 6%,var(--bg-2));border-radius:0 8px 8px 0;font-style:italic;color:var(--ink-dim);font-size:17px;line-height:1.6}
+  .article-body ul,.article-body ol{padding-left:28px}
+  .article-body li{margin-bottom:10px;line-height:1.7}
+
+  .article-footer{padding:48px 0 64px;border-top:1px solid var(--line-soft)}
+  .article-footer .wrap{max-width:760px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  .article-back{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+  .article-back:hover{text-decoration:underline}
+
+  @media(max-width:1024px){
+    .blog-grid{grid-template-columns:1fr;gap:14px}
+    .blog-hero{padding:120px 0 40px}
+    .article-hero{padding:120px 0 40px}
+    .article-author-row{flex-direction:column;align-items:flex-start}
+  }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV (CSS inline) -->
 <nav class="top">
   <div class="inner">
     <div class="logo">
@@ -320,9 +492,11 @@
       <a href="#tecnologia">Architettura</a>
       <a href="#casi">Scenari</a>
       <a href="#lavoriamo">Lavoriamo</a>
+      <a href="#listino">Listino</a>
+      <a href="#blog">Blog</a>
       <a href="#contatti">Contatti</a>
     </div>
-    <a href="#contatti" class="btn primary"><span class="dot"></span>Discovery call</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
   </div>
 </nav>
 
@@ -331,17 +505,21 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
-        <span class="eyebrow"><span class="pulse"></span>Studio · Architettura AI Cloud · Italia</span>
+        <span class="eyebrow"><span class="pulse"></span>Studio · Applicativi AI su Google Cloud · Italia</span>
         <h1 class="hero-title">
-          Architetti<br>
-          dell'AI conversazionale.<br>
-          <em>Su Google Cloud.</em>
+          Tra il vostro telefono<br>
+          e l'intelligenza artificiale,<br>
+          un interprete simultaneo.<br>
+          <em>Lo costruiamo noi.</em>
         </h1>
         <p class="hero-lede">
-          Studio specialistico fondato per portare l'AI vocale enterprise — Vertex AI, Gemini Live, GKE, AlloyDB — dentro le aziende italiane. Con la cura di un boutique e la profondità tecnica di chi questi sistemi li costruisce ogni giorno.
+          Quando una persona alza la cornetta e parla con un'AI di Google, da una parte c'è il formato della rete telefonica, dall'altra un cervello digitale che ragiona. Sono due lingue diverse. In mezzo, il nostro software fa l'interprete — in tempo reale, mentre la conversazione scorre.
+        </p>
+        <p class="hero-extend">
+          Lo stesso principio — costruire ponti tra sistemi e intelligenza — lo applichiamo a chiamate, documenti e processi aziendali.
         </p>
         <div class="hero-cta">
-          <a href="#contatti" class="btn primary"><span class="dot"></span>Prenota una call</a>
+          <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Prenota una call</a>
           <a href="#tecnologia" class="btn">Vedi l'architettura →</a>
         </div>
         <div class="hero-meta">
@@ -367,15 +545,15 @@
           </div>
           <div class="msg ai" style="animation-delay:.7s">
             <span class="who">Agente AI</span>
-            <span class="bubble">Certo, vedo subito. Mi confermi il codice fiscale per recuperare la sua cartella?</span>
+            <span class="bubble">Certo, vedo subito. È un primo accesso o un controllo?</span>
           </div>
           <div class="msg caller" style="animation-delay:1.3s">
             <span class="who">Chiamante</span>
-            <span class="bubble">Sì, è RSSMRA80… anzi scusi, preferirei giovedì pomeriggio.</span>
+            <span class="bubble">È un controllo. Anzi, scusi: preferirei giovedì pomeriggio.</span>
           </div>
           <div class="msg ai" style="animation-delay:1.9s">
             <span class="who">Agente AI</span>
-            <span class="bubble">Nessun problema, adatto subito la ricerca. Sto verificando le disponibilità di giovedì…<span class="tag warn">function_call</span></span>
+            <span class="bubble">Nessun problema, adatto subito la ricerca. Sto verificando le disponibilità di giovedì pomeriggio per cardiologia di controllo…<span class="tag warn">function_call</span></span>
           </div>
         </div>
 
@@ -395,10 +573,10 @@
     <div class="section-head">
       <div>
         <span class="mono">Manifesto — 00</span>
-        <h2>Non un centralino. Non un chatbot. <em style="font-style:normal;color:var(--accent)">Un collaboratore.</em></h2>
+        <h2>Due professionisti, applicativi <em style="font-style:normal;color:var(--accent)">AI su misura.</em></h2>
       </div>
       <p class="lede">
-        SipAiGateway è la nostra reference architecture: il blueprint dell'AI conversazionale enterprise che progettiamo e implementiamo per i clienti, sullo stack Google Cloud. Voce in tempo reale, ragionamento multimodale, integrazione profonda con i sistemi esistenti — risolve, esegue, orchestra su ogni canale.
+        Sviluppiamo software che porta l'AI di Google Cloud dentro i processi delle aziende. Voce, documenti, dati: la stessa logica architetturale, applicata a contesti diversi. SipAiGateway, la nostra architettura di riferimento per l'AI vocale, è il caso più visibile — ma non l'unico.
       </p>
     </div>
   </div>
@@ -412,14 +590,14 @@
       <div class="f-head">
         <div class="f-num">01</div>
         <div class="f-kicker">Real-Time Audio</div>
-        <h3>Naturale come una conversazione tra persone.</h3>
-        <p class="f-desc">Dimentica gli IVR a menu, i silenzi tra un turno e l'altro, le voci robotiche. SipAiGateway ascolta, elabora e risponde in frazioni di secondo — e sa quando tacere.</p>
+        <h3>Conversazioni naturali, in tempo reale.</h3>
+        <p class="f-desc">Niente IVR a menu, niente silenzi tra un turno e l'altro, niente voci robotiche. Il sistema ascolta, elabora e risponde in frazioni di secondo — e sa anche quando tacere.</p>
         <div class="f-list">
           <div class="item">
             <div class="ic">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h2m12 0h2M12 4v2m0 12v2m3-10v4m-6-4v4m3-7v10"/></svg>
             </div>
-            <div><div class="t">Zero latenza percepita</div><div class="d">Dialogo fluido sotto i 400ms — l'utente non capisce di parlare con una macchina.</div></div>
+            <div><div class="t">Latenza minima percepita</div><div class="d">Dialogo fluido sotto i 400ms — l'utente non si accorge di parlare con una macchina.</div></div>
           </div>
           <div class="item">
             <div class="ic">
@@ -431,7 +609,7 @@
             <div class="ic">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M9 14s1 2 3 2 3-2 3-2M9 10h.01M15 10h.01"/></svg>
             </div>
-            <div><div class="t">Intelligenza emotiva</div><div class="d">Modulazione di tono e ritmo in base allo stato del chiamante — empatia, non eco.</div></div>
+            <div><div class="t">Modulazione del tono</div><div class="d">Tono e ritmo si adattano allo stato del chiamante.</div></div>
           </div>
         </div>
       </div>
@@ -486,21 +664,21 @@
     <div class="feature">
       <div class="f-head">
         <div class="f-num">02</div>
-        <div class="f-kicker">Un cervello · Infiniti scenari</div>
-        <h3>Flessibile come il tuo business. Modulare per design.</h3>
-        <p class="f-desc">Non un software pacchettizzato per un settore. Un motore cognitivo configurabile — omnicanale, multi-tenant, infinitamente personalizzabile.</p>
+        <div class="f-kicker">Un cervello · Più scenari</div>
+        <h3>Modulare per design. Multi-canale, multi-tenant.</h3>
+        <p class="f-desc">Non un software pacchettizzato per un settore. Un motore configurabile — omnicanale, multi-tenant, personalizzabile per ogni cliente.</p>
         <div class="f-list">
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h4l3 3h7a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/></svg></div>
-            <div><div class="t">Omnicanalità nativa</div><div class="d">Telefono, WhatsApp, SMS, Email — il contesto del cliente segue ogni canale senza strappi.</div></div>
+            <div><div class="t">Omnicanalità</div><div class="d">Telefono, WhatsApp, SMS, Email — il contesto del cliente segue ogni canale senza strappi.</div></div>
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-            <div><div class="t">Multi-tenancy</div><div class="d">Ogni brand con la propria voce, le proprie regole, la propria personalità. Un'unica console.</div></div>
+            <div><div class="t">Multi-tenancy</div><div class="d">Ogni brand con la propria voce, le proprie regole, una sola console.</div></div>
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="7" height="14" rx="1"/><rect x="14" y="5" width="7" height="9" rx="1"/></svg></div>
-            <div><div class="t">Un volto visivo</div><div class="d">App native per Android e Windows — operatori e clienti vedono stato e dati in tempo reale.</div></div>
+            <div><div class="t">App native</div><div class="d">App native per Android e Windows — operatori e clienti vedono stato e dati in tempo reale.</div></div>
           </div>
         </div>
       </div>
@@ -555,20 +733,20 @@
       <div class="f-head">
         <div class="f-num">03</div>
         <div class="f-kicker">Function Calling · Azioni reali</div>
-        <h3>L'AI che non chiacchiera. Lavora per te.</h3>
-        <p class="f-desc">Tramite integrazione profonda, l'assistente si collega ai tuoi sistemi — CRM, ERP, calendari, knowledge base — e compie azioni concrete in millisecondi.</p>
+        <h3>AI che esegue azioni, non solo conversa.</h3>
+        <p class="f-desc">L'assistente si collega ai sistemi aziendali — CRM, ERP, calendari, knowledge base — e compie azioni concrete in millisecondi.</p>
         <div class="f-list">
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
-            <div><div class="t">Dati in tempo reale</div><div class="d">Si collega a CRM, ERP, Wiki aziendali. Recupera storico, verifica ordini, legge documentazione in millisecondi.</div></div>
+            <div><div class="t">Dati in tempo reale</div><div class="d">Si collega a CRM, ERP, wiki aziendali. Recupera storico, verifica ordini, legge documentazione in millisecondi.</div></div>
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l16 0M4 12l10 0M4 18l14 0"/><circle cx="19" cy="12" r="2"/></svg></div>
-            <div><div class="t">RAG su misura</div><div class="d">Progettiamo sistemi di Retrieval-Augmented Generation che interrogano l'intera knowledge base privata della tua azienda.</div></div>
+            <div><div class="t">RAG su misura</div><div class="d">Sistemi di Retrieval-Augmented Generation che interrogano la knowledge base privata dell'azienda.</div></div>
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <div><div class="t">Gestione dell'attesa</div><div class="d">Intermezzi vocali naturali mentre il sistema lavora. Mai silenzi imbarazzanti.</div></div>
+            <div><div class="t">Gestione dell'attesa</div><div class="d">Intermezzi vocali naturali mentre il sistema lavora. Niente silenzi imbarazzanti.</div></div>
           </div>
         </div>
       </div>
@@ -631,12 +809,12 @@
       <div class="f-head">
         <div class="f-num">04</div>
         <div class="f-kicker">Dati · Conoscenza continua</div>
-        <h3>Ogni conversazione diventa patrimonio.</h3>
-        <p class="f-desc">La chiamata non finisce quando si chiude. Il dialogo viene compreso, strutturato, indicizzato — e diventa il dataset proprietario su cui costruire il tuo vantaggio competitivo.</p>
+        <h3>Le conversazioni diventano dati.</h3>
+        <p class="f-desc">La chiamata non finisce quando si chiude. Il dialogo viene compreso, strutturato, indicizzato — e diventa il dataset proprietario dell'azienda.</p>
         <div class="f-list">
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h14l2 2v14H4z"/><path d="M8 10h8M8 14h6M8 18h4"/></svg></div>
-            <div><div class="t">Tracciabilità assoluta</div><div class="d">Ogni dialogo trascritto, indicizzato, esplorabile. Trend, lamentele, opportunità emergono da soli.</div></div>
+            <div><div class="t">Tracciabilità</div><div class="d">Ogni dialogo trascritto, indicizzato, esplorabile. Trend e opportunità emergono dai dati.</div></div>
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
@@ -644,7 +822,7 @@
           </div>
           <div class="item">
             <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-4 4 4 4-8 6 6"/></svg></div>
-            <div><div class="t">Fondamenta per il ML</div><div class="d">Dataset proprietari di alta qualità. Modelli predittivi che anticipano i tuoi clienti.</div></div>
+            <div><div class="t">Fondamenta per il ML</div><div class="d">Dataset proprietari ad alta qualità per modelli predittivi su misura.</div></div>
           </div>
         </div>
       </div>
@@ -658,16 +836,16 @@
         <div class="data-grid">
           <div class="data-card">
             <div class="h">Input · trascritto</div>
-            <div class="tx-chunk">"…allora volevo disdire l'abbonamento fiber 100 attivato a Firenze il mese scorso, il numero è 055 122 3…"</div>
+            <div class="tx-chunk">"…vorrei prenotare una manutenzione per la caldaia, è da circa due settimane che fa un rumore strano quando si accende…"</div>
           </div>
           <div class="data-card">
             <div class="h">Output · entità estratte</div>
             <div class="fields">
-              <div class="field"><span class="k">intent</span><span class="v hl">churn_request</span></div>
-              <div class="field"><span class="k">product</span><span class="v">fiber_100</span></div>
-              <div class="field"><span class="k">city</span><span class="v">Firenze</span></div>
-              <div class="field"><span class="k">phone</span><span class="v">055-1223…</span></div>
-              <div class="field"><span class="k">sentiment</span><span class="v" style="color:var(--accent)">frustrazione</span></div>
+              <div class="field"><span class="k">intent</span><span class="v hl">service_request</span></div>
+              <div class="field"><span class="k">product</span><span class="v">caldaia</span></div>
+              <div class="field"><span class="k">issue</span><span class="v">rumore_anomalo</span></div>
+              <div class="field"><span class="k">duration</span><span class="v">2_settimane</span></div>
+              <div class="field"><span class="k">sentiment</span><span class="v" style="color:var(--accent)">preoccupato</span></div>
             </div>
           </div>
           <div class="data-card" style="grid-column:span 2">
@@ -686,11 +864,33 @@
     <div class="section-head">
       <div>
         <span class="mono">Architettura — 05</span>
-        <h2>Costruita sulla spina dorsale di <em style="font-style:normal;color:var(--accent)">Google Cloud.</em></h2>
+        <h2>Costruita su <em style="font-style:normal;color:var(--accent)">Google Cloud.</em></h2>
       </div>
       <p class="lede">
-        Progettiamo ecosistemi cloud completi su Google Cloud Platform e Vertex AI — cluster GKE, macchine virtuali, database gestiti, progettazione GDPR-by-design. I tuoi dati restano in Europa. Le chiavi restano blindate.
+        Progettiamo l'infrastruttura su Google Cloud Platform: Vertex AI per i modelli, GKE per l'orchestrazione, AlloyDB per i dati, Secret Manager per le chiavi. Residenza dati in Europa, progettazione secondo principi GDPR.
       </p>
+    </div>
+
+    <!-- Sotto-sezione: come funziona davvero (interprete simultaneo) -->
+    <div class="arch-explainer">
+      <div class="aex-head">
+        <span class="aex-tag">Come funziona davvero</span>
+        <h2 class="aex-title">L'interprete simultaneo SIP ↔ Vertex.</h2>
+      </div>
+      <div class="aex-grid">
+        <p class="aex-intro">Quando una persona alza la cornetta e parla con un'AI di Google, da una parte c'è il formato della rete telefonica — un protocollo vecchio di decenni, pensato per i telefoni — dall'altra un cervello digitale che ragiona in tempo reale. Sono due lingue diverse. In mezzo, il nostro software fa l'interprete.</p>
+        <div class="aex-flows">
+          <div class="aex-flow">
+            <div class="aex-flow-label">SIP → Vertex</div>
+            <p>La voce del chiamante viene ripulita e riconfezionata in pacchetti che l'AI di Google sa leggere, inviati pezzo dopo pezzo, senza aspettare la fine della frase.</p>
+          </div>
+          <div class="aex-flow">
+            <div class="aex-flow-label">Vertex → SIP</div>
+            <p>La voce sintetica generata dall'AI viene riadattata al formato della telefonia tradizionale e rispedita alla cornetta in tempo reale.</p>
+          </div>
+        </div>
+        <p class="aex-foot">I due flussi corrono <em>in parallelo</em>, contemporaneamente. Una persona può anche interrompere l'altra — proprio come in una conversazione vera. È questa simultaneità la parte difficile da far funzionare bene.</p>
+      </div>
     </div>
 
     <div class="arch">
@@ -797,54 +997,71 @@
     <div class="section-head">
       <div>
         <span class="mono">Scenari — 06</span>
-        <h2>Stessa architettura. <em style="font-style:normal;color:var(--accent)">Quattro mondi.</em></h2>
+        <h2>Quattro settori, <em style="font-style:normal;color:var(--accent)">uno schema comune.</em></h2>
       </div>
       <p class="lede">
-        La natura modulare dell'architettura la rende adattabile a qualsiasi processo che richieda intelligenza, empatia e integrazione con sistemi esistenti. Ecco quattro scenari che progettiamo regolarmente — ogni implementazione è custom, il pattern architetturale è ripetibile.
+        Prendiamo qualcosa che vi porta via ore — una conversazione, un audio, una visita — e lo trasformiamo in dati pronti all'uso.
       </p>
     </div>
 
     <div class="use-grid">
       <div class="use">
         <div>
-          <span class="use-num">Scenario · 01</span>
-          <h4>Virtual Triage & Booking</h4>
-          <p class="use-desc">Un assistente virtuale empatico che risponde ai pazienti, comprende le necessità grazie all'<em>Affective Dialog</em>, verifica disponibilità nel gestionale e fissa appuntamenti — azzerando le code telefoniche.</p>
+          <span class="use-num">Scenario · 01 · Scuola / Supporto sociale</span>
+          <h4>Report giornalieri parlati, non scritti.</h4>
+          <p class="use-desc">Gli operatori che seguono studenti con difficoltà passano ogni giorno mezz'ora o più a redigere report. Con un'AI con cui parlare per 6–7 minuti in forma anonima sui ragazzi, restituiamo un report strutturato e i parametri pronti per essere analizzati nel tempo.</p>
         </div>
-        <div class="use-tags">
-          <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Calendar API</span>
+        <div>
+          <div class="use-result"><span class="arrow">→</span> ~10 min con AI · contro ≥30 min manuali, ogni giorno per operatore</div>
+          <div class="use-tags">
+            <span class="t">Scuola</span><span class="t">Supporto sociale</span><span class="t">Report automatici</span>
+          </div>
         </div>
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Scenario · 02</span>
-          <h4>Centralino di nuova generazione</h4>
-          <p class="use-desc">Un concierge, non uno smistatore. L'AI comprende, recupera lo storico dal CRM, risolve in prima battuta e passa all'operatore umano — con riassunto automatico della conversazione.</p>
+          <span class="use-num">Scenario · 02 · Voicemail intelligente</span>
+          <h4>Segreterie telefoniche che si leggono in 10 secondi.</h4>
+          <p class="use-desc">Decine di messaggi vocali al giorno, nessuno ha tempo di riascoltarli uno a uno. L'AI trasforma ogni messaggio in testo, ne estrae motivo, urgenza e contatti, e lo consegna al team in formato leggibile e ricercabile.</p>
         </div>
-        <div class="use-tags">
-          <span class="t">Customer care</span><span class="t">CRM</span><span class="t">Warm transfer</span>
+        <div>
+          <div class="use-result"><span class="arrow">→</span> Nessuna chiamata persa · contatti gestiti per priorità</div>
+          <div class="use-tags">
+            <span class="t">Voicemail</span><span class="t">Speech-to-text</span><span class="t">Lead intake</span>
+          </div>
         </div>
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Scenario · 03</span>
-          <h4>Helpdesk IT · Sistema RAG</h4>
-          <p class="use-desc">Agente di primo livello H24. Interroga in millisecondi migliaia di pagine di manuali tecnici, guida l'utente passo-passo o apre ticket categorizzati e dettagliati.</p>
+          <span class="use-num">Scenario · 03 · Sanità / Studi medici privati</span>
+          <h4>Un secondo paio di orecchie dentro la visita.</h4>
+          <p class="use-desc">L'AI ascolta la visita e svolge due compiti distinti — supporto organizzativo (struttura gli appunti, prepara il referto) e supporto diagnostico (suggerisce valutazioni, segnala possibili sviste). I dati anonimi addestrano modelli che riconoscono pattern diagnostici nel tempo.</p>
         </div>
-        <div class="use-tags">
-          <span class="t">IT Support</span><span class="t">RAG</span><span class="t">Ticketing</span>
+        <div>
+          <div class="use-result"><span class="arrow">→</span> Visite più ordinate · secondo punto di vista in tempo reale</div>
+          <div class="use-tags">
+            <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Supporto diagnostico</span>
+          </div>
         </div>
       </div>
       <div class="use">
         <div>
-          <span class="use-num">Scenario · 04</span>
-          <h4>Concierge Hotellerie</h4>
-          <p class="use-desc">Assistente su telefono e WhatsApp che risponde a FAQ, gestisce richieste in stanza, illustra servizi e prenota extra (ristoranti, spa) integrandosi col gestionale alberghiero.</p>
+          <span class="use-num">Scenario · 04 · Studi legali / Compliance e analisi documentale</span>
+          <h4>Da 3 ore di registrazione a 200 campi compilati in 25 minuti.</h4>
+          <p class="use-desc">Per attività di compliance e analisi documentale — audit, due diligence, valutazioni normative — gli avvocati ascoltano ore di meeting e compilano a mano schede con centinaia di campi. L'AI trascrive 3 ore in ~15 min e popola automaticamente la scheda con i 200 campi richiesti.</p>
         </div>
-        <div class="use-tags">
-          <span class="t">Hospitality</span><span class="t">WhatsApp</span><span class="t">PMS</span>
+        <div>
+          <div class="use-result"><span class="arrow">→</span> ~25 minuti totali · contro giorni di lavoro manuale per pratica</div>
+          <div class="use-tags">
+            <span class="t">Legale</span><span class="t">Compliance</span><span class="t">Document AI</span>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="use-rest">
+      <p><span class="em">Il vostro settore non è qui?</span> La logica è sempre la stessa: voce, audio o documenti da capire e trasformare in informazioni utilizzabili. Si può applicare ovunque.</p>
+      <a href="#contatti" class="btn">Parliamone →</a>
     </div>
   </div>
 </section>
@@ -858,7 +1075,7 @@
         <h2>Quattro modi di iniziare. <em style="font-style:normal;color:var(--accent)">Trasparenti.</em></h2>
       </div>
       <p class="lede">
-        Ogni progetto è diverso, ma il percorso è chiaro. Si parte sempre con una conversazione gratuita, si scala solo quando ha senso. Niente preventivi sorpresa, niente impegni nascosti.
+        Ogni progetto è diverso, ma il percorso è chiaro. Si parte sempre con una conversazione gratuita, si scala solo quando ha senso. I costi dettagliati di setup, infrastruttura cloud e utilizzo AI sono <a href="#listino" style="color:var(--accent);border-bottom:1px solid color-mix(in oklch,var(--accent) 40%,transparent);text-decoration:none">nel listino dedicato</a>.
       </p>
     </div>
 
@@ -871,14 +1088,14 @@
           <span class="price">Gratuita</span>
         </div>
         <div class="w-desc">Capiamo se ha senso. Ti raccontiamo come affronteremmo il tuo caso d'uso, quali tecnologie useremmo, quali rischi vediamo. Senza impegno.</div>
-        <a href="mailto:riccardo@bintware.it?subject=Discovery%20call" class="w-cta">Prenota →</a>
+        <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="w-cta">Prenota →</a>
       </div>
       <div class="work-card featured">
         <div class="num">02</div>
         <div class="w-title">Architecture Review</div>
         <div class="w-meta">
           <span class="duration">2 – 3 giorni</span>
-          <span class="price">da € 1.500</span>
+          <a href="#listino" class="price-link">Vedi listino →</a>
         </div>
         <div class="w-desc">Analizziamo il tuo caso d'uso e produciamo un documento di architettura GCP completo: stack, costi mensili stimati, timeline, rischi. Tu lo possiedi.</div>
         <a href="mailto:riccardo@bintware.it?subject=Architecture%20Review" class="w-cta">Richiedi →</a>
@@ -888,7 +1105,7 @@
         <div class="w-title">Prototipo · Pilot</div>
         <div class="w-meta">
           <span class="duration">4 – 6 settimane</span>
-          <span class="price">da € 15.000</span>
+          <a href="#listino" class="price-link">Vedi listino →</a>
         </div>
         <div class="w-desc">Costruiamo un MVP funzionante con i tuoi dati. Operativo su un perimetro definito — un canale, un caso d'uso, un team. Misurabile.</div>
         <a href="mailto:riccardo@bintware.it?subject=Pilot" class="w-cta">Parliamone →</a>
@@ -907,15 +1124,172 @@
   </div>
 </section>
 
+<!-- LISTINO -->
+<section class="block" id="listino">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Listino — 08</span>
+        <h2>Quanto costa, <em style="font-style:normal;color:var(--accent)">esattamente.</em></h2>
+      </div>
+      <p class="lede">
+        Modello di pricing logico e progressivo: setup una tantum, infrastruttura cloud mensile, utilizzo AI a consumo. Niente preventivi sorpresa.
+      </p>
+    </div>
+
+    <div class="price-stack">
+
+      <!-- 1. Setup -->
+      <div class="price-row">
+        <div class="price-row-num">01</div>
+        <div class="price-row-body">
+          <div class="price-row-head">
+            <div>
+              <h3 class="price-row-title">Setup iniziale</h3>
+              <p class="price-row-desc">Configurazione di tutti i dati e attribuzione della corretta struttura cloud per avviare il progetto alle migliori condizioni.</p>
+            </div>
+            <div class="price-tag">
+              <span class="price-tag-label">Una tantum</span>
+              <span class="price-tag-value">€ 1.500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Infrastruttura Cloud -->
+      <div class="price-row featured">
+        <div class="price-row-num">02</div>
+        <div class="price-row-body">
+          <div class="price-row-head">
+            <div>
+              <h3 class="price-row-title">Infrastruttura Cloud · GCP</h3>
+              <p class="price-row-desc">Ecosistema Google Cloud per garantire continuità, sicurezza e performance.</p>
+            </div>
+            <div class="price-tag">
+              <span class="price-tag-label">Totale mensile</span>
+              <span class="price-tag-value">€ <span id="infra-total">250</span> <small>/mese</small></span>
+            </div>
+          </div>
+
+          <div class="price-base">
+            <div class="price-base-head">
+              <span class="mono">Inclusa nel base</span>
+              <span class="price-base-value">€ 250 / mese</span>
+            </div>
+            <p>Risorse cloud (database e applicativo) condivise con altri clienti, con dati separati per garantire sicurezza. Soluzione performante per la maggioranza delle aziende che storicizzano interazioni senza farsi carico di macchine ad uso esclusivo.</p>
+          </div>
+
+          <div class="price-upgrades">
+            <div class="price-upgrades-head">
+              <span class="mono">Opzioni di potenziamento</span>
+            </div>
+            <div class="price-upgrade-note">
+              <strong>Requisito di attivazione:</strong> opzioni esclusive (VM o DB dedicati) attivabili solo se il progetto prevede almeno <strong>3 servizi AI distinti</strong> — applicativi diversi che usano prompt, function call, post-analisi o operazioni differenziate.
+            </div>
+            <div class="price-upgrade-grid">
+              <button type="button" class="price-upgrade" id="upg-vm" onclick="toggleUpgrade('vm')">
+                <div class="price-upgrade-toprow">
+                  <span class="price-upgrade-name">VM Dedicata</span>
+                  <span class="price-upgrade-check"></span>
+                </div>
+                <div class="price-upgrade-amount">+ € 75 <small>/mese</small></div>
+                <p>Macchina virtuale di proprietà esclusiva, inclusi backup. Per policy aziendali rigide sull'isolamento dei dati o flussi anomali.</p>
+              </button>
+              <button type="button" class="price-upgrade" id="upg-db" onclick="toggleUpgrade('db')">
+                <div class="price-upgrade-toprow">
+                  <span class="price-upgrade-name">Database Dedicato</span>
+                  <span class="price-upgrade-check"></span>
+                </div>
+                <div class="price-upgrade-amount">+ € 150 <small>/mese</small></div>
+                <p>Postgres / AlloyDB esclusivo. Per dati massivi non strutturati, ricerca semantica AI o task di Machine Learning.</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. AI a consumo -->
+      <div class="price-row">
+        <div class="price-row-num">03</div>
+        <div class="price-row-body">
+          <div class="price-row-head">
+            <div>
+              <h3 class="price-row-title">Utilizzo AI · a consumo</h3>
+              <p class="price-row-desc">Due pacchetti, scelta in base al livello di analisi richiesto. Si paga solo l'utilizzo effettivo.</p>
+            </div>
+          </div>
+
+          <div class="price-pack-grid">
+            <div class="price-pack">
+              <div class="price-pack-head">
+                <span class="price-pack-name">Interazione standard</span>
+                <span class="price-pack-amount">€ 0,15 <small>/min</small></span>
+              </div>
+              <ul class="price-pack-list">
+                <li>Interazione con AI in tempo reale</li>
+                <li>Report post-conversazione: <strong>sola trascrizione</strong></li>
+              </ul>
+            </div>
+            <div class="price-pack recommended">
+              <div class="price-pack-tag">Consigliato</div>
+              <div class="price-pack-head">
+                <span class="price-pack-name">Interazione + post-analisi</span>
+                <span class="price-pack-amount">€ 0,20 <small>/min</small></span>
+              </div>
+              <ul class="price-pack-list">
+                <li>Interazione con AI in tempo reale</li>
+                <li>Trascrizione completa inclusa</li>
+                <li><strong>Report analitico:</strong> l'LLM genera un'analisi strutturata post-conversazione, definita in fase di setup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Enterprise -->
+      <div class="price-row enterprise">
+        <div class="price-row-num">04</div>
+        <div class="price-row-body">
+          <div class="price-row-head">
+            <div>
+              <h3 class="price-row-title">Enterprise & Custom</h3>
+              <p class="price-row-desc">Per architetture non standard ed esigenze di sviluppo estreme. In caso di necessità complesse — GKE, comportamenti DB non standard, function call avanzate, workflow di post-analisi articolati — i costi standard non sono applicabili. Si stila un progetto dedicato con preventivo basato sulle tariffe consulenziali per giornata.</p>
+            </div>
+          </div>
+
+          <div class="price-perdiem">
+            <div class="price-perdiem-head">
+              <span class="mono">Tariffe per diem</span>
+            </div>
+            <div class="price-perdiem-row">
+              <span class="price-perdiem-role">Principal Enterprise Architect</span>
+              <span class="price-perdiem-amount">€ 1.000 – 1.400 / giorno</span>
+            </div>
+            <div class="price-perdiem-row">
+              <span class="price-perdiem-role">Junior AI Solutions Engineer</span>
+              <span class="price-perdiem-amount">€ 600 – 800 / giorno</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-disclaimer">
+        I prezzi sono indicativi e soggetti a variazioni in base alle modifiche dei listini di Google Cloud Platform e dei provider di modelli LLM.
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- COME OPERIAMO / PRINCIPI -->
 <section class="block">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Come operiamo — 08</span>
-        <h2>Tre principi. <em style="font-style:normal;color:var(--accent)">Non negoziabili.</em></h2>
+        <span class="mono">Come operiamo — 09</span>
+        <h2>Tre principi <em style="font-style:normal;color:var(--accent)">che teniamo fermi.</em></h2>
       </div>
-      <p class="lede">Come ci differenziamo da una grande consulenza, da un freelance singolo, da una SaaS pacchettizzata. Senza sconti.</p>
+      <p class="lede">In che cosa siamo diversi da una grande consulenza, da un freelance singolo o da una SaaS pacchettizzata.</p>
     </div>
 
     <div class="metrics">
@@ -931,9 +1305,54 @@
       </div>
       <div class="metric">
         <div class="num">03</div>
-        <div class="title">Open & owned</div>
-        <div class="desc">La nostra reference architecture è pubblica. Il codice del tuo sistema lo possiedi tu — Terraform, repo, documentazione. Niente lock-in.</div>
+        <div class="title">Senza lock-in</div>
+        <div class="desc">Il sistema costruito appartiene all'azienda. Documentato, gestibile e portabile — può essere mantenuto e fatto evolvere anche senza di noi.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="block" id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Blog — 10</span>
+        <h2>Appunti <em style="font-style:normal;color:var(--accent)">dallo studio.</em></h2>
+      </div>
+      <p class="lede">
+        Idee, esperimenti, casi d'uso e scelte tecniche dal nostro lavoro quotidiano con l'AI generativa su Google Cloud.
+      </p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Architettura</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>Come abbiamo costruito un interprete simultaneo tra SIP e Vertex AI.</h3>
+        <p class="desc">Il dietro le quinte tecnico del nostro voice gateway: streaming bidirezionale in tempo reale, gestione delle interruzioni, e perché abbiamo scelto Vertex Live invece di Realtime API di OpenAI.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Caso d'uso</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>10 minuti di AI valgono mezz'ora di scrittura.</h3>
+        <p class="desc">Cosa abbiamo imparato progettando un sistema di report parlati per operatori scolastici: come funzionano gli "appunti vocali strutturati", e perché la trascrizione da sola non basta.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Tecnologia</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>AlloyDB e ricerca vettoriale: quando ne vale la pena?</h3>
+        <p class="desc">Tre anni di esperienza con database vettoriali su GCP. Quando AlloyDB è la scelta giusta, quando bastano gli embedding in Postgres standard, e quando serve un vector store dedicato.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
     </div>
   </div>
 </section>
@@ -942,11 +1361,11 @@
 <section class="cta" id="contatti">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="mono">Contatti — 09</span>
-      <h2 style="margin-top:24px">Portiamo la tua azienda <em style="font-style:normal;color:var(--accent)">nel futuro.</em></h2>
-      <p>L'intelligenza artificiale non è più fantascienza. È il tuo prossimo vantaggio competitivo. Parliamone — partiamo da una discovery call di 30 minuti, gratuita. Ti raccontiamo come affronteremmo il tuo caso d'uso. Senza impegno.</p>
+      <span class="mono">Contatti — 11</span>
+      <h2 style="margin-top:24px">Parliamone, <em style="font-style:normal;color:var(--accent)">senza impegno.</em></h2>
+      <p>Trenta minuti di chiamata, gratuiti, per capire insieme se ha senso lavorare insieme. Vi raccontiamo come affronteremmo il vostro caso d'uso, con quali tecnologie, in che tempi e a quali costi.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="mailto:riccardo@bintware.it?subject=Discovery%20call%20·%20Bintware" class="btn primary"><span class="dot"></span>Prenota la discovery call</a>
+        <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Prenota la discovery call</a>
         <a href="#tecnologia" class="btn">Vedi l'architettura →</a>
       </div>
 
@@ -955,21 +1374,25 @@
           <div>
             <span class="role">Co-founder · Strategia & Architettura</span>
             <div class="name">Riccardo Baldacci</div>
-            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per discovery call, valutazioni del tuo caso d'uso e architecture review.</div>
+            <p class="founder-bio">Laureato in Ingegneria Meccanica nel 2023. Sviluppa applicativi in C# e Python da 3 anni e lavora con Google Cloud Platform e AI generativa da 3 anni.</p>
+            <div class="founder-role-note">Per discovery call, valutazioni del vostro caso d'uso e architecture review.</div>
           </div>
-          <a href="mailto:riccardo@bintware.it" class="email">
-            riccardo@bintware.it →
-          </a>
+          <div class="contact-links">
+            <a href="mailto:riccardo@bintware.it" class="email">riccardo@bintware.it →</a>
+            <a href="https://www.linkedin.com/in/riccardo-baldacci/" target="_blank" rel="noopener" class="linkedin">LinkedIn →</a>
+          </div>
         </div>
         <div class="contact-card">
           <div>
             <span class="role">Co-founder · Engineering & Cloud</span>
             <div class="name">Luca Baldacci</div>
-            <div style="color:var(--ink-dim);font-size:14px;max-width:36ch">Per approfondimenti tecnici, integrazioni e progetti di architettura cloud su misura.</div>
+            <p class="founder-bio">Trent'anni di esperienza nel settore IT, dirigente IT presso Irplast (Empoli). Lavora con Google Cloud Platform e AI generativa da 3 anni, specializzato in C# e database relazionali (PostgreSQL, AlloyDB).</p>
+            <div class="founder-role-note">Per approfondimenti tecnici, integrazioni e progetti di architettura cloud su misura.</div>
           </div>
-          <a href="mailto:luca@bintware.it" class="email">
-            luca@bintware.it →
-          </a>
+          <div class="contact-links">
+            <a href="mailto:luca@bintware.it" class="email">luca@bintware.it →</a>
+            <a href="https://www.linkedin.com/in/luca-baldacci/" target="_blank" rel="noopener" class="linkedin">LinkedIn →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -985,11 +1408,12 @@
         <span>Bintware</span>
       </div>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
-        <span>© 2026 Bintware · di Riccardo Baldacci</span>
-        <span>P.IVA IT 0000000000</span>
+        <span>© 2026 Bintware · Riccardo &amp; Luca Baldacci</span>
+        <span>P.IVA IT 07207160487</span>
         <span>Stack: Google Cloud · Vertex AI</span>
         <span>Progettato secondo principi GDPR · Dati in UE</span>
         <span>Fatto in Italia</span>
+        <a href="privacy.html" style="color:var(--ink-mute)">Privacy</a>
       </div>
     </div>
   </div>
@@ -1039,6 +1463,45 @@
       b.style.opacity = (0.35 + (h/120)).toFixed(2);
       c.appendChild(b);
     }
+  })();
+
+  // REVEAL ON SCROLL
+  (function(){
+    const SELECTORS = '.section-head, .feature, .use, .work-card, .metric, .price-row, .contact-card, .use-rest, .arch-explainer, .voice-panel';
+    const els = document.querySelectorAll(SELECTORS);
+    if(!els.length) return;
+    if(!('IntersectionObserver' in window)){
+      els.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    els.forEach(el => el.classList.add('fade-in'));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(el => io.observe(el));
+  })();
+
+  // PRICE LIST · upgrade toggle
+  (function(){
+    const total = document.getElementById('infra-total');
+    if(!total) return;
+    const BASE = 250;
+    const STATE = {vm:false, db:false};
+    const PRICES = {vm:75, db:150};
+
+    window.toggleUpgrade = function(type){
+      STATE[type] = !STATE[type];
+      const btn = document.getElementById('upg-' + type);
+      if(btn){btn.classList.toggle('active', STATE[type])}
+      let sum = BASE;
+      Object.keys(STATE).forEach(k => { if(STATE[k]) sum += PRICES[k] });
+      total.textContent = sum;
+    };
   })();
 
   // Smooth scroll for hash links

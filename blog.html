@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Blog · Bintware</title>
+<meta name="description" content="Idee, esperimenti, casi d'uso e appunti tecnici dallo studio Bintware. AI generativa su Google Cloud, in italiano.">
+<meta property="og:title" content="Blog · Bintware">
+<meta property="og:description" content="Appunti dallo studio Bintware: AI generativa su Google Cloud, casi d'uso, scelte architetturali.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"></span>
+      <span>Bintware</span>
+    </a>
+    <div class="links">
+      <a href="index.html#prodotto">Manifesto</a>
+      <a href="index.html#capacita">Capacità</a>
+      <a href="index.html#tecnologia">Architettura</a>
+      <a href="index.html#casi">Scenari</a>
+      <a href="index.html#lavoriamo">Lavoriamo</a>
+      <a href="index.html#listino">Listino</a>
+      <a href="blog.html" style="color:var(--ink)">Blog</a>
+      <a href="index.html#contatti">Contatti</a>
+    </div>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<header class="blog-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="pulse"></span>Blog · Idee, esperimenti, casi</span>
+    <h1 class="blog-hero-title">Appunti dallo studio.</h1>
+    <p class="blog-hero-lede">Quello che impariamo lavorando ogni giorno con l'AI generativa su Google Cloud — pattern architetturali, casi d'uso reali, scelte tecniche e considerazioni che vale la pena di scrivere.</p>
+  </div>
+</header>
+
+<!-- BLOG INDEX -->
+<section class="blog-index">
+  <div class="wrap">
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Architettura</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>Come abbiamo costruito un interprete simultaneo tra SIP e Vertex AI.</h3>
+        <p class="desc">Il dietro le quinte tecnico del nostro voice gateway: streaming bidirezionale in tempo reale, gestione delle interruzioni, e perché abbiamo scelto Vertex Live invece di Realtime API di OpenAI.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
+
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Caso d'uso</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>10 minuti di AI valgono mezz'ora di scrittura.</h3>
+        <p class="desc">Cosa abbiamo imparato progettando un sistema di report parlati per operatori scolastici: come funzionano gli "appunti vocali strutturati", e perché la trascrizione da sola non basta.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
+
+      <article class="blog-card">
+        <div class="meta">
+          <span class="category">Tecnologia</span>
+          <span class="date">In arrivo</span>
+        </div>
+        <h3>AlloyDB e ricerca vettoriale: quando ne vale la pena?</h3>
+        <p class="desc">Tre anni di esperienza con database vettoriali su GCP. Quando AlloyDB è la scelta giusta, quando bastano gli embedding in Postgres standard, e quando serve un vector store dedicato.</p>
+        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"></span>
+        <span>Bintware</span>
+      </a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span>© 2026 Bintware · Riccardo &amp; Luca Baldacci</span>
+        <span>P.IVA IT 07207160487</span>
+        <span>Stack: Google Cloud · Vertex AI</span>
+        <span>Progettato secondo principi GDPR · Dati in UE</span>
+        <span>Fatto in Italia</span>
+        <a href="privacy.html" style="color:var(--ink-mute)">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
