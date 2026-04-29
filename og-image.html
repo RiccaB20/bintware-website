@@ -2,20 +2,31 @@
 <html lang="it">
 <head>
 <meta charset="utf-8" />
-<title>Bintware OG Image (1200x630) — apri in browser e fai screenshot</title>
+<title>Bintware OG Image (1200x630) — generatore</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@500&display=swap">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    background:#1a1d28;
-    display:flex;align-items:center;justify-content:center;
-    min-height:100vh;
-    font-family:'Inter',sans-serif;
+  html,body{background:#0e1018;color:#f5f0e1;font-family:'Inter',sans-serif;min-height:100vh}
+  .toolbar{
+    position:sticky;top:0;z-index:100;
+    background:#1a1d28;padding:14px 20px;
+    border-bottom:1px solid #2a2d38;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
   }
+  .toolbar h1{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#dc8d3a;letter-spacing:0.04em}
+  .toolbar p{font-size:13px;color:#a0a3ad;max-width:400px}
+  .toolbar button{
+    padding:10px 18px;background:#dc8d3a;color:#1d202b;border:none;border-radius:8px;
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;
+    transition:opacity .2s;
+  }
+  .toolbar button:hover{opacity:0.85}
+  .toolbar button:disabled{opacity:0.5;cursor:wait}
+  .preview-wrap{padding:30px;display:flex;justify-content:center}
   .og{
-    width:1200px;height:630px;
+    width:1200px;height:630px;flex-shrink:0;
     background:linear-gradient(135deg,#272a3a 0%,#1d202b 100%);
     color:#f5f0e1;
     position:relative;overflow:hidden;
@@ -31,48 +42,93 @@
   .logo{width:48px;height:48px;position:relative;flex-shrink:0}
   .logo .sq1,.logo .sq2{position:absolute;inset:0;border:2px solid;border-radius:4px}
   .logo .sq1{border-color:#f5f0e1}
-  .logo .sq2{transform:translate(8px,8px);border-color:#dc8d3a;mix-blend-mode:screen}
+  .logo .sq2{transform:translate(8px,8px);border-color:#dc8d3a}
   .brand{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;letter-spacing:-0.01em}
   .middle{position:relative;z-index:2}
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:#dc8d3a;margin-bottom:24px}
-  .title{font-family:'Space Grotesk',sans-serif;font-size:84px;font-weight:500;line-height:0.98;letter-spacing:-0.035em;max-width:1000px}
+  .title{font-family:'Space Grotesk',sans-serif;font-size:78px;font-weight:500;line-height:0.98;letter-spacing:-0.035em;max-width:1000px}
   .title em{font-style:normal;color:#dc8d3a;font-weight:400}
-  .bottom{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2}
-  .subtitle{font-size:22px;line-height:1.5;color:rgba(245,240,225,0.62);font-weight:300;max-width:680px}
-  .url{font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(245,240,225,0.55);letter-spacing:0.08em;text-transform:uppercase}
-  .instructions{
-    position:fixed;top:20px;left:20px;
-    background:#dc8d3a;color:#1d202b;padding:12px 18px;border-radius:8px;
-    font-family:'Inter',sans-serif;font-size:13px;font-weight:500;
-    max-width:300px;z-index:100;
+  .bottom{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2;gap:32px}
+  .bottom-left{display:flex;flex-direction:column;gap:14px;flex:1}
+  .subtitle{font-size:20px;line-height:1.5;color:rgba(245,240,225,0.62);font-weight:300;max-width:560px}
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:999px;
+    background:#dc8d3a;color:#1d202b;
+    font-family:'Inter',sans-serif;font-size:16px;font-weight:600;
+    letter-spacing:-0.01em;
+    width:fit-content;
   }
+  .cta .arrow{font-size:18px;font-weight:500}
+  .url-block{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .url{font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(245,240,225,0.55);letter-spacing:0.08em;text-transform:uppercase}
+  .pix{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(245,240,225,0.3);letter-spacing:0.06em}
 </style>
 </head>
 <body>
 
-<div class="instructions">
-  <strong>Per generare l'immagine OG:</strong><br>
-  Apri questo file in browser, fai screenshot del riquadro 1200×630 sotto, salva come <code>og-image.png</code> nella root del sito.
+<div class="toolbar">
+  <h1>OG IMAGE GENERATOR</h1>
+  <p>Click "Scarica PNG" per generare <code>og-image.png</code> 1200×630 esatti. Salvalo in root e push.</p>
+  <button id="dl">Scarica PNG (1200×630)</button>
 </div>
 
-<div class="og">
-  <div class="glow"></div>
+<div class="preview-wrap">
+  <div class="og" id="og">
+    <div class="glow"></div>
 
-  <div class="top-row">
-    <div class="logo"><div class="sq1"></div><div class="sq2"></div></div>
-    <div class="brand">Bintware</div>
-  </div>
+    <div class="top-row">
+      <div class="logo"><div class="sq1"></div><div class="sq2"></div></div>
+      <div class="brand">Bintware</div>
+    </div>
 
-  <div class="middle">
-    <div class="eyebrow">Studio · Applicativi AI su Google Cloud · Italia</div>
-    <h1 class="title">Applicativi AI su misura,<br>costruiti per <em>restare.</em></h1>
-  </div>
+    <div class="middle">
+      <div class="eyebrow">Studio · Applicativi AI su Google Cloud · Italia</div>
+      <h1 class="title">Applicativi AI su misura,<br>costruiti per <em>restare.</em></h1>
+    </div>
 
-  <div class="bottom">
-    <div class="subtitle">Vertex AI · GKE · AlloyDB · Voice agents conversazionali, analisi documentale, due professionisti.</div>
-    <div class="url">bintware.com</div>
+    <div class="bottom">
+      <div class="bottom-left">
+        <div class="subtitle">Vertex AI · GKE · AlloyDB · Voice agents conversazionali, analisi documentale.</div>
+        <div class="cta">Discovery call · 30 min · gratuita <span class="arrow">→</span></div>
+      </div>
+      <div class="url-block">
+        <div class="url">bintware.com</div>
+        <div class="pix">1200 × 630</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  document.getElementById('dl').addEventListener('click', async () => {
+    const btn = document.getElementById('dl');
+    const node = document.getElementById('og');
+    btn.disabled = true;
+    btn.textContent = 'Generazione in corso…';
+    try {
+      const canvas = await html2canvas(node, {
+        width: 1200, height: 630,
+        windowWidth: 1200, windowHeight: 630,
+        scale: 1, useCORS: true, allowTaint: false,
+        backgroundColor: null,
+      });
+      const link = document.createElement('a');
+      link.download = 'og-image.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      btn.textContent = '✓ Scaricato — salva in root e push';
+      setTimeout(() => { btn.disabled = false; btn.textContent = 'Scarica PNG (1200×630)'; }, 3000);
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = 'Errore — riprova';
+      console.error(e);
+    }
+  });
+</script>
 
 </body>
 </html>
