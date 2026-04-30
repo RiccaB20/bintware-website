@@ -15,6 +15,25 @@
 <link rel="canonical" href="https://bintware.com/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <meta name="theme-color" content="#272a3a">
+
+<!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -92,6 +111,7 @@
       <li><strong>Google LLC</strong> (sede negli Stati Uniti) — per i servizi Google Calendar (gestione prenotazioni call) e Gmail (gestione corrispondenza email).</li>
       <li><strong>GitHub Inc.</strong> (sede negli Stati Uniti) — per i servizi di hosting del sito tramite GitHub Pages.</li>
       <li><strong>Google LLC</strong> — per il servizio Google Fonts utilizzato per il caricamento dei font tipografici del sito.</li>
+      <li><strong>Google LLC</strong> — per il servizio Google Analytics 4 (proprietà <code>G-8D715JET3M</code>) utilizzato per misurare il traffico del sito su base aggregata, previo consenso esplicito dell'utente. IP anonimizzato. Cookie eventualmente installati dopo consenso: <code>_ga</code>, <code>_ga_8D715JET3M</code> (durata massima 24 mesi).</li>
     </ul>
     <p>Tali soggetti hanno aderito al <strong>EU-US Data Privacy Framework</strong> e garantiscono un livello adeguato di protezione dei dati personali secondo la decisione di adeguatezza della Commissione Europea del 10 luglio 2023.</p>
 
@@ -99,7 +119,13 @@
     <p>I servizi sopra elencati comportano un trasferimento di dati personali negli Stati Uniti. Tali trasferimenti sono leciti in forza della decisione di adeguatezza UE-USA (Data Privacy Framework, Decisione di Esecuzione (UE) 2023/1795 della Commissione).</p>
 
     <h2>Cookie</h2>
-    <p>Il sito <strong>non utilizza cookie di profilazione</strong> né sistemi di analytics che richiedano consenso preventivo. I servizi terzi (Google Fonts, GitHub Pages) possono impostare cookie tecnici essenziali per il loro funzionamento, esenti dall'obbligo di consenso ai sensi dell'art. 122 del Codice Privacy.</p>
+    <p>Il sito utilizza due categorie di cookie:</p>
+    <ul>
+      <li><strong>Cookie tecnici</strong> (essenziali) — necessari al funzionamento del sito (servizi Google Fonts e GitHub Pages). Esenti dall'obbligo di consenso ai sensi dell'art. 122 del Codice Privacy.</li>
+      <li><strong>Cookie analitici</strong> (Google Analytics 4) — installati <em>solo previo consenso esplicito</em> dell'utente, raccolto attraverso l'apposito banner. Servono a misurare in forma aggregata l'utilizzo del sito. In assenza di consenso, Google Analytics opera in modalità Consent Mode v2 con archiviazione bloccata: nessun cookie viene installato e Google riceve esclusivamente segnali anonimi e modellati. Il sito <strong>non utilizza cookie di profilazione</strong> né di marketing.</li>
+    </ul>
+    <p>L'utente può modificare in qualsiasi momento la propria scelta cliccando sul pulsante seguente:</p>
+    <p><button type="button" class="btn" onclick="if(window.bwCookieReset){window.bwCookieReset()}else{localStorage.removeItem('bw_consent');location.reload()}">Modifica preferenze cookie</button></p>
 
     <h2>Diritti dell'interessato</h2>
     <p>L'interessato può esercitare in qualsiasi momento i diritti previsti dagli artt. 15-22 GDPR:</p>
