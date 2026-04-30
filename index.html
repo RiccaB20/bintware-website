@@ -1662,6 +1662,56 @@
       if(el){e.preventDefault(); window.scrollTo({top: el.offsetTop - 70, behavior:'smooth'})}
     });
   });
+
+  // COOKIE CONSENT BANNER — GDPR / Consent Mode v2
+  (function(){
+    const KEY = 'bw_consent';
+
+    window.bwCookieReset = function(){
+      localStorage.removeItem(KEY);
+      location.reload();
+    };
+
+    const stored = localStorage.getItem(KEY);
+
+    if (stored === 'granted') {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      }
+      return;
+    }
+    if (stored === 'denied') return;
+
+    function show(){
+      const b = document.createElement('div');
+      b.className = 'cookie-banner';
+      b.setAttribute('role','dialog');
+      b.setAttribute('aria-label','Consenso cookie');
+      b.innerHTML =
+        '<p class="cb-text">Usiamo Google Analytics per capire come navighi il sito (cookie analitici). Puoi accettare o rifiutare — il sito funziona ugualmente. <a href="/privacy.html">Dettagli</a>.</p>' +
+        '<div class="cb-actions">' +
+          '<button type="button" class="cb-reject">Rifiuta</button>' +
+          '<button type="button" class="cb-accept">Accetta</button>' +
+        '</div>';
+      document.body.appendChild(b);
+
+      function decide(value){
+        try { localStorage.setItem(KEY, value); } catch(e){}
+        if (value === 'granted' && typeof gtag === 'function') {
+          gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        b.remove();
+      }
+      b.querySelector('.cb-accept').addEventListener('click', function(){ decide('granted'); });
+      b.querySelector('.cb-reject').addEventListener('click', function(){ decide('denied'); });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', show);
+    } else {
+      show();
+    }
+  })();
 </script>
 
 </body>
