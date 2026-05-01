@@ -2,6 +2,8 @@
 
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /tools/
 
 # AI training and search crawlers — explicitly allowed (we want to be cited)
 User-agent: GPTBot

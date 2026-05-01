@@ -24,7 +24,6 @@
 <link rel="canonical" href="https://bintware.com/">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <meta name="theme-color" content="#272a3a">
-<meta name="keywords" content="applicativi AI, intelligenza artificiale, Google Cloud, Vertex AI, voice agent, AI conversazionale, agent AI, GKE, AlloyDB, applicativi cloud, AI Italia, sviluppo software AI, RAG, function calling, SipAiGateway, AI generativa, AI Act compliance, chatbot vocale, automazione AI">
 
 <script type="application/ld+json">
 {
@@ -196,9 +195,19 @@
   }
   nav.top .inner{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;max-width:1360px;margin:0 auto}
   .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.01em}
-  .logo-mark{width:22px;height:22px;position:relative}
-  .logo-mark::before,.logo-mark::after{content:'';position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:2px}
-  .logo-mark::after{transform:translate(4px,4px);border-color:var(--accent);mix-blend-mode:screen}
+  .brand-logo{width:32px;height:32px;display:block;flex-shrink:0;object-fit:contain}
+
+  /* Architecture explainer — product row + diagram */
+  .aex-product-row{display:flex;align-items:center;gap:18px;margin:8px 0 24px;padding:18px 20px;border-radius:14px;background:#0c1425;border:1px solid var(--line-soft)}
+  .aex-product-row img{width:64px;height:64px;flex-shrink:0;border-radius:10px}
+  .aex-product-row .aex-product-name{font-family:var(--display);font-size:17px;font-weight:500;color:var(--ink);margin:0 0 4px}
+  .aex-product-row .aex-product-desc{font-size:13.5px;color:var(--ink-dim);line-height:1.5;margin:0}
+  .aex-illustration{margin:0 0 28px;border-radius:14px;overflow:hidden;background:#0c1425;border:1px solid var(--line-soft)}
+  .aex-illustration img{width:100%;height:auto;display:block}
+
+  /* Use case illustrations */
+  .use-illustration{width:100%;height:200px;margin:0 0 22px;background:#0c1425;border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .use-illustration img{width:100%;height:100%;object-fit:contain;display:block}
   nav .links{display:flex;gap:36px;font-size:13px;color:var(--ink-dim)}
   nav .links a:hover{color:var(--ink)}
   .btn{
@@ -632,7 +641,7 @@
 <nav class="top">
   <div class="inner">
     <div class="logo">
-      <span class="logo-mark"></span>
+      <img class="brand-logo" src="asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
       <span>Bintware</span>
     </div>
     <div class="links">
@@ -1026,8 +1035,19 @@
         <span class="aex-tag">Come funziona davvero</span>
         <h2 class="aex-title">L'interprete simultaneo SIP ↔ Vertex.</h2>
       </div>
+      <div class="aex-product-row">
+        <img src="asset/img/logo-ai-gateway.webp" alt="Logo del prodotto AI Gateway" width="64" height="64" loading="lazy">
+        <div>
+          <div class="aex-product-name">AI Gateway</div>
+          <div class="aex-product-desc">L'applicativo Bintware che fa da interprete in tempo reale tra la rete telefonica e Vertex AI di Google Cloud. Backend di servizio e app desktop, Android e iOS per la gestione operativa.</div>
+        </div>
+      </div>
       <div class="aex-grid">
         <p class="aex-intro">Quando una persona alza la cornetta e parla con un'AI di Google, da una parte c'è il formato della rete telefonica — un protocollo vecchio di decenni, pensato per i telefoni — dall'altra un cervello digitale che ragiona in tempo reale. Sono due lingue diverse. In mezzo, il nostro software fa l'interprete.</p>
+        <figure class="aex-illustration">
+          <img src="asset/img/diagramma-sip-vertex.webp" alt="Diagramma del flusso bidirezionale tra telefono e Vertex AI: voce in entrata via RTP 8 kHz convertita a PCM 16 kHz su WebSocket verso Vertex; risposta in PCM 24 kHz dal cloud riconvertita a RTP 8 kHz verso la cornetta. Il gateway Bintware sta al centro." width="1600" height="527" loading="lazy">
+          <figcaption>Due flussi paralleli e indipendenti tra telefono e Vertex AI · Bintware AI Gateway</figcaption>
+        </figure>
         <div class="aex-flows">
           <div class="aex-flow">
             <div class="aex-flow-label">SIP → Vertex</div>
@@ -1155,6 +1175,9 @@
 
     <div class="use-grid">
       <div class="use">
+        <div class="use-illustration">
+          <img src="asset/img/scenario-scuola.webp" alt="Illustrazione: silhouette di un operatore che parla in un microfono mentre un report strutturato con bullet point e checkbox si materializza dall'altra parte; un piccolo orologio in alto richiama il tempo risparmiato." width="1200" height="781" loading="lazy">
+        </div>
         <div>
           <span class="use-num">Scenario · 01 · Scuola / Supporto sociale</span>
           <h4>Report giornalieri parlati, non scritti.</h4>
@@ -1168,6 +1191,9 @@
         </div>
       </div>
       <div class="use">
+        <div class="use-illustration">
+          <img src="asset/img/scenario-voicemail.webp" alt="Illustrazione: a sinistra una colonna disordinata di messaggi vocali con icone play e onde audio; al centro frecce arancioni che indicano la trasformazione; a destra una lista pulita e ordinata di voci con etichette di priorità High, Normal, Low." width="1200" height="868" loading="lazy">
+        </div>
         <div>
           <span class="use-num">Scenario · 02 · Voicemail intelligente</span>
           <h4>Segreterie telefoniche che si leggono in 10 secondi.</h4>
@@ -1181,6 +1207,9 @@
         </div>
       </div>
       <div class="use">
+        <div class="use-illustration">
+          <img src="asset/img/scenario-sanita.webp" alt="Illustrazione: due silhouettes sedute a un tavolo durante una conversazione clinica, con sopra una sottile onda di ascolto che rappresenta l'AI in osservazione, e a fianco un pannello con appunti strutturati e segni di verifica." width="1200" height="752" loading="lazy">
+        </div>
         <div>
           <span class="use-num">Scenario · 03 · Sanità / Studi medici privati</span>
           <h4>Un secondo paio di orecchie dentro la visita.</h4>
@@ -1194,6 +1223,9 @@
         </div>
       </div>
       <div class="use">
+        <div class="use-illustration">
+          <img src="asset/img/scenario-legale.webp" alt="Illustrazione: a sinistra una pila caotica di documenti e onde audio; al centro un flusso di frecce arancioni che attraversa una clessidra; a destra una scheda strutturata con una griglia di caselle quasi tutte compilate." width="1200" height="856" loading="lazy">
+        </div>
         <div>
           <span class="use-num">Scenario · 04 · Studi legali / Compliance e analisi documentale</span>
           <h4>Da 3 ore di registrazione a 200 campi compilati in 25 minuti.</h4>
@@ -1478,11 +1510,11 @@
       <article class="blog-card">
         <div class="meta">
           <span class="category">Architettura</span>
-          <span class="date">In arrivo</span>
+          <span class="date">15 aprile 2026</span>
         </div>
         <h3>Come abbiamo costruito un interprete simultaneo tra SIP e Vertex AI.</h3>
-        <p class="desc">Il dietro le quinte tecnico del nostro voice gateway: streaming bidirezionale in tempo reale, gestione delle interruzioni, e perché abbiamo scelto Vertex Live invece di Realtime API di OpenAI.</p>
-        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+        <p class="desc">Le scelte tecniche dietro il nostro voice gateway.</p>
+        <a href="blog/interprete-sip-vertex-ai.html" class="read">Leggi: il gateway SIP ↔ Vertex AI →</a>
       </article>
       <article class="blog-card">
         <div class="meta">
@@ -1490,8 +1522,8 @@
           <span class="date">In arrivo</span>
         </div>
         <h3>10 minuti di AI valgono mezz'ora di scrittura.</h3>
-        <p class="desc">Cosa abbiamo imparato progettando un sistema di report parlati per operatori scolastici: come funzionano gli "appunti vocali strutturati", e perché la trascrizione da sola non basta.</p>
-        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+        <p class="desc">Quando un report parlato vale più di uno scritto.</p>
+        <span class="read" style="opacity:.55;cursor:default">Prossimamente</span>
       </article>
       <article class="blog-card">
         <div class="meta">
@@ -1499,8 +1531,8 @@
           <span class="date">In arrivo</span>
         </div>
         <h3>AlloyDB e ricerca vettoriale: quando ne vale la pena?</h3>
-        <p class="desc">Tre anni di esperienza con database vettoriali su GCP. Quando AlloyDB è la scelta giusta, quando bastano gli embedding in Postgres standard, e quando serve un vector store dedicato.</p>
-        <a href="blog/articolo-template.html" class="read">Leggi →</a>
+        <p class="desc">AlloyDB, embedding o vector store: quando usare cosa.</p>
+        <span class="read" style="opacity:.55;cursor:default">Prossimamente</span>
       </article>
     </div>
   </div>
@@ -1553,7 +1585,7 @@
   <div class="wrap">
     <div class="inner">
       <div class="logo">
-        <span class="logo-mark"></span>
+        <img class="brand-logo" src="asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
         <span>Bintware</span>
       </div>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
