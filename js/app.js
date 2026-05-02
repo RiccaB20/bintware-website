@@ -82,6 +82,20 @@
     };
   })();
 
+  // MOBILE NAV TOGGLE
+  (function(){
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('nav.top .links');
+    if(!toggle || !links) return;
+    function setOpen(open){
+      links.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+    }
+    toggle.addEventListener('click', () => setOpen(!links.classList.contains('is-open')));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+  })();
+
   // Smooth scroll for hash links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', (e)=>{
