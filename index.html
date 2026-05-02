@@ -224,6 +224,7 @@
     font-size:13px;font-weight:500;font-family:var(--sans);
     border:1px solid var(--line);background:transparent;color:var(--ink);
     cursor:pointer;transition:all .2s ease;
+    white-space:nowrap;
   }
   .btn:hover{border-color:var(--ink);background:color-mix(in oklch, var(--ink) 6%, transparent)}
   .btn.primary{background:var(--accent);color:oklch(0.2 0.02 55);border-color:var(--accent);font-weight:600}
@@ -564,7 +565,7 @@
   /* RESPONSIVE */
   @media (max-width: 1024px){
     .wrap{padding:0 28px}
-    nav.top .inner{padding:14px 28px}
+    nav.top .inner{padding:14px 16px;gap:12px}
     .nav-toggle{display:block;margin-right:6px}
     .logo{margin-right:auto}
     nav .links{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:color-mix(in oklch, var(--bg) 94%, transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft);padding:12px 28px 18px;font-size:15px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .25s ease, opacity .2s ease}
