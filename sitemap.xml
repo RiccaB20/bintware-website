@@ -30,7 +30,7 @@
 
   <url>
     <loc>https://bintware.com/blog.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-04</lastmod>
   </url>
 
   <url>
@@ -39,6 +39,27 @@
     <image:image>
       <image:loc>https://bintware.com/asset/img/diagramma-sip-vertex.webp</image:loc>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://bintware.com/voicemail-aziendale.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://bintware.com/asset/img/scenario-voicemail.webp</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bintware.com/secondo-paio-orecchie.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image>
+      <image:loc>https://bintware.com/asset/img/scenario-sanita.webp</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bintware.com/blog/voicemail-concessionarie-auto.html</loc>
+    <lastmod>2026-05-04</lastmod>
   </url>
 
 </urlset>

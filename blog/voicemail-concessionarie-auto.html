@@ -4,24 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- ============================================================
-     SCHELETRO ARTICOLO — Cluster A (voicemail) · Sotto-cluster automotive
-     Articolo n. 2 del piano editoriale (vedi docs/commerciale/05-canali.md)
-     Stato: bozza, contenuti da inserire.
-     PRIMA DI METTERE ONLINE PUBBLICAMENTE:
-       1. Sostituire tutti i blocchi marcati [DA SCRIVERE: ...]
-       2. Compilare le date reali (datePublished, dateModified)
-       3. Rimuovere il <meta name="robots" content="noindex,follow">
-       4. Aggiungere l'URL https://bintware.com/blog/voicemail-concessionarie-auto.html a sitemap.xml
-       5. Aggiornare la card in blog.html: rimuovere "Prossimamente", aggiungere link funzionante
-     ============================================================ -->
-<meta name="robots" content="noindex,follow">
+<!-- Articolo — Cluster A (voicemail) · automotive · Pubblicato 2026-05-04 -->
 
-<title>Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware</title>
-<meta name="description" content="Quante chiamate perde una concessionaria in un mese, quanto valgono in mancato margine, e come una voicemail intelligente recupera test drive e richieste fuori orario senza sostituire il personale.">
+<title>Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale · Bintware</title>
+<meta name="description" content="Quante chiamate perde davvero una concessionaria, come una voicemail intelligente recupera lead fuori orario e nei picchi, e quando ha senso fare il salto dalla voicemail asincrona alla conversazione realtime.">
 
-<meta property="og:title" content="Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware">
-<meta property="og:description" content="I numeri delle chiamate perse in concessionaria, il costo reale in mancato margine, e cosa cambia quando il telefono risponde anche fuori orario.">
+<meta property="og:title" content="Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale · Bintware">
+<meta property="og:description" content="I numeri delle chiamate perse in concessionaria, l'evoluzione dalla voicemail classica al realtime conversazionale, e quando conviene salire di livello.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://bintware.com/blog/voicemail-concessionarie-auto.html">
 <meta property="og:site_name" content="Bintware">
@@ -30,12 +19,12 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:author" content="Riccardo Baldacci">
-<meta property="article:published_time" content="2026-XX-XX">
+<meta property="article:published_time" content="2026-05-04">
 <meta property="article:section" content="Caso d'uso">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware">
-<meta name="twitter:description" content="I numeri delle chiamate perse in concessionaria e cosa cambia quando il telefono risponde anche fuori orario.">
+<meta name="twitter:title" content="Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale · Bintware">
+<meta name="twitter:description" content="Quanto vale ogni chiamata persa in concessionaria, e quando ha senso il salto dal Piano A al Piano B.">
 <meta name="twitter:image" content="https://bintware.com/og-image.png">
 
 <link rel="canonical" href="https://bintware.com/blog/voicemail-concessionarie-auto.html">
@@ -46,11 +35,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead",
-  "description": "I numeri delle chiamate perse in concessionaria, il costo reale in mancato margine, e cosa cambia quando il telefono risponde anche fuori orario.",
+  "headline": "Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale",
+  "description": "Quante chiamate perde davvero una concessionaria, come una voicemail intelligente recupera lead fuori orario e nei picchi, e quando ha senso fare il salto dalla voicemail asincrona alla conversazione realtime.",
   "image": "https://bintware.com/og-image.png",
-  "datePublished": "2026-XX-XX",
-  "dateModified": "2026-XX-XX",
+  "datePublished": "2026-05-04",
+  "dateModified": "2026-05-04",
   "author": {
     "@type": "Person",
     "name": "Riccardo Baldacci",
@@ -71,7 +60,7 @@
   },
   "inLanguage": "it-IT",
   "articleSection": "Caso d'uso",
-  "keywords": "voicemail concessionaria auto, chiamate perse concessionario, segreteria virtuale automotive, gestione chiamate fuori orario concessionaria"
+  "keywords": "voicemail concessionaria auto, chiamate perse concessionario, segreteria virtuale automotive, IA conversazionale concessionarie, gestione chiamate fuori orario concessionaria"
 }
 </script>
 
@@ -98,7 +87,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../css/style.css">
 
-<!-- Stili locali per le tabelle/box numerici dell'articolo -->
 <style>
   .article-body table.numbers{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
   .article-body table.numbers th,
@@ -111,6 +99,8 @@
   .calc-box{margin:28px 0;padding:24px;border:1px solid var(--line, rgba(255,255,255,.12));border-radius:12px;background:rgba(255,255,255,.02)}
   .calc-box .label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px}
   .calc-box .formula{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink);line-height:1.6}
+
+  .article-body h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:32px 0 14px;color:var(--ink);letter-spacing:-0.01em}
 </style>
 </head>
 <body>
@@ -143,17 +133,17 @@
     <div class="article-meta">
       <span class="category">Caso d'uso</span>
       <span class="sep">·</span>
-      <span>[DA SCRIVERE: data pubblicazione, es. "12 maggio 2026"]</span>
+      <span>4 maggio 2026</span>
       <span class="sep">·</span>
-      <span class="article-read-time">[DA SCRIVERE: tempo di lettura, es. "7 min di lettura"]</span>
+      <span class="article-read-time">9 min di lettura</span>
     </div>
-    <h1>[DA SCRIVERE: titolo principale — esempio dal piano: "Voicemail per concessionarie auto: prenotazioni test drive e richieste fuori orario, gestite senza perdere lead."]</h1>
-    <p class="article-dek">[DA SCRIVERE: dek di 2-3 righe — anticipa il messaggio, dichiara cosa il lettore troverà (numeri + esempio concreto + analisi qualitativa).]</p>
+    <h1>Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale.</h1>
+    <p class="article-dek">Quante chiamate perde davvero una concessionaria in un mese, quanto valgono in mancato margine, e perché il vero salto non è "comprare l'AI" ma scegliere il livello giusto di automazione — dalla voicemail analisi al dialogo realtime.</p>
     <div class="article-author-row">
       <div class="article-author">
         <div>
-          <div class="author-name">[DA SCRIVERE: autore, es. "Riccardo Baldacci"]</div>
-          <div class="author-role">[DA SCRIVERE: ruolo]</div>
+          <div class="author-name">Riccardo Baldacci</div>
+          <div class="author-role">Co-founder · Strategia & Architettura</div>
         </div>
       </div>
     </div>
@@ -164,14 +154,13 @@
 <article class="article-body">
   <div class="wrap">
 
-    <!-- INTRO -->
-    <p>[DA SCRIVERE: 1-2 paragrafi di apertura — partire da un fatto osservabile, non da una claim astratta. Es. "In una concessionaria media italiana entrano X chiamate al giorno, di cui Y restano senza risposta. La gran parte di queste sono richieste preliminari di test drive o info su un modello — esattamente le chiamate che diventano un appuntamento se gestite, e zero se ignorate."]</p>
+    <p>Nel mercato automotive italiano, dove la concorrenza è alta e il cliente ha alternative a pochi chilometri di distanza, il primo punto di contatto col cliente non è una formalità: è una scelta. Chi non risponde subito, perde. Chi risponde male, perde lo stesso. La voicemail nasce per evitare il danno peggiore — che la traccia di un cliente potenziale vada persa nel silenzio — e nel tempo si è evoluta da semplice registratore di messaggi a strumento di analisi sofisticato.</p>
 
-    <p>[DA SCRIVERE: anticipare cosa il lettore troverà — i numeri sotto, l'esempio del concessionario tipo, l'analisi qualitativa di cosa cambia quando una chiamata fuori orario riceve comunque una risposta.]</p>
+    <p>In questo articolo guardiamo i numeri concreti di una concessionaria di medie dimensioni, raccontiamo cosa fa una voicemail intelligente sotto il cofano, e mettiamo a confronto i due livelli che vendiamo: quello asincrono — il punto di ingresso — e quello realtime conversazionale, l'evoluzione tecnologica. Senza forzare verso l'uno o l'altro: la scelta giusta dipende dai vostri numeri.</p>
 
-    <h2>I numeri</h2>
+    <h2>I numeri di una concessionaria tipo</h2>
 
-    <p>[DA SCRIVERE: paragrafo di setup — dichiarare le ipotesi su cui si basa la simulazione (concessionario di medie dimensioni, X chiamate/giorno, Y giorni lavorativi/mese, Z% di chiamate non risposte in fasce di picco e fuori orario). Citare le fonti dove possibile (es. medie di settore, dati Anfia, esperienza diretta su clienti).]</p>
+    <p>Per dare un riferimento concreto prendiamo una concessionaria mono-marca di provincia, 4 venditori, 2 persone in officina, ufficio amministrativo composto da una persona che risponde anche al telefono. È un profilo realistico, non un caso limite. I numeri qui sotto sono ordini di grandezza tipici nel settore italiano — vanno presi come riferimento e calibrati sui numeri reali della singola azienda.</p>
 
     <table class="numbers">
       <thead>
@@ -184,27 +173,27 @@
       <tbody>
         <tr>
           <td>Chiamate giornaliere in entrata</td>
-          <td>[DA SCRIVERE]</td>
-          <td>[DA SCRIVERE: ipotesi]</td>
+          <td>80-120</td>
+          <td>Picchi su lunedì mattina, post-pausa pranzo, weekend di apertura</td>
         </tr>
         <tr>
-          <td>Chiamate non risposte (picchi + fuori orario)</td>
-          <td>[DA SCRIVERE: %]</td>
-          <td>[DA SCRIVERE]</td>
+          <td>Chiamate non risposte</td>
+          <td>25-35%</td>
+          <td>Picchi non gestiti + fuori orario serale e festivi</td>
         </tr>
         <tr>
           <td>Tasso di conversione chiamata → appuntamento</td>
-          <td>[DA SCRIVERE: %]</td>
-          <td>[DA SCRIVERE]</td>
+          <td>15-25%</td>
+          <td>Su chiamate effettivamente gestite</td>
         </tr>
         <tr>
-          <td>Margine medio per veicolo venduto</td>
-          <td>[DA SCRIVERE: €]</td>
-          <td>[DA SCRIVERE: ordine di grandezza realistico]</td>
+          <td>Margine medio per veicolo venduto (nuovo)</td>
+          <td>€800-1.500</td>
+          <td>Dipende da segmento, marca, finanziamento, accessori</td>
         </tr>
         <tr class="total">
-          <td>Mancato margine annuo (stima)</td>
-          <td>[DA SCRIVERE: €]</td>
+          <td>Mancato margine annuo (stima realistica)</td>
+          <td>€60.000-120.000</td>
           <td>Solo da chiamate non risposte recuperabili</td>
         </tr>
       </tbody>
@@ -215,51 +204,95 @@
       <div class="formula">chiamate/giorno × giorni/mese × % non risposte × % conversione × margine medio = mancato margine/mese</div>
     </div>
 
-    <p>[DA SCRIVERE: lettura del numero — non promettere di recuperare il 100%, essere onesti su quale frazione è realisticamente recuperabile dalla voicemail intelligente (es. il 30-50% delle non risposte diventa lead richiamabile entro 24h). Il numero finale onesto è quello.]</p>
+    <p>Una nota di onestà sul numero finale: non tutte le chiamate non risposte sono recuperabili. Una parte del cliente si rivolge subito al concorrente, un'altra parte è chiamata di servizio (informazioni generiche, errori di chiamata) che non ha valore commerciale. La frazione realisticamente recuperabile da una voicemail intelligente è in genere il 30-50% delle non risposte: gli altri sono comunque andati. Il numero della tabella resta significativo anche dimezzato.</p>
+
+    <h2>Cosa fa il sistema — sotto il cofano</h2>
+
+    <p>La voicemail evoluta — entrambi i livelli, sia quello asincrono sia quello realtime — esegue quattro operazioni in background. Sono lo stesso motore: cambia solo se il messaggio viene raccolto in modalità asincrona o gestito durante una conversazione in tempo reale.</p>
+
+    <h3>1. Trascrizione e analisi semantica</h3>
+    <p>Il sistema ascolta il messaggio vocale e lo trascrive in testo immediatamente leggibile. Pulisce rumore di fondo, normalizza pause e false partenze, restituisce un testo coerente che il responsabile vendite legge in dieci secondi anziché ascoltare per due minuti. È la differenza fra "ho 40 messaggi vocali da ascoltare a fine giornata" e "scorro 40 righe di testo in pochi minuti".</p>
+
+    <h3>2. Estrazione strutturata dei dati</h3>
+    <p>Dal testo trascritto vengono estratti automaticamente i campi rilevanti — nome del chiamante, numero di richiamo, motivo (test drive, info modello, sinistro, tagliando, ricambio), livello di urgenza, eventuale modello di auto citato. Un discorso destrutturato diventa un ticket pre-compilato: niente più "ricostruzione" mentale del messaggio prima di richiamare.</p>
+
+    <h3>3. Monitoraggio dei richiami via API</h3>
+    <p>Tramite API dedicate il sistema dialoga col centralino aziendale o col CRM esistente. Sa in tempo reale se un cliente che ha lasciato un messaggio è stato effettivamente richiamato, e da chi. Il risultato è il primo dato gestionale che molte concessionarie non hanno mai avuto: quante chiamate sono state effettivamente seguite, in quanti minuti, con che esito.</p>
+
+    <h3>4. Reportistica direzionale</h3>
+    <p>Tutti questi dati alimentano un report automatico — HTML, dashboard, export Excel a richiesta. Il responsabile vendite e il titolare vedono inequivocabilmente: chiamate ricevute per giorno, distribuzione per categoria (vendite, post-vendita, urgenze), tempi di reazione (SLA) sui richiami, performance dei singoli commerciali. Statistiche su cui prendere decisioni, non sensazioni.</p>
+
+    <blockquote style="margin:32px 0;padding:20px 28px;border-left:3px solid var(--accent, rgba(255,255,255,.4));font-style:italic;color:var(--ink);font-size:18px;line-height:1.6;background:rgba(255,255,255,.02);border-radius:0 8px 8px 0">L'AI non sostituisce il personale: gli toglie il lavoro di trascrizione e smistamento, così il tempo umano resta sui clienti. È quello che cambia la conversazione.</blockquote>
 
     <h2>Cosa NON dicono i numeri</h2>
 
-    <p>[DA SCRIVERE: qui arriva l'analisi qualitativa. I numeri sono utili ma riduttivi. Tre o quattro elementi che non si misurano facilmente ma contano:]</p>
+    <p>I numeri della tabella sono utili ma riduttivi. Tre o quattro elementi che non si misurano bene ma contano davvero:</p>
 
     <ul>
-      <li><strong>[DA SCRIVERE: punto qualitativo 1]</strong> — es. la reputazione del marchio quando le recensioni Google citano "non rispondono al telefono". Il danno è permanente e si vede solo nel medio termine.</li>
-      <li><strong>[DA SCRIVERE: punto qualitativo 2]</strong> — es. il tempo del titolare/responsabile vendite che la sera deve gestire i messaggi vocali ricevuti durante il giorno. Costo opportunità raramente messo a bilancio.</li>
-      <li><strong>[DA SCRIVERE: punto qualitativo 3]</strong> — es. il prospect che, quando non riceve risposta, chiama subito un'altra concessionaria. La chiamata persa non è "rimandata", è "regalata al concorrente".</li>
-      <li><strong>[DA SCRIVERE: punto qualitativo 4]</strong> — es. la differenza fra "messaggio in segreteria standard" e "messaggio strutturato che il responsabile vendite legge in 10 secondi e richiama in mattinata". Il secondo è un appuntamento, il primo è un altro telefono che squilla domani.</li>
+      <li><strong>La reputazione del marchio</strong> quando le recensioni Google citano "non rispondono al telefono". Il danno è permanente e si vede nel medio termine, mai nel mese in corso.</li>
+      <li><strong>Il tempo del titolare</strong> che la sera deve ascoltare i messaggi vocali ricevuti durante il giorno o gestire personalmente le emergenze fuori orario. Costo opportunità raramente messo a bilancio, ma chiunque abbia gestito una concessionaria sa cosa significa.</li>
+      <li><strong>Il prospect che chiama subito un'altra concessionaria.</strong> Quando un cliente alza il telefono per chiedere un test drive, ha già deciso di muoversi entro qualche giorno. Se non riceve risposta, non rimanda — chiama il concorrente. La chiamata persa non è "rimandata", è "regalata".</li>
+      <li><strong>La differenza fra "messaggio in segreteria standard" e "messaggio strutturato in dieci righe pulite"</strong> sulla scrivania del responsabile vendite. Il secondo diventa un appuntamento; il primo è un altro telefono che squilla domani.</li>
     </ul>
 
-    <blockquote>[DA SCRIVERE: una frase memorabile da virgolettare. Es. "Una chiamata persa non è rimandata: è regalata al concorrente di fronte." Tono diretto, utile in social.]</blockquote>
+    <h2>Una settimana in concessionaria, due scenari</h2>
 
-    <h2>Un esempio concreto</h2>
+    <p>Riprendiamo la concessionaria mono-marca di prima. Ecco come si presenta una settimana tipica e cosa cambia con i due livelli di voicemail intelligente.</p>
 
-    <p>[DA SCRIVERE: scenario pratico di una concessionaria immaginaria ma plausibile (es. mono-marca, 4 venditori, periferia di una città di provincia). Raccontarne una settimana tipo: lunedì mattina ondata di chiamate post-weekend, sabato pomeriggio fuori orario, lancio nuovo modello a settembre. Mostrare cosa cambia con la voicemail intelligente in ognuna delle tre situazioni.]</p>
+    <p><strong>Lunedì mattina, ondata post-weekend.</strong> Tra le 9 e le 11 arrivano 30-40 chiamate concentrate. L'unica persona al telefono ne gestisce dodici, le altre vanno in voicemail standard, che a fine giornata accumula ventotto messaggi audio da ascoltare. Col Piano A questi messaggi diventano ventotto righe di testo già categorizzate per priorità: i tre clienti che chiedevano test drive in giornata sono in cima alla lista. Col Piano B, tredici di quelle chiamate vengono gestite direttamente dall'AI conversazionale: i clienti che chiedevano informazioni generiche ricevono già le risposte (orari, modelli disponibili), quelli che vogliono un test drive prendono direttamente l'appuntamento, gli altri vengono inoltrati a un commerciale con il contesto già strutturato.</p>
 
-    <p>[DA SCRIVERE: continua il racconto, mantenendolo ancorato a numeri ragionevoli ma raccontato come storia.]</p>
+    <p><strong>Sabato sera, fuori orario.</strong> Un prospect ha visto un'auto online, vorrebbe parlare con qualcuno. Senza voicemail, chiude il sito e prova lunedì — magari da un altro concessionario. Col Piano A, lascia un messaggio strutturato che lunedì mattina è il primo nella lista del responsabile vendite, con nome, modello d'interesse e motivo. Col Piano B, l'AI risponde subito, capisce che è un prospect serio, propone un appuntamento per martedì pomeriggio. Lunedì il commerciale trova in agenda un appuntamento già confermato, non una chiamata da fare al buio.</p>
 
-    <h2>Cosa fa una voicemail intelligente, in pratica</h2>
+    <p><strong>Settembre, lancio nuovo modello.</strong> Per due settimane le chiamate raddoppiano. Senza supporto, una parte va inevitabilmente persa. Il Piano A garantisce che ogni messaggio vocale diventi comunque un ticket gestito; il Piano B regge i picchi assorbendo le richieste informative ripetitive (disponibilità, prezzi, finanziamenti) e lasciando ai commerciali solo le conversazioni di valore.</p>
 
-    <p>[DA SCRIVERE: tre o quattro funzioni concrete, descritte come le vede il titolare, non come le vede il fornitore. Niente "AI", niente "LLM". Esempi:]</p>
+    <h2>Due livelli, una stessa infrastruttura</h2>
 
+    <p>Setup e canone sono <strong>identici per entrambi i piani</strong>: €1.500 una tantum + €250/mese. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione adatto alla sua azienda. È una progressione naturale, non una scelta fra prodotti diversi.</p>
+
+    <p>Il <strong>Piano A — voicemail analisi</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama. Il chiamante sente una segreteria normale, ma quello che succede dietro è diverso: trascrizione, estrazione dati, ticket strutturato, reportistica. Tutta l'elaborazione è inclusa nel canone, fino a 1.000 messaggi al mese di fair-use. Niente costi a consumo, niente sorprese in bolletta.</p>
+
+    <p>Il <strong>Piano B — voicemail realtime</strong> è il salto evolutivo. L'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti, prequalifica le richieste. Stesso setup, stesso canone, in più €0,15-0,20 al minuto sulla conversazione effettiva. Costa di più sui mesi attivi, ma riduce drasticamente l'abbandono di chiamata e consente di reggere i picchi senza ampliare l'organico.</p>
+
+    <h3>Quando il Piano A basta</h3>
     <ul>
-      <li>[DA SCRIVERE: risposta sempre, anche fuori orario, con un messaggio brandizzato e umano.]</li>
-      <li>[DA SCRIVERE: trascrizione del messaggio in 30 secondi, ricevuta via email/SMS/dashboard.]</li>
-      <li>[DA SCRIVERE: categorizzazione: test drive, info modello, post-vendita, urgenza. Ogni categoria al referente giusto.]</li>
-      <li>[DA SCRIVERE: report giornaliero al titolare: cosa è successo, cosa va richiamato, niente chiamate dimenticate.]</li>
+      <li>Volumi medi (sotto le 50-60 chiamate/giorno, picchi gestibili con personale esistente).</li>
+      <li>Le richieste tipiche tollerano un richiamo entro 1-2 ore (preventivi, info, prenotazioni non urgenti).</li>
+      <li>Il problema principale è ricostruire <em>chi ha chiamato e per cosa</em>, non rispondere subito.</li>
+      <li>Cultura aziendale conservativa rispetto all'AI: il cliente preferisce che il chiamante non si trovi a parlare con una voce automatica.</li>
+    </ul>
+
+    <h3>Quando ha senso il Piano B</h3>
+    <ul>
+      <li>Volumi alti o picchi frequenti (oltre le 80-100 chiamate/giorno, recall stagionali, lanci modelli).</li>
+      <li>Urgenze immediate dove un richiamo entro un'ora è troppo tardi (sinistri carrozzeria, urgenze stradali H24, conferma test drive in giornata).</li>
+      <li>Apertura culturale al dialogo con AI: il decisore ha già usato assistenti vocali (Alexa, banche, compagnie aeree) e capisce che la voce automatica è ormai uno standard.</li>
+      <li>Margine per auto sufficiente a giustificare il costo a minuto: anche pochi appuntamenti recuperati in più ripagano abbondantemente la differenza.</li>
     </ul>
 
     <h2>Limiti onesti</h2>
 
-    <p>[DA SCRIVERE: paragrafo che costruisce credibilità dichiarando cosa la voicemail NON fa. Es. non sostituisce un commerciale, non chiude la vendita, non gestisce conversazioni complesse in tempo reale. È un filtro intelligente per le chiamate, non un agente conversazionale. Onestà = autorevolezza.]</p>
+    <p>Costruire fiducia significa dire anche cosa la voicemail intelligente non fa.</p>
 
-    <h2>Quanto costa</h2>
+    <p>Il Piano A non risolve la chiamata in tempo reale: il cliente che si aspetta una risposta immediata e si trova davanti una segreteria — anche evoluta — può comunque riattaccare. È l'unica vera limitazione del livello asincrono, ed è precisamente il motivo per cui esiste il Piano B.</p>
 
-    <p>[DA SCRIVERE: rimando trasparente al listino, niente sorprese. Setup €1.500 una tantum, canone €250/mese, consumo a minuto €0,15-0,20. Calcolo break-even: con un margine medio per auto di X €, recuperare anche un solo cliente in più al trimestre ripaga l'intero anno di canone. Linkare alla pillar.]</p>
+    <p>Il Piano B, dal canto suo, non sostituisce un commerciale: non chiude la vendita, non gestisce conversazioni complesse di negoziazione su prezzo o accessori, non sa rispondere a domande tecniche fuori dal perimetro definito in setup. Gestisce molto bene la <em>prima fase</em>: capire chi chiama, qualificare la richiesta, dare risposte standard, fissare appuntamenti. Per il resto, passa la mano al personale umano col contesto già strutturato.</p>
 
-    <p><a href="../voicemail-aziendale.html">Tutti i dettagli sulla voicemail intelligente Bintware per il settore automotive</a> sono nella pagina dedicata, con FAQ e modalità di partenza.</p>
+    <p>Né l'uno né l'altro è una "rivoluzione": entrambi sono un upgrade ben preciso di una tecnologia che esiste già — la segreteria telefonica — fatto con strumenti contemporanei. Il valore non è la novità, è l'efficienza concreta sui flussi quotidiani.</p>
+
+    <h2>Quanto costa, e quanto si ripaga</h2>
+
+    <p>Per la concessionaria della tabella sopra (mancato margine annuo €60.000-120.000), il calcolo si fa rapidamente:</p>
+
+    <ul>
+      <li><strong>Piano A</strong>: €4.500/anno totali (setup ammortizzato sul primo anno + canone). Recuperando anche solo il 5% del mancato margine annuo, l'investimento si ripaga in tre mesi.</li>
+      <li><strong>Piano B</strong>: €4.500 + consumo a minuto sul realtime. Per un consumo realistico di 200-300 minuti di conversazione AI al mese (pari al 30-40% delle chiamate medie gestite in modalità realtime), il costo annuale si stabilizza fra €5.500 e €7.500. Anche qui il ROI rapidissimo: bastano due appuntamenti vendita aggiuntivi/anno recuperati.</li>
+    </ul>
+
+    <p>I dettagli di listino, il confronto piano per piano, le FAQ specifiche del settore automotive sono nella <a href="../voicemail-aziendale.html">pagina dedicata alla voicemail intelligente per il mondo automotive</a>.</p>
 
     <h2>Quando ha senso parlarne</h2>
 
-    <p>[DA SCRIVERE: chiusura pragmatica — non un push di vendita, ma un invito a una discovery call gratuita. Spiegare cosa succede in 30 minuti: si guardano i numeri reali della concessionaria, si stima il recuperabile, si decide insieme se ha senso provare.]</p>
+    <p>Non bisogna decidere in astratto. La discovery call è 30 minuti, gratuita, e serve a guardare insieme i vostri numeri reali — chiamate al giorno, picchi, fuori orario, abbandono — per capire onestamente se il punto di ingresso (Piano A) è quello che vi serve, o se i vostri volumi giustificano il salto evolutivo al Piano B fin dal primo giorno. Risponde un founder, non un commerciale: niente qualifica, si parla del problema.</p>
 
   </div>
 </article>

@@ -114,13 +114,39 @@
           },
           {
             "@type": "Offer",
+            "name": "Voicemail analisi · Piano A",
             "itemOffered": {
               "@type": "Service",
-              "name": "Utilizzo AI a consumo (con post-analisi)",
-              "description": "Interazione con AI in tempo reale + trascrizione + report analitico LLM."
+              "name": "Voicemail analisi (Piano A)",
+              "description": "Voicemail asincrona: il chiamante lascia un messaggio, l'AI lo trascrive, ne estrae dati strutturati (nome, numero, motivo, urgenza) e recapita un ticket al referente giusto. Elaborazione inclusa nel canone mensile, fair-use 1.000 messaggi/mese."
+            },
+            "price": "0",
+            "priceCurrency": "EUR",
+            "description": "Costo aggiuntivo: incluso nel canone €250/mese (voce 02). Fair-use 1.000 messaggi voicemail elaborati/mese. Oltre soglia, ricalibrazione consensuale del canone."
+          },
+          {
+            "@type": "Offer",
+            "name": "Voicemail realtime · Piano B · Standard",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Voicemail realtime (Piano B) · Interazione standard",
+              "description": "Voicemail conversazionale realtime: l'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti, prequalifica le richieste. Modalità Standard: conversazione + trascrizione."
+            },
+            "price": "0.15",
+            "priceCurrency": "EUR",
+            "unitText": "MIN"
+          },
+          {
+            "@type": "Offer",
+            "name": "Voicemail realtime · Piano B · Post-analisi",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Voicemail realtime (Piano B) · Interazione + post-analisi",
+              "description": "Voicemail conversazionale realtime con report analitico: conversazione + trascrizione + analisi strutturata LLM post-conversazione, definita in fase di setup."
             },
             "price": "0.20",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "unitText": "MIN"
           }
         ]
       }
@@ -423,6 +449,8 @@
   .use .use-tags .t{font-family:var(--mono);font-size:10px;padding:4px 9px;border:1px solid var(--line-soft);border-radius:4px;color:var(--ink-dim);letter-spacing:0.08em;text-transform:uppercase}
   .use .use-result{display:flex;align-items:center;gap:10px;margin-top:18px;padding:11px 14px;background:color-mix(in oklch,var(--accent) 8%,var(--bg-3));border:1px solid color-mix(in oklch,var(--accent) 28%,var(--line-soft));border-radius:8px;font-family:var(--mono);font-size:11.5px;color:var(--ink);letter-spacing:0.04em;line-height:1.45}
   .use .use-result .arrow{color:var(--accent);font-weight:700;font-size:13px}
+  .use .use-cta{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-top:20px;display:inline-block;text-decoration:none}
+  .use .use-cta:hover{text-decoration:underline}
   .use-rest{margin-top:48px;padding:36px 32px;border:1px dashed var(--line);border-radius:14px;text-align:center;background:var(--bg-2)}
   .use-rest p{font-size:15.5px;color:var(--ink-dim);max-width:62ch;margin:0 auto 22px;line-height:1.55}
   .use-rest .em{color:var(--ink);font-weight:500}
@@ -1220,6 +1248,7 @@
           <div class="use-tags">
             <span class="t">Voicemail</span><span class="t">Speech-to-text</span><span class="t">Lead intake</span>
           </div>
+          <a href="voicemail-aziendale.html" class="use-cta">Scopri la soluzione Voicemail →</a>
         </div>
       </div>
       <div class="use">
@@ -1229,13 +1258,14 @@
         <div>
           <span class="use-num">Scenario · 03 · Sanità / Studi medici privati</span>
           <h4>Un secondo paio di orecchie dentro la visita.</h4>
-          <p class="use-desc">L'AI ascolta la visita e svolge due compiti distinti — supporto organizzativo (struttura gli appunti, prepara il referto) e supporto diagnostico (suggerisce valutazioni, segnala possibili sviste). I dati anonimi addestrano modelli che riconoscono pattern diagnostici nel tempo.</p>
+          <p class="use-desc">L'AI ascolta la visita e svolge due compiti distinti — supporto organizzativo (struttura gli appunti, prepara il referto) e supporto cognitivo (suggerisce valutazioni, segnala possibili sviste). Mai sostitutivo del giudizio clinico: sempre integrativo. I dati strutturati nel tempo abilitano analisi longitudinali sui pazienti che ritornano.</p>
         </div>
         <div>
           <div class="use-result"><span class="arrow">→</span> Visite più ordinate · secondo punto di vista in tempo reale</div>
           <div class="use-tags">
-            <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Supporto diagnostico</span>
+            <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Supporto cognitivo</span>
           </div>
+          <a href="secondo-paio-orecchie.html" class="use-cta">Scopri il secondo paio di orecchie →</a>
         </div>
       </div>
       <div class="use">
@@ -1405,39 +1435,75 @@
         </div>
       </div>
 
-      <!-- 3. AI a consumo -->
+      <!-- 3. Modalità di utilizzo · scegli il piano -->
       <div class="price-row">
         <div class="price-row-num">03</div>
         <div class="price-row-body">
           <div class="price-row-head">
             <div>
-              <h3 class="price-row-title">Utilizzo AI · a consumo</h3>
-              <p class="price-row-desc">Due pacchetti, scelta in base al livello di analisi richiesto. Si paga solo l'utilizzo effettivo.</p>
+              <h3 class="price-row-title">Modalità di utilizzo · scegli il piano</h3>
+              <p class="price-row-desc">Setup (01) e canone (02) sono identici nei due piani. Cambia cosa fa il sistema quando il telefono squilla. In entrambi i casi il servizio non si interrompe per superamento di soglie: avvisi, mai blocchi automatici.</p>
             </div>
           </div>
 
-          <div class="price-pack-grid">
-            <div class="price-pack">
-              <div class="price-pack-head">
-                <span class="price-pack-name">Interazione standard</span>
-                <span class="price-pack-amount">€ 0,15 <small>/min</small></span>
-              </div>
-              <ul class="price-pack-list">
-                <li>Interazione con AI in tempo reale</li>
-                <li>Report post-conversazione: <strong>sola trascrizione</strong></li>
-              </ul>
+          <!-- Piano A — Voicemail analisi -->
+          <div class="plan">
+            <div class="plan-head">
+              <span class="plan-eyebrow">Piano A · Punto di ingresso</span>
+              <h4 class="plan-title">Voicemail analisi</h4>
+              <p class="plan-desc">Il chiamante lascia un messaggio come a una segreteria normale. L'AI lavora in background: trascrive, struttura, recapita un ticket pronto da gestire al referente giusto.</p>
             </div>
-            <div class="price-pack recommended">
-              <div class="price-pack-tag">Consigliato</div>
-              <div class="price-pack-head">
-                <span class="price-pack-name">Interazione + post-analisi</span>
-                <span class="price-pack-amount">€ 0,20 <small>/min</small></span>
+            <ul class="plan-list">
+              <li>Trascrizione e analisi semantica del messaggio vocale</li>
+              <li>Estrazione automatica dei dati (nome, numero, motivo, urgenza)</li>
+              <li>Recapito al referente giusto · email, dashboard, integrazione CRM</li>
+              <li>Reportistica direzionale: SLA di richiamo, performance commerciali</li>
+            </ul>
+            <div class="plan-cost">
+              <span class="plan-cost-label">Costo aggiuntivo</span>
+              <span class="plan-cost-amount">incluso nel canone</span>
+            </div>
+            <p class="plan-note">Fair-use 1.000 messaggi voicemail elaborati/mese inclusi. Oltre soglia: avvisi al 70% e 90%, ricalibrazione consensuale del canone — il servizio non si interrompe.</p>
+          </div>
+
+          <!-- Piano B — Voicemail realtime · IA conversazionale -->
+          <div class="plan plan-evolution">
+            <div class="plan-head">
+              <span class="plan-eyebrow">Piano B · Evoluzione tecnologica</span>
+              <h4 class="plan-title">Voicemail realtime · IA conversazionale</h4>
+              <p class="plan-desc">L'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti, prequalifica le richieste. Tutto il backend del Piano A — ma in tempo reale.</p>
+            </div>
+            <ul class="plan-list">
+              <li>Risposta dal primo squillo · niente attesa, niente "bip" della segreteria</li>
+              <li>Conversazione bidirezionale · domande di chiarimento, conferme dirette</li>
+              <li>Pre-qualificazione del lead durante la chiamata stessa</li>
+              <li><strong>Tutto il backend del Piano A incluso:</strong> trascrizione, estrazione dati, ticket, reportistica</li>
+            </ul>
+            <div class="plan-subnote">Costo aggiuntivo · sui minuti di conversazione effettiva</div>
+
+            <div class="price-pack-grid">
+              <div class="price-pack">
+                <div class="price-pack-head">
+                  <span class="price-pack-name">Interazione standard</span>
+                  <span class="price-pack-amount">€ 0,15 <small>/min</small></span>
+                </div>
+                <ul class="price-pack-list">
+                  <li>Conversazione realtime con AI</li>
+                  <li>Report post-conversazione: <strong>sola trascrizione</strong></li>
+                </ul>
               </div>
-              <ul class="price-pack-list">
-                <li>Interazione con AI in tempo reale</li>
-                <li>Trascrizione completa inclusa</li>
-                <li><strong>Report analitico:</strong> l'LLM genera un'analisi strutturata post-conversazione, definita in fase di setup</li>
-              </ul>
+              <div class="price-pack recommended">
+                <div class="price-pack-tag">Consigliato</div>
+                <div class="price-pack-head">
+                  <span class="price-pack-name">Interazione + post-analisi</span>
+                  <span class="price-pack-amount">€ 0,20 <small>/min</small></span>
+                </div>
+                <ul class="price-pack-list">
+                  <li>Conversazione realtime con AI</li>
+                  <li>Trascrizione completa inclusa</li>
+                  <li><strong>Report analitico:</strong> l'LLM genera un'analisi strutturata post-conversazione, definita in fase di setup</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -1470,6 +1536,14 @@
         </div>
       </div>
 
+      <div class="pricing-cross">
+        <div class="pricing-cross-eyebrow">Standard incluso · Custom a progetto</div>
+        <h3>Una logica unica per tutti i servizi del catalogo</h3>
+        <p>Il listino sopra vale trasversalmente per tutti i servizi Bintware — voicemail aziendale, supporto al medico durante la visita, analisi documentale, agenti vocali. <strong>Il report standard di ogni servizio è incluso nel costo a consumo</strong>: niente sovrapprezzi sul singolo report, niente sorprese in fattura.</p>
+        <p>Per pipeline su misura — flussi non standard, integrazioni con software gestionali specifici, modelli costruiti sui dati del cliente, analisi longitudinali con dataset proprietari — il costo si concorda a progetto secondo il listino enterprise (voce 04). È la differenza tra "compri un servizio dal catalogo" e "ci progetti insieme un sistema dedicato".</p>
+        <p>In nessun caso il servizio si interrompe per superamento di soglie di consumo. Avvisi al 70% e al 90%, conversazione esplicita, mai blocchi automatici.</p>
+      </div>
+
       <div class="price-disclaimer">
         I prezzi sono indicativi e soggetti a variazioni in base alle modifiche dei listini di Google Cloud Platform e dei provider di modelli LLM.
       </div>
@@ -1478,12 +1552,45 @@
   </div>
 </section>
 
+<!-- ACCESSO AI DATI / APP -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="mono">Accesso ai dati — 09</span>
+        <h2>I tuoi dati, <em style="font-style:normal;color:var(--accent)">sempre con te.</em></h2>
+      </div>
+      <p class="lede">Trascrizioni, ticket strutturati, report e analisi non restano in una console isolata. Sono accessibili in ogni momento da tre interfacce diverse sullo stesso database — pensate per momenti d'uso diversi, ma con le stesse regole di sicurezza e conformità.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="num">01</div>
+        <div class="title">Console web Bintware</div>
+        <div class="desc">Interfaccia primaria di gestione, accessibile da qualunque browser senza installazione. Pensata per l'uso operativo durante la giornata di lavoro: revisione di trascrizioni, controllo dei ticket aperti, lettura dei report.</div>
+      </div>
+      <div class="metric">
+        <div class="num">02</div>
+        <div class="title">App desktop · Windows e macOS</div>
+        <div class="desc">Applicativo nativo per uso intensivo: trascrizione live in studio o in azienda, ricerca veloce sull'archivio, esportazioni. Per chi lavora ogni giorno con flussi strutturati e vuole un'esperienza più reattiva del browser.</div>
+      </div>
+      <div class="metric">
+        <div class="num">03</div>
+        <div class="title">App mobile · Android e iOS</div>
+        <div class="desc">Per consultazioni in mobilità. Rivedere una visita prima di un consulto, controllare lo storico di un cliente fuori sede, condividere rapidamente un report con un collega. I dati ti seguono, sempre nel perimetro GDPR.</div>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;font-size:14.5px;line-height:1.6;color:var(--ink-mute);max-width:720px">Tutti i canali rispettano le stesse regole di accesso — autenticazione, profili autorizzativi distinti per ruolo, log degli accessi conservati per le esigenze di audit GDPR. I dati restano su Google Cloud <code>europe-west8</code> (Milano), niente trasferimenti extra-UE.</p>
+  </div>
+</section>
+
 <!-- COME OPERIAMO / PRINCIPI -->
 <section class="block">
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Come operiamo — 09</span>
+        <span class="mono">Come operiamo — 10</span>
         <h2>Tre principi <em style="font-style:normal;color:var(--accent)">che teniamo fermi.</em></h2>
       </div>
       <p class="lede">In che cosa siamo diversi da una grande consulenza, da un freelance singolo o da una SaaS pacchettizzata.</p>
@@ -1514,7 +1621,7 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <span class="mono">Blog — 10</span>
+        <span class="mono">Blog — 11</span>
         <h2>Appunti <em style="font-style:normal;color:var(--accent)">dallo studio.</em></h2>
       </div>
       <p class="lede">
@@ -1558,7 +1665,7 @@
 <section class="cta" id="contatti">
   <div class="wrap">
     <div class="cta-inner">
-      <span class="mono">Contatti — 11</span>
+      <span class="mono">Contatti — 12</span>
       <h2 style="margin-top:24px">Parliamone, <em style="font-style:normal;color:var(--accent)">senza impegno.</em></h2>
       <p>Trenta minuti di chiamata, gratuiti, per capire insieme se ha senso lavorare insieme. Vi raccontiamo come affronteremmo il vostro caso d'uso, con quali tecnologie, in che tempi e a quali costi.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">

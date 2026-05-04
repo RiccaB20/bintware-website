@@ -350,6 +350,28 @@
   .price-pack-list li::before{content:'';position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .price-pack-list li strong{color:var(--ink);font-weight:500}
 
+  /* Piano A vs Piano B (voicemail) */
+  .plan{padding:28px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:12px;display:flex;flex-direction:column;gap:18px}
+  .plan + .plan{margin-top:18px}
+  .plan-evolution{border-color:color-mix(in oklch,var(--accent) 35%,var(--line-soft));background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 8%,var(--bg-3)),var(--bg-3))}
+  .plan-head{display:flex;flex-direction:column;gap:8px}
+  .plan-eyebrow{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.12em;text-transform:uppercase}
+  .plan-evolution .plan-eyebrow{color:var(--accent)}
+  .plan-title{font-family:var(--display);font-size:20px;font-weight:500;letter-spacing:-0.015em;margin:0;color:var(--ink)}
+  .plan-desc{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-dim);max-width:62ch}
+  .plan-body{display:flex;flex-direction:column;gap:16px}
+  .plan-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .plan-list li{font-size:14px;line-height:1.55;color:var(--ink-dim);padding-left:20px;position:relative}
+  .plan-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--ink-mute)}
+  .plan-evolution .plan-list li::before{background:var(--accent)}
+  .plan-list li strong{color:var(--ink);font-weight:500}
+  .plan-cost{display:flex;justify-content:space-between;align-items:baseline;padding:16px 18px;background:var(--bg-2);border-radius:8px;border:1px solid var(--line-soft);gap:14px;flex-wrap:wrap}
+  .plan-cost-label{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
+  .plan-cost-amount{font-family:var(--display);font-size:18px;font-weight:500;color:var(--ink)}
+  .plan-evolution .plan-cost-amount{color:var(--accent)}
+  .plan-note{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-mute);font-style:italic}
+  .plan-subnote{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
+
   .price-perdiem{padding:20px;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:10px}
   .price-perdiem-head{padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--line-soft)}
   .price-perdiem-head .mono{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
@@ -360,6 +382,14 @@
 
   .price-disclaimer{margin-top:8px;padding:18px 20px;border:1px dashed var(--line-soft);border-radius:10px;font-size:13px;line-height:1.55;color:var(--ink-mute);background:transparent}
 
+  /* Pricing trasversale — riusabile in homepage e pillar settoriali */
+  .pricing-cross{margin-top:24px;padding:24px 28px;border:1px solid var(--line-soft);border-radius:12px;background:var(--bg-2)}
+  .pricing-cross-eyebrow{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+  .pricing-cross h3{font-family:var(--display);font-size:20px;font-weight:500;color:var(--ink);margin:0 0 12px;letter-spacing:-0.01em}
+  .pricing-cross p{margin:0 0 10px;font-size:15px;line-height:1.65;color:var(--ink-dim)}
+  .pricing-cross p:last-child{margin-bottom:0}
+  .pricing-cross strong{color:var(--ink);font-weight:500}
+
   @media (max-width:900px){
     .price-row{grid-template-columns:1fr;gap:18px;padding:24px}
     .price-row-num{font-size:28px;padding-top:0}
@@ -368,6 +398,8 @@
     .price-upgrade-grid{grid-template-columns:1fr}
     .price-pack-grid{grid-template-columns:1fr}
     .price-perdiem-row{flex-direction:column;align-items:flex-start;gap:4px}
+    .plan{padding:22px}
+    .plan-cost{flex-direction:column;align-items:flex-start;gap:6px}
   }
 
   /* CTA + CONTACT */

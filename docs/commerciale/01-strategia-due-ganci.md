@@ -42,11 +42,14 @@ Il gancio voicemail si articola in **due piani distinti, presentati al cliente f
 - **Differenza vs voicemail**: qui il linguaggio AI si può usare, ma sempre accoppiato a parole come "supporto", "tracciabilità", "etica", "GDPR", "privacy minori".
 - **Settori prioritari**: dettaglio in [03-icp-educazione.md](03-icp-educazione.md).
 
-## Cosa NON facciamo (per ora)
+## Dove concentriamo le energie attive
 
-- Niente sanità privata e legal come ganci primari, anche se il sito li cita: cicli d'acquisto lunghi, vincoli regolatori complessi (sanità: GDPR + dati sanitari + responsabilità clinica; legal: segreto professionale + responsabilità deontologica), rischio di bruciare risorse senza contratti chiusi nei primi mesi. Restano nel catalogo come case study aspirazionali, non come target di acquisizione attivo.
-- Niente generalismo "AI per aziende": ogni euro speso in contenuti generici è un euro tolto ai due cluster verticali.
-- Niente outbound a freddo: scelta esplicita del founder. La pipeline si costruisce via inbound (SEO+blog) e network organico.
+Questo paragrafo descrive come allochiamo tempo e budget di contenuti, non un divieto sui settori che si possono servire.
+
+- **Energie attive di acquisizione** (contenuti SEO dedicati, asset settoriali, articoli blog mirati, campagne di networking): focalizzate sui due ganci sopra (voicemail con focus automotive · educazione/scuola). Concentrare lì gli sforzi rende il footprint inbound significativo nei primi 12 mesi.
+- **Settori serviti su inbound spontaneo**: sanità privata, studi legali, e altri settori che il sito già cita come scenari. Hanno asset esistenti (scenari in homepage, immagini, demo) e una pillar settoriale dedicata può funzionare come **atterraggio serio per chi arriva spontaneamente** senza diventare una campagna di acquisizione attiva. Vengono serviti normalmente con il listino del catalogo. La scelta di non investire energie attive su questi settori nei primi mesi è dettata da cicli d'acquisto più lunghi (legal/sanità) e da vincoli regolatori più complessi che rendono il ROI commerciale più difficile da prevedere — ma non è un divieto: se arriva un'opportunità seria, si chiude.
+- **Niente generalismo "AI per aziende"**: ogni euro speso in contenuti generici è un euro tolto ai due cluster verticali e ai settori già esposti.
+- **Niente outbound a freddo**: scelta esplicita del founder. La pipeline si costruisce via inbound (SEO+blog) e network organico.
 
 ## Come si combinano operativamente
 

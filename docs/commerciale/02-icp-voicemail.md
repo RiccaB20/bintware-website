@@ -19,7 +19,7 @@ Profilo del cliente ideale per il gancio voicemail. Serve a focalizzare contenut
 - **Carrozzerie**: chiamate di sinistro, preventivi, gestione tempi di consegna, dialogo con periti assicurativi. Decisore: titolare.
 - **Ricambisti e magazzini ricambi B2B**: chiamate da officine clienti per disponibilità pezzi, ordini urgenti. Decisore: titolare o responsabile vendite.
 
-**Espansione organica futura** (settori adiacenti, NON target attivi nei primi 12 mesi): gli stessi pattern di pain (chiamate perse, fuori orario, filtraggio urgenze) sono replicabili in altri settori. Vanno serviti se arrivano in inbound spontaneo dal blog o dal sito, ma non si producono contenuti o asset dedicati per loro:
+**Settori adiacenti** (gli stessi pattern di pain — chiamate perse, fuori orario, filtraggio urgenze — sono replicabili). Vengono serviti normalmente quando arrivano in inbound spontaneo. Nei primi 12 mesi non si producono per loro contenuti SEO o asset dedicati, perché le energie attive di acquisizione restano sul mondo automotive — ma se un'opportunità arriva, si chiude con il listino del catalogo:
 
 - Studi professionali medio-piccoli (commercialisti, geometri, notai, consulenti del lavoro).
 - Idraulici, elettricisti, manutentori, artigiani strutturati.
@@ -28,7 +28,7 @@ Profilo del cliente ideale per il gancio voicemail. Serve a focalizzare contenut
 - Cliniche veterinarie, studi dentistici e poliambulatori privati (con cautela su data residency UE per dati sanitari).
 - Servizi di assistenza domiciliare.
 
-**Regola operativa**: se un lead di un settore non automotive arriva spontaneamente da SEO/blog o da rete personale, lo si serve normalmente con il listino del sito. Se per acquisirlo serve creare contenuti dedicati o asset settoriali, le energie restano sul mondo automotive fino alla chiusura dei primi 5-10 contratti.
+**Regola operativa**: lead di settori non automotive che arrivano spontaneamente da SEO/blog o da rete personale si servono normalmente con il listino del catalogo. La regola riguarda solo dove si investono energie attive di acquisizione (contenuti dedicati, asset settoriali, articoli mirati), che nei primi 5-10 contratti restano concentrate sul mondo automotive per non frammentare lo sforzo.
 
 ## Decisore tipico
 
