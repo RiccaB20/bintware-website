@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- ============================================================
+     SCHELETRO ARTICOLO — Cluster A (voicemail) · Sotto-cluster automotive
+     Articolo n. 2 del piano editoriale (vedi docs/commerciale/05-canali.md)
+     Stato: bozza, contenuti da inserire.
+     PRIMA DI METTERE ONLINE PUBBLICAMENTE:
+       1. Sostituire tutti i blocchi marcati [DA SCRIVERE: ...]
+       2. Compilare le date reali (datePublished, dateModified)
+       3. Rimuovere il <meta name="robots" content="noindex,follow">
+       4. Aggiungere l'URL https://bintware.com/blog/voicemail-concessionarie-auto.html a sitemap.xml
+       5. Aggiornare la card in blog.html: rimuovere "Prossimamente", aggiungere link funzionante
+     ============================================================ -->
+<meta name="robots" content="noindex,follow">
+
+<title>Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware</title>
+<meta name="description" content="Quante chiamate perde una concessionaria in un mese, quanto valgono in mancato margine, e come una voicemail intelligente recupera test drive e richieste fuori orario senza sostituire il personale.">
+
+<meta property="og:title" content="Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware">
+<meta property="og:description" content="I numeri delle chiamate perse in concessionaria, il costo reale in mancato margine, e cosa cambia quando il telefono risponde anche fuori orario.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bintware.com/blog/voicemail-concessionarie-auto.html">
+<meta property="og:site_name" content="Bintware">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://bintware.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="Riccardo Baldacci">
+<meta property="article:published_time" content="2026-XX-XX">
+<meta property="article:section" content="Caso d'uso">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead · Bintware">
+<meta name="twitter:description" content="I numeri delle chiamate perse in concessionaria e cosa cambia quando il telefono risponde anche fuori orario.">
+<meta name="twitter:image" content="https://bintware.com/og-image.png">
+
+<link rel="canonical" href="https://bintware.com/blog/voicemail-concessionarie-auto.html">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<meta name="theme-color" content="#272a3a">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Voicemail per concessionarie auto: prenotazioni e richieste fuori orario senza perdere lead",
+  "description": "I numeri delle chiamate perse in concessionaria, il costo reale in mancato margine, e cosa cambia quando il telefono risponde anche fuori orario.",
+  "image": "https://bintware.com/og-image.png",
+  "datePublished": "2026-XX-XX",
+  "dateModified": "2026-XX-XX",
+  "author": {
+    "@type": "Person",
+    "name": "Riccardo Baldacci",
+    "jobTitle": "Co-founder · Strategia & Architettura",
+    "url": "https://bintware.com/#riccardo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bintware",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bintware.com/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bintware.com/blog/voicemail-concessionarie-auto.html"
+  },
+  "inLanguage": "it-IT",
+  "articleSection": "Caso d'uso",
+  "keywords": "voicemail concessionaria auto, chiamate perse concessionario, segreteria virtuale automotive, gestione chiamate fuori orario concessionaria"
+}
+</script>
+
+<!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Stili locali per le tabelle/box numerici dell'articolo -->
+<style>
+  .article-body table.numbers{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+  .article-body table.numbers th,
+  .article-body table.numbers td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line, rgba(255,255,255,.08))}
+  .article-body table.numbers th{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--ink);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+  .article-body table.numbers td{color:var(--ink-dim)}
+  .article-body table.numbers tr:last-child td{border-bottom:none}
+  .article-body table.numbers .total{font-weight:600;color:var(--ink)}
+
+  .calc-box{margin:28px 0;padding:24px;border:1px solid var(--line, rgba(255,255,255,.12));border-radius:12px;background:rgba(255,255,255,.02)}
+  .calc-box .label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px}
+  .calc-box .formula{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink);line-height:1.6}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <a href="../index.html" class="logo">
+      <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+      <span>Bintware</span>
+    </a>
+    <div class="links" id="nav-links">
+      <a href="../index.html#prodotto">Manifesto</a>
+      <a href="../index.html#capacita">Capacità</a>
+      <a href="../index.html#tecnologia">Architettura</a>
+      <a href="../index.html#casi">Scenari</a>
+      <a href="../index.html#lavoriamo">Lavoriamo</a>
+      <a href="../index.html#listino">Listino</a>
+      <a href="../blog.html" style="color:var(--ink)">Blog</a>
+      <a href="../index.html#contatti">Contatti</a>
+    </div>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="wrap">
+    <div class="article-meta">
+      <span class="category">Caso d'uso</span>
+      <span class="sep">·</span>
+      <span>[DA SCRIVERE: data pubblicazione, es. "12 maggio 2026"]</span>
+      <span class="sep">·</span>
+      <span class="article-read-time">[DA SCRIVERE: tempo di lettura, es. "7 min di lettura"]</span>
+    </div>
+    <h1>[DA SCRIVERE: titolo principale — esempio dal piano: "Voicemail per concessionarie auto: prenotazioni test drive e richieste fuori orario, gestite senza perdere lead."]</h1>
+    <p class="article-dek">[DA SCRIVERE: dek di 2-3 righe — anticipa il messaggio, dichiara cosa il lettore troverà (numeri + esempio concreto + analisi qualitativa).]</p>
+    <div class="article-author-row">
+      <div class="article-author">
+        <div>
+          <div class="author-name">[DA SCRIVERE: autore, es. "Riccardo Baldacci"]</div>
+          <div class="author-role">[DA SCRIVERE: ruolo]</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="wrap">
+
+    <!-- INTRO -->
+    <p>[DA SCRIVERE: 1-2 paragrafi di apertura — partire da un fatto osservabile, non da una claim astratta. Es. "In una concessionaria media italiana entrano X chiamate al giorno, di cui Y restano senza risposta. La gran parte di queste sono richieste preliminari di test drive o info su un modello — esattamente le chiamate che diventano un appuntamento se gestite, e zero se ignorate."]</p>
+
+    <p>[DA SCRIVERE: anticipare cosa il lettore troverà — i numeri sotto, l'esempio del concessionario tipo, l'analisi qualitativa di cosa cambia quando una chiamata fuori orario riceve comunque una risposta.]</p>
+
+    <h2>I numeri</h2>
+
+    <p>[DA SCRIVERE: paragrafo di setup — dichiarare le ipotesi su cui si basa la simulazione (concessionario di medie dimensioni, X chiamate/giorno, Y giorni lavorativi/mese, Z% di chiamate non risposte in fasce di picco e fuori orario). Citare le fonti dove possibile (es. medie di settore, dati Anfia, esperienza diretta su clienti).]</p>
+
+    <table class="numbers">
+      <thead>
+        <tr>
+          <th>Voce</th>
+          <th>Valore tipo</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chiamate giornaliere in entrata</td>
+          <td>[DA SCRIVERE]</td>
+          <td>[DA SCRIVERE: ipotesi]</td>
+        </tr>
+        <tr>
+          <td>Chiamate non risposte (picchi + fuori orario)</td>
+          <td>[DA SCRIVERE: %]</td>
+          <td>[DA SCRIVERE]</td>
+        </tr>
+        <tr>
+          <td>Tasso di conversione chiamata → appuntamento</td>
+          <td>[DA SCRIVERE: %]</td>
+          <td>[DA SCRIVERE]</td>
+        </tr>
+        <tr>
+          <td>Margine medio per veicolo venduto</td>
+          <td>[DA SCRIVERE: €]</td>
+          <td>[DA SCRIVERE: ordine di grandezza realistico]</td>
+        </tr>
+        <tr class="total">
+          <td>Mancato margine annuo (stima)</td>
+          <td>[DA SCRIVERE: €]</td>
+          <td>Solo da chiamate non risposte recuperabili</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="calc-box">
+      <div class="label">Formula di base</div>
+      <div class="formula">chiamate/giorno × giorni/mese × % non risposte × % conversione × margine medio = mancato margine/mese</div>
+    </div>
+
+    <p>[DA SCRIVERE: lettura del numero — non promettere di recuperare il 100%, essere onesti su quale frazione è realisticamente recuperabile dalla voicemail intelligente (es. il 30-50% delle non risposte diventa lead richiamabile entro 24h). Il numero finale onesto è quello.]</p>
+
+    <h2>Cosa NON dicono i numeri</h2>
+
+    <p>[DA SCRIVERE: qui arriva l'analisi qualitativa. I numeri sono utili ma riduttivi. Tre o quattro elementi che non si misurano facilmente ma contano:]</p>
+
+    <ul>
+      <li><strong>[DA SCRIVERE: punto qualitativo 1]</strong> — es. la reputazione del marchio quando le recensioni Google citano "non rispondono al telefono". Il danno è permanente e si vede solo nel medio termine.</li>
+      <li><strong>[DA SCRIVERE: punto qualitativo 2]</strong> — es. il tempo del titolare/responsabile vendite che la sera deve gestire i messaggi vocali ricevuti durante il giorno. Costo opportunità raramente messo a bilancio.</li>
+      <li><strong>[DA SCRIVERE: punto qualitativo 3]</strong> — es. il prospect che, quando non riceve risposta, chiama subito un'altra concessionaria. La chiamata persa non è "rimandata", è "regalata al concorrente".</li>
+      <li><strong>[DA SCRIVERE: punto qualitativo 4]</strong> — es. la differenza fra "messaggio in segreteria standard" e "messaggio strutturato che il responsabile vendite legge in 10 secondi e richiama in mattinata". Il secondo è un appuntamento, il primo è un altro telefono che squilla domani.</li>
+    </ul>
+
+    <blockquote>[DA SCRIVERE: una frase memorabile da virgolettare. Es. "Una chiamata persa non è rimandata: è regalata al concorrente di fronte." Tono diretto, utile in social.]</blockquote>
+
+    <h2>Un esempio concreto</h2>
+
+    <p>[DA SCRIVERE: scenario pratico di una concessionaria immaginaria ma plausibile (es. mono-marca, 4 venditori, periferia di una città di provincia). Raccontarne una settimana tipo: lunedì mattina ondata di chiamate post-weekend, sabato pomeriggio fuori orario, lancio nuovo modello a settembre. Mostrare cosa cambia con la voicemail intelligente in ognuna delle tre situazioni.]</p>
+
+    <p>[DA SCRIVERE: continua il racconto, mantenendolo ancorato a numeri ragionevoli ma raccontato come storia.]</p>
+
+    <h2>Cosa fa una voicemail intelligente, in pratica</h2>
+
+    <p>[DA SCRIVERE: tre o quattro funzioni concrete, descritte come le vede il titolare, non come le vede il fornitore. Niente "AI", niente "LLM". Esempi:]</p>
+
+    <ul>
+      <li>[DA SCRIVERE: risposta sempre, anche fuori orario, con un messaggio brandizzato e umano.]</li>
+      <li>[DA SCRIVERE: trascrizione del messaggio in 30 secondi, ricevuta via email/SMS/dashboard.]</li>
+      <li>[DA SCRIVERE: categorizzazione: test drive, info modello, post-vendita, urgenza. Ogni categoria al referente giusto.]</li>
+      <li>[DA SCRIVERE: report giornaliero al titolare: cosa è successo, cosa va richiamato, niente chiamate dimenticate.]</li>
+    </ul>
+
+    <h2>Limiti onesti</h2>
+
+    <p>[DA SCRIVERE: paragrafo che costruisce credibilità dichiarando cosa la voicemail NON fa. Es. non sostituisce un commerciale, non chiude la vendita, non gestisce conversazioni complesse in tempo reale. È un filtro intelligente per le chiamate, non un agente conversazionale. Onestà = autorevolezza.]</p>
+
+    <h2>Quanto costa</h2>
+
+    <p>[DA SCRIVERE: rimando trasparente al listino, niente sorprese. Setup €1.500 una tantum, canone €250/mese, consumo a minuto €0,15-0,20. Calcolo break-even: con un margine medio per auto di X €, recuperare anche un solo cliente in più al trimestre ripaga l'intero anno di canone. Linkare alla pillar.]</p>
+
+    <p><a href="../voicemail-aziendale.html">Tutti i dettagli sulla voicemail intelligente Bintware per il settore automotive</a> sono nella pagina dedicata, con FAQ e modalità di partenza.</p>
+
+    <h2>Quando ha senso parlarne</h2>
+
+    <p>[DA SCRIVERE: chiusura pragmatica — non un push di vendita, ma un invito a una discovery call gratuita. Spiegare cosa succede in 30 minuti: si guardano i numeri reali della concessionaria, si stima il recuperabile, si decide insieme se ha senso provare.]</p>
+
+  </div>
+</article>
+
+<!-- ARTICLE FOOTER -->
+<div class="article-footer">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back">← Torna al blog</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="article-back" style="color:var(--ink-dim)">Vuoi discuterne con noi? Prenota una call →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="inner">
+      <a href="../index.html" class="logo">
+        <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+        <span>Bintware</span>
+      </a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span>© 2026 Bintware · Riccardo &amp; Luca Baldacci</span>
+        <span>P.IVA IT 07207160487</span>
+        <span>Stack: Google Cloud · Vertex AI</span>
+        <a href="../privacy.html" style="color:var(--ink-mute)">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

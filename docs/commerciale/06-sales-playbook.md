@@ -32,6 +32,13 @@ Ramo **voicemail** (se contesto = aziende, chiamate, telefonate perse):
 - "Quando un cliente chiama e non risponde nessuno, cosa fate / cosa fa lui?"
 - "Avete mai contato quanti clienti perdete perché non avete risposto?"
 
+Domande aggiuntive per indirizzare il **piano (A o B)**, da fare dopo le precedenti — vedi criteri completi in `02-icp-voicemail.md`:
+
+- "Avete picchi di chiamate concentrati o un flusso più costante? Se sì, in quali momenti?" → picchi forti + non gestibili = segnale Piano B.
+- "Quando un cliente lascia un messaggio, riuscite tipicamente a richiamarlo entro 1-2 ore o serve molto più tempo?" → callback rapido funziona = Piano A può bastare; callback lento = Piano B aiuta.
+- "I vostri clienti che chiamano si aspettano una risposta immediata (es. urgenze, conferme appuntamenti)? O accettano un richiamo nel giro di un paio d'ore?" → risposta immediata necessaria = Piano B.
+- "Vi sembrerebbe strano se i vostri clienti, chiamando, sentissero una voce automatica che chiede di cosa hanno bisogno e prende l'appuntamento? O preferireste che lasciassero un messaggio classico, con voi che vedete il riassunto in tempo reale e richiamate?" → la risposta a questa è il filtro culturale più affidabile tra i due piani.
+
 Ramo **educazione** (se contesto = scuola, cooperativa, educatori):
 - "Quanti operatori / insegnanti coinvolti nel processo che vorreste migliorare?"
 - "Oggi quanto tempo dedicano a [reportistica / verbali / osservazioni]?"
@@ -69,8 +76,9 @@ Se le risposte sono evasive su tutti e tre i punti (decisione, tempi, budget), i
 Obiettivo: chiudere con un'azione concreta, mai con "ti mando una mail e vediamo".
 
 Opzione A — **Lead caldo, fit chiaro, voicemail**:
-- "Ti faccio arrivare entro 48h una proposta scritta basata sui numeri di oggi, con il listino completo (setup, canone fisso, consumo a minuto) e una stima di ROI a 12 mesi. Possiamo fissare ora una call di 30 minuti tra 7 giorni per discuterla insieme?"
+- "Ti faccio arrivare entro 48h una proposta scritta basata sui numeri di oggi, con **entrambi i piani** affiancati (analisi e realtime), una raccomandazione esplicita su quale partire dato quello che mi hai detto, e una stima di ROI a 12 mesi per ognuno. Possiamo fissare ora una call di 30 minuti tra 7 giorni per discuterla insieme?"
 - Fissare data e ora subito sul calendario condiviso, non rimandare.
+- **Mai mandare la proposta con un solo piano** se i numeri non lo giustificano in modo netto. La trasparenza preventiva sui due livelli è il principio del modello commerciale (vedi `01-strategia-due-ganci.md`).
 
 Opzione B — **Lead caldo, fit chiaro, educazione**:
 - "Vista la sensibilità del contesto, ti propongo un Architecture Review da remoto di 2 ore, da fissare nelle prossime 2-3 settimane, con te e il referente privacy. Ti restituisco un documento di valutazione. Costo: gratuito se vi muovete entro 30 giorni a una proposta o a un MVP, altrimenti €X. Ti suona equo?"
@@ -96,7 +104,9 @@ Risposta:
 ### "Costa troppo / non abbiamo budget."
 
 Risposta voicemail:
-- "Capisco. Facciamo un esercizio veloce: hai detto che perdete circa 12.000€/mese di fatturato in chiamate non gestite, cioè 144.000€ all'anno. Il nostro listino è di €1.500 una tantum di setup e €250/mese fissi di infrastruttura cloud, più un costo per minuto di conversazione AI di €0,15 (modalità standard) o €0,20 (con report post-analisi). Anche immaginando un anno di consumo non banale, restiamo abbondantemente sotto i 10.000€ di costo annuale totale. Se il sistema recuperasse anche solo il 10% delle chiamate perse, si ripaga molto presto. Il problema vero non è il prezzo, è capire se funziona davvero per voi. Per questo nei primi 60-90 giorni monitoriamo insieme i numeri reali: se non tornano, riparliamo della struttura del contratto. E ti dico subito una cosa importante: il servizio non si spegne se sfori una soglia di consumo. Tu imposti un budget, ricevi avvisi, decidi tu come procedere. Niente sorprese."
+- "Capisco. Prima di tutto: sono io che ti devo dire bene cosa abbiamo, perché non abbiamo un solo prezzo, ne abbiamo due. Hai detto che perdete circa 12.000€/mese di fatturato in chiamate non gestite, cioè 144.000€ all'anno. Il setup e il canone sono uguali per tutti e due i piani: €1.500 una tantum, €250 al mese. Quello che cambia è cosa fa il sistema. Nel piano analisi, il chiamante lascia un messaggio come a una segreteria normale, l'AI lo trascrive e lo struttura, voi vi vedete arrivare un ticket pulito col motivo della chiamata e il numero da richiamare. Tutto incluso nel canone, fino a circa mille messaggi al mese — niente costi a consumo, niente sorprese. Nel piano realtime, in più, l'AI risponde dal primo squillo, dialoga col chiamante e conferma appuntamenti: qui paghi €0,15-0,20 al minuto di conversazione effettiva, ma riduci drasticamente le chiamate abbandonate. Quale dei due ha più senso provare prima dipende dai vostri picchi: se ci sono molte chiamate concentrate che oggi vanno perse perché nessuno risponde, il realtime ha più ROI; se invece il problema è ricostruire chi ha chiamato senza dover ascoltare 40 messaggi vocali a fine giornata, il piano analisi vi basta. Importante: in entrambi i casi il servizio non si spegne se sfori una soglia. Imposti il tuo limite, ricevi avvisi, decidi tu. Niente sorprese."
+
+In pratica: l'obiezione prezzo è anche l'occasione per **mostrare al cliente che stiamo applicando la trasparenza dei due piani**. Se rispondi solo con i numeri del Piano B, hai perso l'occasione di proporre il Piano A — e il cliente non saprà mai che esisteva.
 
 Risposta educazione:
 - "Posso chiederti su quale ordine di grandezza vi muovete? A volte la nostra proposta esce di scala perché immaginiamo enterprise e voi siete piccoli, e in quel caso possiamo fare un MVP più contenuto. Altre volte è un problema di priorità di spesa. Se mi dai un riferimento posso dire onestamente se ha senso o no andare avanti."
@@ -105,6 +115,7 @@ Risposta educazione:
 
 Risposta:
 - "Capita spesso, e onestamente è una cosa sana da dire. Posso girarti la domanda: cosa vi farebbe sentire pronti? È una questione di cultura interna, di formazione, di prove di altri prima di voi, di normativa? Se mi dici cos'è, vediamo se possiamo starci dentro o se è effettivamente meglio aspettare."
+- Specifico voicemail, dopo la prima risposta: "Per inciso: se il blocco è il fatto che 'i miei clienti non vogliono parlare con un robot', abbiamo un piano in cui questo non succede. Si chiama piano analisi: dal lato del chiamante è una segreteria normalissima — sente la voce vostra (o quella che decidiamo insieme), lascia il messaggio, riattacca. L'AI lavora dietro: trascrive il messaggio, lo struttura, lo manda a chi deve richiamare. Per i vostri clienti non cambia niente, per voi cambia molto. Vuoi che ne parliamo?"
 
 ### "Vogliamo aspettare di vedere come va con altri."
 
@@ -123,8 +134,8 @@ Risposta:
 Massimo 3-5 pagine. Mai allegati infiniti.
 
 1. **Una pagina**: il pain del cliente nei suoi termini (le sue parole, ripresi dalla discovery), tradotto in numeri.
-2. **Una pagina**: cosa proponiamo, in italiano semplice. Niente acronimi tecnici se il decisore è non-IT.
-3. **Una pagina**: prezzo, cosa è incluso, cosa è escluso. Formato tabellare. Niente sorprese.
+2. **Una pagina**: cosa proponiamo, in italiano semplice. Niente acronimi tecnici se il decisore è non-IT. Per il gancio voicemail: presentare **entrambi i piani** (analisi e realtime), descritti dal lato del cliente, con focus su "cosa cambia per chi chiama" e "cosa cambia per voi che ricevete".
+3. **Una pagina**: prezzo, cosa è incluso, cosa è escluso. Formato tabellare. Per voicemail: **tabella confronto a due colonne** (Piano A | Piano B), stessi parametri (setup, canone, modello consumo, esempio costo annuo), niente sorprese. Sotto la tabella, **una raccomandazione esplicita scritta** ("Dato i numeri che ci hai dato, ti consigliamo di partire dal piano [A/B] perché…"). La scelta finale resta al cliente, ma la guida è chiara.
 4. **Mezza pagina**: tempi (kickoff entro X, MVP entro Y, production entro Z) e responsabilità reciproche.
 5. **Mezza pagina**: cosa serve da loro per partire (un file, un account, una persona referente). Lista di 3-5 punti operativi.
 6. **In fondo**: validità della proposta (es. 30 giorni), riferimento DPA, link al sito per dettagli tecnici, firma.

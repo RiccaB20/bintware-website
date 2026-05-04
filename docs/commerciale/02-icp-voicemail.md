@@ -48,7 +48,8 @@ In entrambi i casi il responsabile IT (se esiste, tipicamente nelle realtà più
 
 ## Linguaggio da usare (e da NON usare)
 
-**Da usare**:
+**Apertura discovery (entrambi i piani)** — niente AI come prima parola, si parte sempre dal pain operativo:
+
 - "Non perdere chiamate"
 - "Rispondere fuori orario senza pagare uno stipendio"
 - "Filtrare le urgenze vere dal rumore"
@@ -56,21 +57,59 @@ In entrambi i casi il responsabile IT (se esiste, tipicamente nelle realtà più
 - "Si paga per quello che serve, niente abbonamenti telefonici aggiuntivi"
 - "Funziona col centralino che avete già"
 
-**Da evitare nelle prime conversazioni**:
-- "Intelligenza artificiale", "AI", "LLM", "Vertex AI", "Google Cloud"
+**Da evitare in apertura (entrambi i piani)**:
+- "Intelligenza artificiale", "AI", "LLM", "Vertex AI", "Google Cloud" come **slogan**
 - "Trascrizione real-time", "speech-to-text", "NLP"
 - "Multi-tenant", "data residency", "Vector DB"
 
-Il termine "AI" può rientrare a discovery avanzata, quando il cliente capisce che dietro c'è qualcosa di più intelligente di una segreteria normale e lo chiede esplicitamente. Non è negato, è dosato.
+**Linguaggio specifico Piano A — voicemail analisi**: l'AI può restare sotto il cofano anche in trattativa avanzata. Si parla di "messaggi che arrivano già trascritti", "ticket strutturato in email", "campi compilati automaticamente" senza dover nominare la tecnologia. Il cliente compra una "segreteria evoluta che capisce e prioritizza", non un prodotto AI. Se lo chiede esplicitamente, si conferma con onestà — ma non si forza.
+
+**Linguaggio specifico Piano B — voicemail realtime**: qui il termine "AI" o "voce automatica" diventa esplicito **al momento giusto**, cioè quando si descrive il dialogo in tempo reale. Senza nominarlo, il prodotto non si capisce. La regola è introdurlo come strumento ("una voce automatica che risponde, capisce, conferma appuntamenti"), non come bandiera ("la rivoluzione dell'AI conversazionale"). Restano vietati i tecnicismi ("Vertex Live", "WebSocket bidirezionale") salvo l'IT del cliente li chieda. Per concessionarie e officine, l'analogia utile è "come quando chiami una compagnia aerea o una banca grossa e ti risponde una voce che capisce cosa vuoi" — la tecnologia è familiare, non aliena.
+
+In ogni caso il principio è: **dosato, non negato**. Si nomina l'AI quando serve a chiarire il prodotto, mai prima. E mai si descrive una conversazione realtime con paroloni come "empatia" o "naturalezza umana" — sono claim che il cliente sentirà subito come venduti.
+
+## Quale piano consigliare (A o B)
+
+Vedi `01-strategia-due-ganci.md` per il razionale strategico dei due piani e `04-pricing-voicemail.md` per i listini. Qui i criteri operativi per indirizzare in discovery — si presentano **entrambi** al cliente, ma si raccomanda esplicitamente uno.
+
+**Indirizzare verso il Piano A (voicemail analisi, asincrona)** quando:
+
+- **Volume chiamate** medio-basso o concentrato in fasce gestibili (es. officina con 30-50 chiamate/giorno, picchi al lunedì mattina, ufficio già coperto in fascia centrale).
+- **Sensibilità al budget** alta: il cliente cerca un upgrade della segreteria, non un agente conversazionale completo. La frase tipica è "voglio capire chi ha chiamato senza richiamare uno per uno".
+- **Cultura conservativa** rispetto all'AI: il cliente è scettico sulla voce automatica ("non voglio che i miei clienti pensino di parlare con un robot"). Il Piano A è invisibile dal lato del chiamante (sente la sua segreteria di sempre), l'AI lavora sul backend.
+- **Urgenze gestibili in callback** entro 1-2 ore: il pain è non perdere il lead, non risolvere il problema dal primo squillo. Esempio tipo: ricambista che riceve richieste di disponibilità pezzi — basta un richiamo entro mezz'ora.
+- **Primo contatto con Bintware**: cliente che vuole "provare" senza esposizione: il Piano A è il rischio più basso, il modo più economico di iniziare il rapporto. Eventuale upgrade al Piano B viene proposto in modo trasparente quando i numeri lo giustificano (e mai come "te l'avevo detto").
+
+**Indirizzare verso il Piano B (voicemail realtime, conversazionale)** quando:
+
+- **Volume chiamate** alto o con picchi frequenti che superano la capacità del front-office (es. concessionaria mono-marca con 80-150 chiamate/giorno, lancio nuovi modelli, fine campagne fiscali).
+- **Budget disponibile**: il cliente capisce che la conversazione realtime ha un costo per minuto e non è uno scoglio. La frase tipica è "quanto costa? ok, e quanto recupero?".
+- **Urgenze immediate** che non possono attendere callback: sinistro carrozzeria di un cliente assicurazione, urgenza stradale di un'officina con servizio H24, conferma appuntamento pre-stagione gomme dove il cliente che non ottiene risposta subito chiama il concorrente.
+- **Apertura culturale** all'AI conversazionale: il decisore ha già usato assistenti vocali (Alexa, banche, compagnie aeree) e capisce che la voce automatica è uno standard di mercato, non una rivoluzione.
+- **Esigenza di copertura totale fuori orario**: il cliente vuole che il telefono "risponda sempre", non solo "raccolga sempre". Il piano A risolve il secondo, il piano B risolve il primo.
+
+**Quando proporre entrambi senza raccomandazione netta**:
+
+- Cliente con volumi al confine (es. 50-80 chiamate/giorno, alcuni picchi).
+- Cliente che chiede esplicitamente di valutare entrambi prima di scegliere.
+- Multi-sede dove sedi diverse hanno volumi diversi (es. concessionaria con 3 filiali: B sulla sede grande, A sulle due piccole).
+
+In questi casi: proposta scritta con tabella confronto a due colonne, raccomandazione esplicita scritta sotto la tabella, scelta finale al cliente. Mai una proposta a singolo piano se i numeri non lo giustificano in modo netto.
+
+**Quando NON ha senso proporre nessuno dei due**:
+
+- Cliente con <10 chiamate/giorno: ROI non difendibile per nessun piano. Suggerire una segreteria standard del centralino esistente.
+- Cliente che cerca un agente conversazionale custom (es. che gestisca prenotazioni complesse o vendita inbound): non è il caso d'uso voicemail, va proposto un progetto enterprise secondo listino full (vedi `01-strategia-due-ganci.md`).
+- Cliente con vincoli normativi forti non ancora pronti (es. studi legali con segreto professionale, finanza con MiFID): rimandare al gancio educazione o al catalogo full enterprise.
 
 ## Pain quantificabili (da usare in proposta)
 
 Da chiedere in discovery e tradurre in numeri:
 - Chiamate perse stimate al giorno × giorni lavorativi × valore medio cliente acquisito × tasso di conversione chiamata→cliente.
 - Ore/settimana del titolare al telefono fuori orario × costo opportunità.
-- Costo di una segretaria part-time (€800-1.200/mese netto a lui) vs canone Bintware secondo listino del sito (€250/mese fissi + consumo a minuto, vedi `04-pricing-voicemail.md`).
+- Costo di una segretaria part-time (€800-1.200/mese netto a lui) vs canone Bintware. Confronto da fare con **entrambi i piani**: setup e canone sono identici (€1.500 + €250/mese), la differenza è solo che il Piano B aggiunge il consumo a minuto sulla conversazione realtime (€0,15-0,20/min), mentre il Piano A non ha costi variabili (elaborazione messaggi inclusa nel canone fino a 1.000 messaggi/mese di fair-use). Vedi `04-pricing-voicemail.md`.
 
-Queste tre formule sono il cuore del calcolatore ROI da produrre come asset (vedi `07-asset-minimi.md`).
+Queste tre formule sono il cuore del calcolatore ROI da produrre come asset (vedi `07-asset-minimi.md`), che andrà sviluppato con **due colonne di output** (Piano A a costo fisso, Piano B con stima minuti × tariffa) per permettere il confronto in discovery.
 
 ## Segnali di NON-fit (da non inseguire)
 

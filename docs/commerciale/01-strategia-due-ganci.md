@@ -8,16 +8,30 @@ Bintware ha un catalogo potenzialmente ampio (voce real-time, omnicanalità, pos
 - **Coprono due archetipi di cliente**: chi NON vuole sentir parlare di AI (voicemail) e chi è già esposto al tema e cerca soluzioni (scuola). Lo stesso motore tecnico, due narrazioni diverse.
 - **Generano contenuti inbound complementari**: il blog può alternare temi senza perdere coerenza, raddoppiando il footprint SEO senza raddoppiare lo sforzo di scrittura.
 
-## Gancio 1 — Voicemail intelligente (land-and-expand)
+## Gancio 1 — Voicemail intelligente (due piani in parallelo)
 
 **Logica strategica**: la voicemail è una tecnologia che le aziende tradizionali già conoscono. Vendere "una segreteria che capisce, trascrive e prioritizza i messaggi" non richiede di convincere il cliente sull'AI: il cliente compra un upgrade di qualcosa che ha già.
 
-- **Land**: contratto piccolo, ricorrente, ROI misurabile in chiamate non perse / euro recuperati.
-- **Expand**: una volta dentro, scopri i veri pain operativi (CRM disordinato, knowledge base inesistente, processi manuali) e proponi i moduli successivi del catalogo Bintware (omnicanalità, post-analisi, function call su gestionale).
-- **Posizionamento**: NON parlare di "AI vocale" o "Vertex AI" nelle prime conversazioni. Parlare di chiamate perse, fuori orario, filtraggio messaggi, report giornaliero al titolare.
-- **Settori prioritari**: dettaglio in [02-icp-voicemail.md](02-icp-voicemail.md).
+Il gancio voicemail si articola in **due piani distinti, presentati al cliente fin dalla prima conversazione**, non in sequenza land-and-expand:
 
-**Metafora di riferimento (uso interno)**: vendere il primo veicolo a motore a chi va a cavallo, non la Ferrari. Quando il cliente ha capito che il motore funziona, sarà lui a chiedere upgrade.
+- **Piano A — Voicemail analisi (asincrona)**. Il cliente lascia un messaggio, l'AI lo trascrive, estrae i campi rilevanti (nome, numero, motivo, urgenza), produce un ticket strutturato, lo recapita al referente giusto. Nessuna conversazione in tempo reale: pipeline batch sul singolo messaggio. Costo ridotto, complessità di delivery contenuta, adatto al cliente che vuole una segreteria evoluta senza l'esperienza dell'AI conversazionale.
+- **Piano B — Voicemail realtime (conversazionale)**. L'AI risponde in tempo reale, dialoga con il chiamante, fa domande di chiarimento, conferma appuntamenti, fornisce orari/disponibilità. Esegue le stesse operazioni di backend del piano A (trascrizione, estrazione, ticket strutturato), ma lo fa interagendo. Costo più alto (stack realtime SIP↔Vertex always-on, tariffe per minuto di conversazione), adatto al cliente con volumi alti o picchi frequenti che non possono attendere callback.
+
+**Perché due piani in parallelo, non land-and-expand**:
+
+- **Trasparenza preventiva > scoperta tardiva**. Il cliente conservativo che compra solo il piano A non deve scoprire dopo 6 mesi che esisteva una versione realtime mai proposta ("perché non me l'hai detto?"). Il cliente sofisticato che chiede subito il piano B non deve passare da una versione "ridotta" prima di arrivare a quella che gli serviva fin dall'inizio.
+- **Riduce due fallimenti opposti**: cliente che si sente sotto-venduto (stentava a sapere del piano alto), cliente che rinuncia a tutto perché spaventato dal costo o dall'AI conversazionale (e finisce dal concorrente con una soluzione qualunque).
+- **Ogni piano ha valore autonomo**, non è "la versione mutilata dell'altro". Si vendono entrambi senza svalutare l'uno per giustificare l'altro.
+
+**Posizionamento commerciale**: in apertura di discovery, nessuno dei due piani si chiama "AI". Si parla di chiamate perse, fuori orario, filtraggio messaggi, report giornaliero al titolare. Il piano B introduce naturalmente il tema della conversazione realtime quando il volume di chiamate o l'urgenza dei casi lo richiede; il piano A può restare al livello "segreteria evoluta che capisce e prioritizza i messaggi" anche dopo la firma. Il cliente decide il livello di esposizione all'AI che preferisce.
+
+**Criteri di indirizzamento sintetici** (dettaglio in [02-icp-voicemail.md](02-icp-voicemail.md)):
+- Piano A se: budget contenuto, cultura conservativa rispetto all'AI, volume telefonico medio-basso, urgenze gestibili in callback entro 1-2 ore.
+- Piano B se: budget disponibile, picchi di chiamate frequenti, urgenze immediate (es. sinistro carrozzeria, urgenze stradali officina), apertura culturale all'interazione vocale con AI.
+
+**Settori prioritari**: dettaglio in [02-icp-voicemail.md](02-icp-voicemail.md). Il focus automotive vale per **entrambi** i piani.
+
+**Metafora di riferimento (uso interno)**: come vendere auto. Il cliente che cerca una Panda con servosterzo non sta sbagliando a non comprare una premium — sta scegliendo l'auto giusta per il suo uso e il suo budget. Il nostro lavoro non è convincere chi vuole la Panda a comprare la premium: è far sapere a entrambi che vendiamo entrambe, e indirizzare ognuno alla scelta più adatta. Quando il cliente Panda un giorno avrà bisogno di più, saprà già a chi chiedere.
 
 ## Gancio 2 — Educazione / Scuola
 
@@ -39,7 +53,7 @@ Bintware ha un catalogo potenzialmente ampio (voce real-time, omnicanalità, pos
 - **Sito**: in homepage convivono già più casi d'uso. La strategia non richiede riscrittura totale, ma due **landing page settoriali** dedicate (una "voicemail aziendale", una "scuola") che diventano le destinazioni dei contenuti SEO. Vedi [07-asset-minimi.md](07-asset-minimi.md).
 - **Blog**: alternanza di articoli sui due cluster (es. 2/mese voicemail, 1/mese scuola, 1/mese tecnico-architetturale per credibilità). Vedi [05-canali.md](05-canali.md).
 - **Discovery call**: lo script è uno solo, ma con due rami di qualifica (vedi [06-sales-playbook.md](06-sales-playbook.md)). Il secondo passo dipende dal settore.
-- **Pricing**: il listino del sito si applica integralmente a entrambi i ganci, senza bundle inventati o sconti. Per la voicemail è particolarmente importante il principio "consumo a minuto con avvisi di soglia anziché blocchi automatici" — è una differenziazione esplicita rispetto a competitor che vendono pacchetti minuti rigidi (vedi [04-pricing-voicemail.md](04-pricing-voicemail.md)). Eventuali pacchetti o tariffe alternative verranno valutati solo dopo aver raccolto dati di consumo reali da 5-10 clienti.
+- **Pricing**: il gancio voicemail ha due piani sul listino (Piano A analisi, Piano B realtime); il gancio educazione segue il listino full enterprise. Niente bundle inventati o sconti (vedi [04-pricing-voicemail.md](04-pricing-voicemail.md)). I due piani condividono **stesso setup (€1.500) e stesso canone (€250/mese)**: la differenza è cosa fa il sistema in risposta alla chiamata. Il Piano A non ha costo a consumo — l'elaborazione dei messaggi è inclusa nel canone, con un fair-use di 1.000 messaggi/mese rivedibile col cliente quando il volume reale lo richiede. Il Piano B ha consumo a minuto (€0,15-0,20) sulla conversazione realtime, con avvisi di soglia mai blocchi automatici. In entrambi i casi il messaggio commerciale è "non ti spegniamo il telefono / non ti scartiamo i messaggi". Eventuali revisioni dei listini verranno valutate solo dopo aver raccolto dati di consumo reali da 5-10 clienti per piano.
 
 ## Quando rivedere questa strategia
 

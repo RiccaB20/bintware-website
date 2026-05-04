@@ -10,18 +10,24 @@ Il principio guida: **un asset deve servire a più di una situazione**. Un one-p
 
 **Cosa**: pagina dedicata sul sito Bintware.com, URL `/voicemail-aziendale` (o variante coerente con la struttura URL — vedi `docs/seo/`).
 
-**Contenuto** (struttura consigliata):
+**Contenuto** (struttura consigliata, con presentazione esplicita dei due piani):
 - Hero: una frase secca sul pain ("Non perdere più chiamate fuori orario, con un sistema che capisce e prioritizza i messaggi") + CTA discovery call.
 - 3 problemi concreti che risolve (chiamate perse, fuori orario, filtraggio urgenze).
-- 3 schermate / mockup di come arriva il messaggio al titolare (email + WhatsApp).
-- Sezione "Funziona col tuo centralino" con loghi compatibili (3CX, Wildix, NFON, etc.).
-- Listino del sito ben visibile (€1.500 setup + €250/mese + €0,15 o €0,20/min consumo) con il claim differenziante: "il servizio non si spegne quando superi una soglia, ricevi un avviso e decidi tu".
-- 5-7 FAQ (privacy, cancellazione, lingue supportate, integrazione, supporto).
-- CTA finale: "Prenota una call di 30 minuti, gratis, capiamo se fa per te."
+- **Sezione "Due livelli, scelta consapevole"** — è il cuore della pagina e riflette il modello commerciale (vedi `01-strategia-due-ganci.md`):
+  - **Setup e canone identici per entrambi i piani**: €1.500 una tantum + €250/mese. Il cliente non sceglie tra "economico" e "caro", sceglie tra "la stessa infrastruttura usata in due modi diversi".
+  - **Piano A — Voicemail analisi (asincrona)**: il chiamante lascia un messaggio, voi ricevete un ticket strutturato. Per chi vuole "una segreteria evoluta che capisce chi ha chiamato e perché". Tutto incluso nel canone, fino a 1.000 messaggi/mese di fair-use. Niente costi a consumo.
+  - **Piano B — Voicemail realtime (conversazionale)**: l'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti. Per chi non può permettersi di perdere chiamate nei picchi o di far attendere il chiamante. Stesso setup e canone, in più €0,15-0,20/min sulla conversazione effettiva.
+  - **Tabella confronto** affiancata, con riga "quando ha senso questo piano" che riprende i criteri da `02-icp-voicemail.md` (volume, picchi, urgenze, cultura AI). Da NOTARE: la riga "budget" in tabella va presentata onestamente — A costa di meno solo se i volumi voicemail sono nella fascia di fair-use; per chi va sopra, A e B convergono come costo annuale.
+  - **Niente svalutazione di un piano per giustificare l'altro**: entrambi hanno valore autonomo. Frasi come "il piano A è limitato/passivo" o "solo il B è la soluzione vera" sono vietate (vedi `01-strategia-due-ganci.md` per il razionale).
+- 3 schermate / mockup di come arriva il messaggio al titolare (email + WhatsApp + dashboard) — vanno bene per entrambi i piani, è il backend di analisi che è comune.
+- Sezione "Funziona col tuo centralino" con loghi compatibili (3CX, Wildix, NFON, etc.) — vale per entrambi i piani.
+- Claim differenziante trasversale ai due piani: "Il servizio non si spegne quando superi una soglia, ricevi un avviso e decidi tu" — applicato sia ai messaggi del Piano A sia ai minuti del Piano B.
+- 5-7 FAQ (privacy, cancellazione, lingue supportate, integrazione, supporto, "qual è il piano giusto per me", "posso passare da A a B in un secondo momento").
+- CTA finale: "Prenota una call di 30 minuti, gratis, capiamo insieme quale dei due piani ha più senso per voi."
 
-**Tono**: pragmatico, niente "AI" in evidenza, lessico imprenditoriale.
+**Tono**: pragmatico, niente "AI" come slogan ma esplicitato per spiegare il Piano B (vedi `02-icp-voicemail.md` sezione linguaggio), lessico imprenditoriale.
 
-**Priorità**: massima. Senza questa pagina, gli articoli del blog non hanno una destinazione di conversione.
+**Priorità**: massima. Senza questa pagina, gli articoli del blog non hanno una destinazione di conversione, e la trasparenza dei due piani non viene comunicata in inbound.
 
 ### 2. Landing page settoriale "Scuola / Educazione"
 
@@ -44,14 +50,21 @@ Il principio guida: **un asset deve servire a più di una situazione**. Un one-p
 
 **Contenuto**:
 - Logo + intestazione.
-- "Cosa fa" in 3 righe.
-- 3 bullet di benefici concreti (chiamate gestite fuori orario, riepilogo via WhatsApp, integrazione col centralino esistente).
-- Mockup visuale (stesso della landing).
-- Prezzo da listino: Setup €1.500 una tantum, Canone €250/mese fissi, Consumo €0,15/min (standard) o €0,20/min (con post-analisi). Niente cap automatico: avvisi di soglia configurabili dal cliente.
+- "Cosa fa" in 3 righe (a livello di prodotto, comune ai due piani: chiamate non perse, messaggi strutturati, integrazione col centralino).
+- Riga prezzo trasversale: **"Setup €1.500 una tantum + Canone €250/mese — uguali per entrambi i piani"**. È un punto di forza, non un dettaglio: si comunica subito che il cliente non sta scegliendo tra "economico" e "caro".
+- **Tabella confronto a due colonne — Piano A vs Piano B**: con righe "Cosa cambia per chi chiama" / "Cosa cambia per voi" / "Cosa è incluso" / "Cosa si paga in più" / "Quando ha senso". È il cuore visivo dell'one-pager.
+- Riga "Cosa è incluso" Piano A: tutta l'elaborazione dei messaggi, fair-use 1.000/mese.
+- Riga "Cosa si paga in più" Piano A: niente — il canone copre tutto.
+- Riga "Cosa è incluso" Piano B: tutto quello del Piano A, più la conversazione realtime.
+- Riga "Cosa si paga in più" Piano B: €0,15/min (standard) o €0,20/min (con post-analisi) sui minuti di conversazione effettiva.
+- Mockup visuale (stesso della landing) — un solo mockup va bene perché il backend di analisi è comune.
+- Claim trasversale: "Niente cap automatico in nessuno dei due piani: avvisi di soglia, conversazione esplicita se il volume cresce, il servizio non si spegne mai."
 - "Ti contattiamo entro 24h" + email + telefono + link calendar.
 - Footer: P.IVA, sede, dichiarazione data residency UE.
 
 **Strumento di produzione**: Google Slides → export PDF, oppure Canva. Niente InDesign per ora.
+
+**Variante "ridotta" se serve**: se il cliente in discovery ha mostrato fit netto su un piano (e il piano è già stato concordato verbalmente), si può mandare una versione one-pager dedicata al solo piano scelto, ma **mai** prima della proposta scritta che include entrambi. La trasparenza preventiva è il principio.
 
 ### 4. One-pager PDF "Bintware per la scuola"
 
@@ -65,22 +78,36 @@ Il principio guida: **un asset deve servire a più di una situazione**. Un one-p
 - Riferimenti contatto.
 - NESSUN prezzo specifico (la scuola compra custom, vedi listino full).
 
-### 5. Calcolatore ROI semplice (Voicemail)
+### 5. Calcolatore ROI semplice (Voicemail) — due colonne, un foglio
 
-**Cosa**: foglio Google condiviso, link condivisibile in sola lettura, copia-modifica per ogni cliente.
+**Cosa**: foglio Google condiviso, link in sola lettura, copia-modifica per ogni cliente. Una sola scheda, due colonne di output (Piano A | Piano B), così il cliente vede il confronto sullo stesso input.
 
-**Input** (3 campi):
+**Input** (3-4 campi, comuni ai due piani):
 - Numero chiamate medie/giorno
-- Stima % chiamate perse
+- Stima % chiamate perse oggi
 - Valore medio cliente acquisito × tasso conversione chiamata→cliente
+- (Aggiuntivo per Piano B) Stima durata media chiamata in minuti — se non si conosce, default 1.5 min
 
-**Output**:
-- Mancato fatturato mensile stimato.
-- Recupero atteso con voicemail intelligente (al 30% di recupero, al 50%, al 70% — tre scenari).
-- Confronto con costo Bintware secondo listino del sito (€1.500 setup + €250/mese + stima consumo a minuto basata sui volumi attuali del cliente).
+**Output a due colonne**:
+
+Per il **Piano A — voicemail analisi**:
+- Numero stimato di messaggi voicemail/mese (= chiamate perse × 60-70% lasciano messaggio).
+- Verifica fair-use: se i messaggi/mese stimati restano sotto 1.000, il canone copre tutto. Se sopra, segnalare al cliente che si discuterà un canone adeguato dal day-1.
+- Costo Bintware mensile = €250 fissi (entro fair-use).
+- Costo Bintware annuale = €1.500 setup + €3.000 canone = €4.500 (entro fair-use).
+- Recupero atteso (al 30% di richiamati con esito positivo, al 50%, al 70%).
 - Tempo di rientro investimento (mesi).
 
-Si compila INSIEME al cliente in discovery, condividendo lo schermo. È più potente di qualunque slide.
+Per il **Piano B — voicemail realtime**:
+- Minuti AI/mese stimati = chiamate gestite × durata media.
+- Costo Bintware mensile = €250 + (minuti × €0,15 o €0,20).
+- Costo Bintware annuale = €1.500 + 12 × costo mensile.
+- Recupero atteso (al 50%, al 70%, al 90% — la conversazione realtime ha tassi di recupero più alti perché evita drop-off).
+- Tempo di rientro investimento (mesi).
+
+**Riga finale**: "Quale dei due ha senso per voi?" con regola sintetica derivata dai criteri di `02-icp-voicemail.md` (es. "se i picchi superano X, il piano B; sotto, il piano A"). Differenziale costo annuale Piano A vs Piano B = il consumo a minuto del Piano B nei tuoi mesi tipici. Mostrarlo in chiaro.
+
+Si compila INSIEME al cliente in discovery, condividendo lo schermo. È più potente di qualunque slide. La compilazione doppia è l'occasione concreta per **mostrare la trasparenza**: il cliente vede entrambe le proiezioni e capisce sui suoi numeri quale piano ha senso.
 
 ### 6. Deck base (8-10 slide) per presentazioni
 
@@ -93,7 +120,7 @@ Si compila INSIEME al cliente in discovery, condividendo lo schermo. È più pot
 4. La nostra soluzione, in italiano semplice.
 5. Architettura tecnica (1 slide per chi vuole capire il dietro le quinte: GCP, `europe-west8`, Vertex AI). Si salta se l'audience è non-IT.
 6. Casi d'uso (1-2 esempi concreti).
-7. Pricing (slide variabile: listino voicemail con principio "no cap automatico" per il mondo automotive vs custom enterprise per il mondo scuola).
+7. Pricing (slide variabile: per voicemail, **due slide o una slide a due colonne** che mostrano Piano A e Piano B affiancati con principio "no cap automatico" trasversale; per scuola, custom enterprise).
 8. Come si parte (Architecture Review → MVP → produzione).
 9. Privacy / GDPR / AI Act.
 10. Prossimi passi + contatti.
