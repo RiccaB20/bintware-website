@@ -1,12 +1,10 @@
-# Bintware Website — Guida per Claude
+# Bintware Website — Guida per Codex
 
 Sito statico, deploy via GitHub Pages (CNAME → bintware.com).
 
 ## Knowledge base
 
 Per qualunque richiesta che riguarda **SEO, contenuti del blog, struttura URL, sitemap, meta tag, titoli, immagini ottimizzate o redirect**: leggi prima `docs/seo/00-index.md` per orientarti, poi i file specifici della knowledge base in `docs/seo/`.
-
-Per qualunque richiesta che riguarda **strategia commerciale, piano di vendita, ICP/cliente ideale, pricing, materiali di vendita, script di discovery, obiezioni, canali inbound o KPI di vendita**: leggi prima `docs/commerciale/00-index.md` per orientarti, poi i file specifici della knowledge base in `docs/commerciale/`.
 
 Lo stesso schema vale per altre aree man mano che verranno aggiunte (es. `docs/architettura/`, `docs/copywriting/`).
 
