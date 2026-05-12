@@ -159,7 +159,7 @@
     border:1px solid var(--line-soft);border-radius:16px;
     padding:28px;min-height:460px;position:relative;overflow:hidden;
   }
-  .viz-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+  .viz-head{display:flex;justify-content:space-between;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-bottom:22px}
 
   /* Viz 1: conversation flow */
   .conv{display:flex;flex-direction:column;gap:14px}
@@ -205,17 +205,29 @@
   .tool-call .step .card code{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);background:var(--bg);padding:1px 5px;border-radius:3px}
 
   /* Viz 4: data extraction */
-  .data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .data-card{background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px;padding:16px}
+  .data-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+  .data-card{min-width:0;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:10px;padding:16px}
+  .data-card-wide{grid-column:1 / -1}
   .data-card .h{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px}
   .data-card .tx-chunk{font-size:12.5px;line-height:1.5;color:var(--ink-dim);padding:10px;background:var(--bg-2);border-radius:6px;border-left:2px solid var(--accent)}
   .data-card .fields{display:flex;flex-direction:column;gap:8px;margin-top:4px}
-  .data-card .field{display:grid;grid-template-columns:90px 1fr;gap:10px;font-size:12.5px;padding:6px 10px;background:var(--bg-2);border-radius:6px}
+  .data-card .field{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;font-size:12.5px;padding:6px 10px;background:var(--bg-2);border-radius:6px}
   .data-card .field .k{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute)}
-  .data-card .field .v{color:var(--ink);font-family:var(--mono);font-size:11.5px}
+  .data-card .field .v{color:var(--ink);font-family:var(--mono);font-size:11.5px;overflow-wrap:anywhere}
   .data-card .field .v.hl{color:var(--accent)}
-  .chart{display:flex;align-items:flex-end;gap:6px;height:100px;margin-top:10px;padding:8px 0;border-top:1px dashed var(--line-soft)}
+  .chart{min-width:0;display:flex;align-items:flex-end;gap:6px;height:100px;margin-top:10px;padding:8px 0;border-top:1px dashed var(--line-soft)}
   .chart .bar{flex:1;background:linear-gradient(180deg,var(--accent),var(--accent-dim));border-radius:2px 2px 0 0;opacity:.9}
+
+  @media (max-width:640px){
+    .viz{padding:18px;min-height:0}
+    .viz-head{align-items:flex-start}
+    .data-grid{grid-template-columns:1fr;gap:14px}
+    .data-card-wide{grid-column:auto}
+    .data-card{padding:14px}
+    .data-card .h{line-height:1.4}
+    .data-card .field{grid-template-columns:minmax(72px,.8fr) minmax(0,1fr);gap:8px}
+    .chart{gap:4px;height:88px}
+  }
 
   /* --- Architecture diagram --- */
   .arch{display:grid;grid-template-columns: repeat(12, 1fr);gap:14px}
