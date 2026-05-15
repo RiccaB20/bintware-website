@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Articolo — Tecnologia · divulgativo · Pubblicato 2026-05-15 -->
+
+<title>Cos'è un interprete vocale SIP↔AI (spiegato semplice) · Bintware</title>
+<meta name="description" content="Cosa c'è davvero dietro un'AI che risponde al telefono e dialoga con te in tempo reale — spiegato a chi non è tecnico, senza gergo.">
+
+<meta property="og:title" content="Cos'è un interprete vocale SIP↔AI (spiegato semplice) · Bintware">
+<meta property="og:description" content="Un'AI che risponde al telefono e parla con te in tempo reale: cosa c'è dietro, spiegato senza tecnicismi.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bintware.com/blog/cos-e-interprete-vocale-sip-ai.html">
+<meta property="og:site_name" content="Bintware">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://bintware.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="Riccardo Baldacci">
+<meta property="article:published_time" content="2026-05-15">
+<meta property="article:section" content="Tecnologia">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cos'è un interprete vocale SIP↔AI (spiegato semplice) · Bintware">
+<meta name="twitter:description" content="Cosa c'è dietro un'AI che risponde al telefono e dialoga in tempo reale, spiegato senza gergo.">
+<meta name="twitter:image" content="https://bintware.com/og-image.png">
+
+<link rel="canonical" href="https://bintware.com/blog/cos-e-interprete-vocale-sip-ai.html">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<meta name="theme-color" content="#272a3a">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cos'è un interprete vocale SIP↔AI (spiegato semplice)",
+  "description": "Cosa c'è davvero dietro un'AI che risponde al telefono e dialoga con te in tempo reale — spiegato a chi non è tecnico, senza gergo.",
+  "image": "https://bintware.com/og-image.png",
+  "datePublished": "2026-05-15",
+  "dateModified": "2026-05-15",
+  "author": {
+    "@type": "Person",
+    "name": "Riccardo Baldacci",
+    "jobTitle": "Co-founder · Strategia & Architettura",
+    "url": "https://bintware.com/#riccardo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bintware",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bintware.com/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bintware.com/blog/cos-e-interprete-vocale-sip-ai.html"
+  },
+  "inLanguage": "it-IT",
+  "articleSection": "Tecnologia",
+  "keywords": "interprete vocale SIP AI, AI risponde al telefono, voce AI tempo reale, cos'è SIP, assistente vocale telefonico AI"
+}
+</script>
+
+<!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+  .article-body h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:32px 0 14px;color:var(--ink);letter-spacing:-0.01em}
+
+  .article-body figure img{display:block;width:100%;height:auto}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <a href="../index.html" class="logo">
+      <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+      <span>Bintware</span>
+    </a>
+    <div class="links" id="nav-links">
+      <a href="../index.html#prodotto">Manifesto</a>
+      <a href="../index.html#capacita">Capacità</a>
+      <a href="../index.html#tecnologia">Architettura</a>
+      <a href="../index.html#casi">Scenari</a>
+      <a href="../index.html#lavoriamo">Lavoriamo</a>
+      <a href="../index.html#listino">Listino</a>
+      <a href="../blog.html" style="color:var(--ink)">Blog</a>
+      <a href="../index.html#contatti">Contatti</a>
+    </div>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="wrap">
+    <div class="article-meta">
+      <span class="category">Tecnologia</span>
+      <span class="sep">·</span>
+      <span>15 maggio 2026</span>
+      <span class="sep">·</span>
+      <span class="article-read-time">4 min di lettura</span>
+    </div>
+    <h1>Cos'è un interprete vocale SIP↔AI (spiegato semplice).</h1>
+    <p class="article-dek">Hai presente quando chiami un'azienda e, invece della solita segreteria, ti risponde una voce che capisce quello che dici e ti risponde subito, a tono? Dietro quella cosa apparentemente banale c'è un pezzo di tecnologia che vale la pena spiegare — senza tecnicismi.</p>
+    <div class="article-author-row">
+      <div class="article-author">
+        <div>
+          <div class="author-name">Riccardo Baldacci</div>
+          <div class="author-role">Co-founder · Strategia & Architettura</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="wrap">
+
+    <p>Partiamo da un'esperienza che hai già fatto. Chiami un'azienda. Di solito: squilli a vuoto, oppure una segreteria che ti chiede di lasciare un messaggio. Ogni tanto, però, ti risponde qualcosa che ti capisce, ti fa una domanda sensata e ti dà una risposta — subito, mentre parli. Quella «cosa» ha un nome poco poetico: interprete vocale SIP↔AI. Spieghiamo cos'è, in modo che lo capisca chiunque.</p>
+
+    <h2>Due mondi che, da soli, non si parlano</h2>
+
+    <p>Da una parte c'è <strong>il telefono</strong>: la chiamata vera, quella che parte dal cellulare di un cliente e arriva alla tua azienda. Le linee telefoniche moderne, per viaggiare su internet, usano un «linguaggio» tecnico che si chiama <strong>SIP</strong>. Non serve sapere altro: pensalo come le regole con cui una telefonata viene impacchettata e spedita da un punto all'altro.</p>
+
+    <p>Dall'altra parte c'è <strong>l'AI</strong>: un sistema capace di ascoltare una voce, capire cosa è stato detto e rispondere parlando in modo naturale.</p>
+
+    <p>Il problema è che questi due mondi, da soli, non si capiscono. Il telefono non «parla AI». L'AI non «parla telefono». Serve qualcuno in mezzo che faccia da traduttore.</p>
+
+<h2>L'interprete in mezzo alla telefonata</h2>
+
+    <p>Un interprete vocale SIP↔AI è esattamente quello che dice il nome: qualcosa che si mette <em>in mezzo</em> alla telefonata e fa da traduttore simultaneo tra i due mondi. Prende la voce che arriva dalla linea telefonica e la passa all'AI <em>mentre la persona sta ancora parlando</em>. Prende la risposta dell'AI e la rimanda sulla linea, come voce, <em>mentre la conversazione è ancora in corso</em>.</p>
+
+    <p>Come un interprete umano in una trattativa tra due lingue: non aspetta la fine del discorso per tradurre. Lavora in tempo reale, frase dopo frase, così che le due parti possano semplicemente parlarsi.</p>
+
+    <h2>Perché «in tempo reale» è la parte difficile</h2>
+
+    <p>Far parlare un'AI, oggi, è alla portata di molti. Farla parlare <em>dentro una telefonata vera</em> — senza pause imbarazzanti, gestendo chi la interrompe a metà frase come farebbe una persona — è tutta un'altra cosa.</p>
+
+    <p>Se la risposta arriva mezzo secondo troppo tardi, sembra rotto. Se non gestisce bene l'interruzione di chi sta dall'altra parte, sembra stupido. È in questi dettagli — invisibili quando funzionano, fastidiosissimi quando no — che si gioca tutta la qualità. Non è magia: è ingegneria fatta bene su una cosa che sembra banale solo finché non provi a costruirla.</p>
+
+    <blockquote style="margin:32px 0;padding:20px 28px;border-left:3px solid var(--accent, rgba(255,255,255,.4));font-style:italic;color:var(--ink);font-size:18px;line-height:1.6;background:rgba(255,255,255,.02);border-radius:0 8px 8px 0">Il valore non è «c'è un'AI». Il valore è che la conversazione sembri naturale a chi ha in mano il telefono.</blockquote>
+
+    <h2>A cosa serve, in pratica</h2>
+
+    <p>Per un'azienda significa una cosa molto concreta: <strong>il telefono non squilla mai a vuoto</strong>. Alle tre di notte, nel picco del lunedì mattina, quando in ufficio sono tutti occupati — qualcuno risponde, capisce perché il cliente sta chiamando, dà le risposte semplici e prepara tutto il resto, già ordinato, per la persona giusta. La chiamata che prima andava persa diventa una chiamata gestita.</p>
+
+    <p>È il motore che sta dietro la nostra <a href="../voicemail-aziendale.html">voicemail intelligente per le aziende</a>: stessa idea, applicata al telefono che squilla tutti i giorni nella tua attività.</p>
+
+    <h2>Cosa NON è</h2>
+
+    <p>Non è il vecchio risponditore «premi 1 per le vendite, premi 2 per l'assistenza». Non è un robot che recita un copione rigido. E non è fantascienza: è una tecnologia che oggi funziona davvero, a patto di costruirla con cura nei dettagli che non si vedono.</p>
+
+    <p>Se ti stai chiedendo se ha senso per la tua azienda, <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener">parliamone in una call</a>: 30 minuti, gratis, risponde un founder e non un commerciale.</p>
+
+  </div>
+</article>
+
+<!-- ARTICLE FOOTER -->
+<div class="article-footer">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back">← Torna al blog</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="article-back" style="color:var(--ink-dim)">Vuoi discuterne con noi? Prenota una call →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="inner">
+      <a href="../index.html" class="logo">
+        <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+        <span>Bintware</span>
+      </a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span>© 2026 Bintware · Riccardo &amp; Luca Baldacci</span>
+        <span>P.IVA IT 07207160487</span>
+        <span>Stack: Google Cloud · Vertex AI</span>
+        <a href="../privacy.html" style="color:var(--ink-mute)">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

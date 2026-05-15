@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Articolo — Tecnologia · divulgativo · Pubblicato 2026-05-15 -->
+
+<title>AlloyDB e AI: perché non basta installarli · Bintware</title>
+<meta name="description" content="Costruire una ricerca AI sui propri documenti non è «accendere» un database. Cosa cambia davvero tra «installato» e «funziona sul lavoro vero», raccontato senza gergo.">
+
+<meta property="og:title" content="AlloyDB e AI: perché non basta installarli · Bintware">
+<meta property="og:description" content="Perché una ricerca AI sui documenti aziendali non si «installa»: il lavoro vero è dove non si vede. Spiegato senza tecnicismi.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bintware.com/blog/alloydb-ricerca-ai-documenti.html">
+<meta property="og:site_name" content="Bintware">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://bintware.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="Luca Baldacci">
+<meta property="article:published_time" content="2026-05-15">
+<meta property="article:section" content="Tecnologia">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AlloyDB e AI: perché non basta installarli · Bintware">
+<meta name="twitter:description" content="Una ricerca AI sui documenti non si «accende»: la differenza tra installato e funzionante è tutto il lavoro.">
+<meta name="twitter:image" content="https://bintware.com/og-image.png">
+
+<link rel="canonical" href="https://bintware.com/blog/alloydb-ricerca-ai-documenti.html">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<meta name="theme-color" content="#272a3a">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AlloyDB e AI: perché non basta installarli",
+  "description": "Costruire una ricerca AI sui propri documenti non è «accendere» un database. Cosa cambia davvero tra «installato» e «funziona sul lavoro vero», raccontato senza gergo.",
+  "image": "https://bintware.com/og-image.png",
+  "datePublished": "2026-05-15",
+  "dateModified": "2026-05-15",
+  "author": {
+    "@type": "Person",
+    "name": "Luca Baldacci",
+    "jobTitle": "Co-founder · Engineering & Cloud",
+    "url": "https://bintware.com/#luca"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bintware",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bintware.com/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bintware.com/blog/alloydb-ricerca-ai-documenti.html"
+  },
+  "inLanguage": "it-IT",
+  "articleSection": "Tecnologia",
+  "keywords": "ricerca AI documenti, ricerca semantica aziendale, AlloyDB Vertex AI, AI sui propri dati, motore di ricerca intelligente"
+}
+</script>
+
+<!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+  .article-body h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:32px 0 14px;color:var(--ink);letter-spacing:-0.01em}
+
+  .article-body figure img{display:block;width:100%;height:auto}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="inner">
+    <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <a href="../index.html" class="logo">
+      <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+      <span>Bintware</span>
+    </a>
+    <div class="links" id="nav-links">
+      <a href="../index.html#prodotto">Manifesto</a>
+      <a href="../index.html#capacita">Capacità</a>
+      <a href="../index.html#tecnologia">Architettura</a>
+      <a href="../index.html#casi">Scenari</a>
+      <a href="../index.html#lavoriamo">Lavoriamo</a>
+      <a href="../index.html#listino">Listino</a>
+      <a href="../blog.html" style="color:var(--ink)">Blog</a>
+      <a href="../index.html#contatti">Contatti</a>
+    </div>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="wrap">
+    <div class="article-meta">
+      <span class="category">Tecnologia</span>
+      <span class="sep">·</span>
+      <span>15 maggio 2026</span>
+      <span class="sep">·</span>
+      <span class="article-read-time">4 min di lettura</span>
+    </div>
+    <h1>AlloyDB e AI: perché non basta installarli.</h1>
+    <p class="article-dek">Quando un'azienda ci dice «vorremmo fare ricerca AI sui nostri documenti», per noi la conversazione comincia. Non finisce. Cosa significa davvero portare l'AI sui dati reali — raccontato senza gergo.</p>
+    <div class="article-author-row">
+      <div class="article-author">
+        <div>
+          <div class="author-name">Luca Baldacci</div>
+          <div class="author-role">Co-founder · Engineering & Cloud</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <div class="wrap">
+
+    <p>«Vorremmo fare ricerca AI sui nostri documenti.» È una frase che sentiamo spesso. Quando la sentiamo, per noi la conversazione <em>inizia</em> — non finisce. Perché tra «abbiamo acceso lo strumento» e «funziona davvero sul lavoro di tutti i giorni» c'è tutto il lavoro che conta, ed è il lavoro che non si vede.</p>
+
+    <p>Negli ultimi mesi abbiamo costruito un motore di ricerca intelligente sui documenti, su Google Cloud con Vertex AI. Detto così sembra qualcosa che «si installa». Non lo è. E vale la pena spiegare perché, senza tecnicismi.</p>
+
+    <h2>Trovare il documento giusto non basta</h2>
+
+    <p>Immagina un utente che fa una domanda al sistema. Il sistema trova il documento giusto — proprio quello che serviva. Ma la risposta che l'AI costruisce <em>su quel documento</em> è sbagliata. Fonte giusta, risposta sbagliata. Com'è possibile?</p>
+
+<p>È possibile perché «trovare un testo» e «capire una domanda» sono due cose diverse, e farle combaciare su dati veri — non sugli esempi puliti dei tutorial — è esattamente dove nascono i problemi. Funziona tutto nella demo. Poi arrivano i documenti veri dell'azienda, con il loro linguaggio, le loro abbreviazioni, il loro disordine.</p>
+
+    <h2>Un problema, tre cause invisibili</h2>
+
+    <p>Quando un caso così è capitato a noi, quella risposta sbagliata non aveva una sola causa. Erano tre problemi diversi e indipendenti che, sommati, producevano un risultato confuso. Presi uno per uno erano invisibili: ognuno sembrava una piccola anomalia trascurabile.</p>
+
+    <p>Trovarli ha richiesto sessioni intere di analisi. Ma ogni volta che ne isolavamo uno e lo risolvevamo, quel pezzo diventava qualità in più per chiunque usi il sistema. È un lavoro che non finisce in uno screenshot: finisce in una risposta che, semplicemente, è giusta.</p>
+
+    <blockquote style="margin:32px 0;padding:20px 28px;border-left:3px solid var(--accent, rgba(255,255,255,.4));font-style:italic;color:var(--ink);font-size:18px;line-height:1.6;background:rgba(255,255,255,.02);border-radius:0 8px 8px 0">La parte facile è far rispondere l'AI. La parte difficile è farla rispondere bene sui tuoi dati, in modo prevedibile, ogni volta.</blockquote>
+
+    <h2>Lo stesso bisogno cambia forma</h2>
+
+    <p>«Trova quello che cerco» sembra un'esigenza sola. In realtà, in contesti diversi, prende forme opposte. A volte conta riconoscere un termine tecnico preciso. A volte capire una domanda fatta con le parole di tutti i giorni. A volte tenere insieme tanti dettagli senza perderne nessuno per strada.</p>
+
+    <p>Non esiste un'unica configurazione che vada bene per tutti questi casi insieme. Per questo costruiamo un sistema che si <em>adatta</em> al contesto, invece di forzare il contesto dentro uno schema unico. È più lavoro. È anche la differenza tra una cosa che fa scena e una cosa che regge.</p>
+
+    <h2>Perché lo raccontiamo così</h2>
+
+    <p>Non vendiamo l'AI come una scatola magica. La costruiamo come si costruisce un'infrastruttura: pezzo per pezzo, misurando i risultati, correggendo gli errori, documentando ogni scelta. La complessità non è un vezzo da ingegneri: è quella necessaria perché i risultati reggano sul lavoro vero, non solo nella dimostrazione.</p>
+
+    <p>Se stai pensando a una ricerca AI sui tuoi documenti, <a href="../index.html#capacita">parliamone</a>. Quasi certamente il tuo caso è più complesso di quello che sembra. Per fortuna, anche la nostra esperienza.</p>
+
+  </div>
+</article>
+
+<!-- ARTICLE FOOTER -->
+<div class="article-footer">
+  <div class="wrap">
+    <a href="../blog.html" class="article-back">← Torna al blog</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="article-back" style="color:var(--ink-dim)">Vuoi discuterne con noi? Prenota una call →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="inner">
+      <a href="../index.html" class="logo">
+        <img class="brand-logo" src="../asset/img/logo-bintware-v2.webp" alt="Bintware" width="32" height="32">
+        <span>Bintware</span>
+      </a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <span>© 2026 Bintware · Riccardo &amp; Luca Baldacci</span>
+        <span>P.IVA IT 07207160487</span>
+        <span>Stack: Google Cloud · Vertex AI</span>
+        <a href="../privacy.html" style="color:var(--ink-mute)">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
