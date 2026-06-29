@@ -64,24 +64,6 @@
     els.forEach(el => io.observe(el));
   })();
 
-  // PRICE LIST · upgrade toggle
-  (function(){
-    const total = document.getElementById('infra-total');
-    if(!total) return;
-    const BASE = 250;
-    const STATE = {vm:false, db:false};
-    const PRICES = {vm:75, db:150};
-
-    window.toggleUpgrade = function(type){
-      STATE[type] = !STATE[type];
-      const btn = document.getElementById('upg-' + type);
-      if(btn){btn.classList.toggle('active', STATE[type])}
-      let sum = BASE;
-      Object.keys(STATE).forEach(k => { if(STATE[k]) sum += PRICES[k] });
-      total.textContent = sum;
-    };
-  })();
-
   // MOBILE NAV TOGGLE
   (function(){
     const toggle = document.querySelector('.nav-toggle');

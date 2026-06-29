@@ -51,7 +51,7 @@
   .article-body figure{margin:36px 0 40px;padding:0;border-radius:12px;overflow:hidden;background:#0c1425;border:1px solid var(--line-soft)}
   .article-body figure img{width:100%;height:auto;display:block}
   .article-body figcaption{font-family:var(--mono);font-size:11.5px;color:var(--ink-mute);letter-spacing:0.06em;padding:10px 18px;background:var(--bg-2);border-top:1px solid var(--line-soft);text-align:center}
-  nav .links{display:flex;gap:36px;font-size:13px;color:var(--ink-dim)}
+  nav .links{display:flex;gap:26px;font-size:13px;color:var(--ink-dim)}
   nav .links a:hover{color:var(--ink)}
   .nav-toggle{display:none;position:relative;background:none;border:0;width:40px;height:40px;padding:0;cursor:pointer}
   .nav-toggle span{position:absolute;left:9px;right:9px;height:2px;background:var(--ink);border-radius:2px;transform-origin:center;transition:top .25s ease, transform .25s ease, opacity .2s ease}
@@ -330,24 +330,6 @@
   .price-base-value{font-family:var(--display);font-size:18px;font-weight:500;color:var(--ink)}
   .price-base p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-dim)}
 
-  .price-upgrades{display:flex;flex-direction:column;gap:14px}
-  .price-upgrades-head{padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
-  .price-upgrades-head .mono{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;text-transform:uppercase}
-  .price-upgrade-note{padding:12px 16px;background:color-mix(in oklch,var(--accent) 8%,var(--bg-3));border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:13px;line-height:1.55;color:var(--ink-dim)}
-  .price-upgrade-note strong{color:var(--ink);font-weight:500}
-  .price-upgrade-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .price-upgrade{display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid var(--line-soft);border-radius:10px;background:var(--bg-3);text-align:left;cursor:pointer;transition:border-color .2s ease, background .2s ease;font-family:inherit;color:inherit}
-  .price-upgrade:hover{border-color:var(--line)}
-  .price-upgrade.active{border-color:var(--accent);background:color-mix(in oklch,var(--accent) 12%,var(--bg-3))}
-  .price-upgrade-toprow{display:flex;justify-content:space-between;align-items:center}
-  .price-upgrade-name{font-family:var(--display);font-size:16px;font-weight:500;color:var(--ink)}
-  .price-upgrade-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);position:relative;flex-shrink:0;transition:all .2s ease}
-  .price-upgrade.active .price-upgrade-check{border-color:var(--accent);background:var(--accent)}
-  .price-upgrade.active .price-upgrade-check::after{content:'';position:absolute;left:5px;top:2px;width:5px;height:9px;border:solid oklch(0.2 0.02 55);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
-  .price-upgrade-amount{font-family:var(--display);font-size:18px;font-weight:500;color:var(--accent)}
-  .price-upgrade-amount small{font-size:12.5px;color:var(--ink-mute);font-weight:400;margin-left:2px}
-  .price-upgrade p{margin:0;font-size:13px;line-height:1.55;color:var(--ink-dim)}
-
   .price-pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .price-pack{position:relative;padding:24px;background:var(--bg-3);border:1px solid var(--line-soft);border-radius:12px;display:flex;flex-direction:column;gap:16px}
   .price-pack.recommended{border-color:color-mix(in oklch,var(--accent) 50%,var(--line-soft));background:linear-gradient(135deg,color-mix(in oklch,var(--accent) 12%,var(--bg-3)),var(--bg-3))}
@@ -407,7 +389,6 @@
     .price-row-num{font-size:28px;padding-top:0}
     .price-row-head{flex-direction:column;gap:18px;align-items:stretch}
     .price-tag{align-items:flex-start;width:auto;min-width:0}
-    .price-upgrade-grid{grid-template-columns:1fr}
     .price-pack-grid{grid-template-columns:1fr}
     .price-perdiem-row{flex-direction:column;align-items:flex-start;gap:4px}
     .plan{padding:22px}

@@ -7,10 +7,10 @@
 <!-- Pillar — Voicemail aziendale (settore automotive) · Pubblicata 2026-05-04 -->
 
 <title>Voicemail intelligente per aziende automotive · Bintware</title>
-<meta name="description" content="Due livelli di voicemail intelligente per concessionarie, officine, carrozzerie e ricambisti. Punto di ingresso o evoluzione tecnologica: stesso setup, stesso canone, scelta consapevole del cliente.">
+<meta name="description" content="Due livelli di voicemail intelligente per concessionarie, officine, carrozzerie e ricambisti. Setup iniziale fisso, canone e consumo stimati sui volumi reali.">
 
 <meta property="og:title" content="Voicemail intelligente per aziende automotive · Bintware">
-<meta property="og:description" content="Concessionarie, officine, carrozzerie, ricambisti: due livelli di voicemail intelligente. Stesso setup, stesso canone, scelta consapevole sul livello di automazione.">
+<meta property="og:description" content="Concessionarie, officine, carrozzerie, ricambisti: due livelli di voicemail intelligente. Setup fisso, ordini di grandezza chiari, preventivo sui volumi reali.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bintware.com/voicemail-aziendale.html">
 <meta property="og:site_name" content="Bintware">
@@ -21,7 +21,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Voicemail intelligente per aziende automotive · Bintware">
-<meta name="twitter:description" content="Due livelli di voicemail intelligente per il settore automotive. Stesso setup, stesso canone, scelta consapevole del cliente.">
+<meta name="twitter:description" content="Due livelli di voicemail intelligente per il settore automotive. Setup fisso, ordini di grandezza chiari, preventivo sui volumi reali.">
 <meta name="twitter:image" content="https://bintware.com/og-image.png">
 
 <link rel="canonical" href="https://bintware.com/voicemail-aziendale.html">
@@ -38,7 +38,7 @@
       "@id": "https://bintware.com/voicemail-aziendale.html#webpage",
       "url": "https://bintware.com/voicemail-aziendale.html",
       "name": "Voicemail intelligente per aziende automotive",
-      "description": "Due livelli di voicemail intelligente per concessionarie, officine, carrozzerie e ricambisti. Punto di ingresso o evoluzione tecnologica: stesso setup, stesso canone, scelta consapevole del cliente.",
+      "description": "Due livelli di voicemail intelligente per concessionarie, officine, carrozzerie e ricambisti. Setup iniziale fisso, canone e consumo stimati sui volumi reali.",
       "inLanguage": "it-IT",
       "isPartOf": { "@id": "https://bintware.com/#website" },
       "about": { "@id": "https://bintware.com/voicemail-aziendale.html#service" },
@@ -55,29 +55,34 @@
         "@type": "BusinessAudience",
         "audienceType": "Concessionarie auto, officine, carrozzerie, ricambisti"
       },
-      "description": "Voicemail intelligente in due livelli: Piano A (analisi asincrona) per chi vuole un punto di ingresso nell'AI senza ribaltare il centralino esistente; Piano B (realtime conversazionale) per chi ha picchi di chiamate o urgenze che non possono attendere callback. Stesso setup, stesso canone — cambia solo cosa fa il sistema quando il telefono squilla.",
+      "description": "Voicemail intelligente in due livelli: Piano A (analisi asincrona) per chi vuole un punto di ingresso nell'AI senza ribaltare il centralino esistente; Piano B (realtime conversazionale) per chi ha picchi di chiamate o urgenze che non possono attendere callback. Il setup è fisso; canone e consumo si stimano sui volumi reali.",
       "offers": [
         {
           "@type": "Offer",
           "name": "Setup iniziale",
           "price": "1500",
           "priceCurrency": "EUR",
-          "description": "Una tantum, identico per entrambi i piani. Configurazione, integrazione col centralino esistente, addestramento sui flussi specifici dell'azienda."
+          "description": "Una tantum, valido per entrambi i piani. Configurazione, integrazione col centralino esistente, addestramento sui flussi specifici dell'azienda."
         },
         {
           "@type": "Offer",
-          "name": "Canone mensile",
-          "price": "250",
-          "priceCurrency": "EUR",
-          "description": "Mensile, identico per entrambi i piani. Infrastruttura cloud GCP, manutenzione, aggiornamenti. Per il Piano A include tutta l'elaborazione dei messaggi (fair-use 1.000/mese)."
+          "name": "Canone operativo",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "EUR",
+            "description": "Da stimare sui volumi reali; ordine di grandezza da circa €250/mese per casi semplici."
+          },
+          "description": "Mensile, stimato su volumi, canali, integrazioni e requisiti dati. Include infrastruttura cloud GCP, manutenzione e aggiornamenti."
         },
         {
           "@type": "Offer",
           "name": "Piano B · consumo realtime",
-          "price": "0.15-0.20",
-          "priceCurrency": "EUR",
-          "unitText": "MIN",
-          "description": "Solo per il Piano B realtime. Tariffa per minuto di conversazione effettiva: €0,15/min Standard o €0,20/min con post-analisi. Avvisi di soglia configurabili, mai blocchi automatici del servizio."
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "EUR",
+            "description": "Ordine di grandezza: circa €0,20-0,25/min sui minuti di conversazione effettiva."
+          },
+          "description": "Solo per il Piano B realtime. La stima dipende dai minuti di conversazione effettiva e dal livello di post-analisi richiesto. Avvisi di soglia configurabili, mai blocchi automatici del servizio."
         }
       ]
     },
@@ -90,7 +95,7 @@
           "name": "Qual è la differenza tra Piano A e Piano B?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Setup (€1.500) e canone (€250/mese) sono identici. Cambia cosa fa il sistema quando il telefono squilla. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background, recapitandovi un ticket pronto. Nel Piano B l'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti — qui si paga in più €0,15-0,20 al minuto di conversazione effettiva. Il Piano A è il punto di ingresso, il Piano B è l'evoluzione tecnologica."
+            "text": "Il setup iniziale è fisso (€1.500). Cambia cosa fa il sistema quando il telefono squilla e quindi cambia la stima mensile. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background. Nel Piano B l'AI risponde dal primo squillo e dialoga col chiamante: qui si aggiunge un consumo indicativo di circa €0,20-0,25/min sui minuti effettivi."
           }
         },
         {
@@ -106,7 +111,7 @@
           "name": "Quanto costa al mese?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Setup di €1.500 una tantum + canone fisso di €250/mese, identici per entrambi i piani. Nel Piano A non si paga nient'altro: l'elaborazione dei messaggi è inclusa, fino a 1.000 messaggi voicemail/mese di fair-use. Nel Piano B si pagano in più €0,15/min (Standard) o €0,20/min (con post-analisi) sulla conversazione effettiva. Per un'azienda media nella fascia di fair-use il Piano A si stabilizza intorno ai €4.500/anno."
+            "text": "Il setup iniziale è fisso: €1.500 una tantum. Il canone operativo parte indicativamente da circa €250/mese per casi semplici, ma viene stimato sui volumi reali: numero di messaggi, minuti, integrazioni, requisiti dati e livello di automazione. Nel Piano B si aggiunge il consumo realtime, nell'ordine di grandezza di circa €0,20-0,25/min sui minuti effettivi."
           }
         },
         {
@@ -248,16 +253,16 @@
       <span>Bintware</span>
     </a>
     <div class="links" id="nav-links">
-      <a href="index.html#prodotto">Manifesto</a>
-      <a href="index.html#capacita">Capacità</a>
-      <a href="index.html#tecnologia">Architettura</a>
-      <a href="index.html#casi">Scenari</a>
-      <a href="index.html#lavoriamo">Lavoriamo</a>
-      <a href="index.html#listino">Listino</a>
+      <a href="index.html#prodotto">Cosa facciamo</a>
+      <a href="index.html#capacita">Soluzioni</a>
+      <a href="index.html#tecnologia">Tecnologia</a>
+      <a href="index.html#casi">Casi d'uso</a>
+      <a href="index.html#lavoriamo">Come iniziare</a>
+      <a href="index.html#listino">Prezzi</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contatti">Contatti</a>
     </div>
-    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Discovery call</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Valuta il tuo caso</a>
   </div>
 </nav>
 
@@ -268,7 +273,7 @@
     <h1>Non perdere più una chiamata. Né fuori orario, né nei picchi.</h1>
     <p class="lede">Concessionarie, officine, carrozzerie e ricambisti perdono ogni giorno lead di valore quando il telefono squilla a vuoto. La voicemail intelligente di Bintware è la prima linea di difesa contro la dispersione dei contatti — disponibile in due livelli, dal punto di ingresso al salto evolutivo, scelti dal cliente in base ai suoi numeri reali.</p>
     <div class="cta-row">
-      <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Prenota una call · 30 min</a>
+      <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Valuta il tuo caso · 30 min</a>
       <a href="#due-livelli" class="btn ghost">Vedi i due livelli</a>
     </div>
   </div>
@@ -337,12 +342,12 @@
 <!-- DUE LIVELLI -->
 <section class="pillar-section" id="due-livelli">
   <div class="wrap">
-    <h2>Due livelli, una stessa infrastruttura</h2>
-    <p>Setup e canone sono identici per entrambi i piani: <strong>€1.500 una tantum + €250/mese</strong>. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione che è giusto per la sua azienda. È una progressione naturale, non una scelta fra prodotti diversi.</p>
+    <h2>Due livelli, una stessa logica di stima</h2>
+    <p>Il setup iniziale è fisso: <strong>€1.500 una tantum</strong>. Il canone operativo e l'eventuale consumo realtime dipendono dai vostri numeri: messaggi, minuti, picchi, integrazioni e livello di analisi richiesto. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione che è giusto per la sua azienda.</p>
 
-    <p>Il <strong>Piano A — voicemail analisi</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama: il chiamante sente una segreteria normale, ma quello che succede dietro è completamente diverso. Tutta l'elaborazione è inclusa nel canone, fino a 1.000 messaggi al mese di fair-use. Niente costi a consumo, niente sorprese.</p>
+    <p>Il <strong>Piano A — voicemail analisi</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama: il chiamante sente una segreteria normale, ma quello che succede dietro è completamente diverso. Per casi semplici, il canone operativo parte indicativamente da circa <strong>€250/mese</strong>, poi si calibra sui volumi reali.</p>
 
-    <p>Il <strong>Piano B — voicemail realtime</strong> è il salto evolutivo. Quando i volumi crescono, quando i picchi non si gestiscono più con un richiamo entro un'ora, quando il cliente che non riceve risposta immediata chiama il concorrente di fronte. L'AI risponde dal primo squillo, dialoga, conferma appuntamenti, prequalifica. Stesso setup e canone del Piano A, in più €0,15-0,20 al minuto sulla conversazione effettiva.</p>
+    <p>Il <strong>Piano B — voicemail realtime</strong> è il salto evolutivo. Quando i volumi crescono, quando i picchi non si gestiscono più con un richiamo entro un'ora, quando il cliente che non riceve risposta immediata chiama il concorrente di fronte. L'AI risponde dal primo squillo, dialoga, conferma appuntamenti, prequalifica. Qui si aggiunge il consumo realtime: ordine di grandezza <strong>€0,20-0,25/min</strong> sui minuti effettivi.</p>
 
     <table class="compare-table">
       <thead>
@@ -370,8 +375,8 @@
         </tr>
         <tr>
           <td class="row-label">Costo aggiuntivo</td>
-          <td>Nessuno. Tutto incluso nel canone €250/mese (fair-use 1.000 messaggi/mese).</td>
-          <td>€0,15/min Standard o €0,20/min con post-analisi, sui minuti di conversazione effettiva.</td>
+          <td>Canone operativo stimato sui volumi. Per casi semplici: da circa €250/mese.</td>
+          <td>Canone operativo + consumo realtime indicativo: circa €0,20-0,25/min sui minuti effettivi.</td>
         </tr>
         <tr>
           <td class="row-label">Quando ha senso</td>
@@ -385,7 +390,7 @@
       </tbody>
     </table>
 
-    <p>Una nota onesta sui costi annuali: nei volumi tipici (entro fair-use), il Piano A si stabilizza intorno ai <strong>€4.500/anno</strong> totali e il Piano B aggiunge il consumo a minuto sulla conversazione realtime. Per volumi conversazionali contenuti la differenza è modesta; per volumi alti — concessionarie con picchi importanti, recall stagionali — il Piano B costa significativamente di più, ma recupera molte più chiamate. Nel discovery call analizziamo insieme i vostri numeri reali e vediamo quale dei due ha senso per voi.</p>
+    <p>Una nota onesta sui costi annuali: il Piano A è prevedibile quando i volumi sono chiari; il Piano B cresce con i minuti di conversazione realtime. Per volumi contenuti la differenza può essere modesta; per volumi alti — concessionarie con picchi importanti, recall stagionali — il Piano B costa di più, ma recupera molte più chiamate. Nella valutazione gratuita analizziamo i vostri numeri reali e vediamo quale livello ha senso.</p>
   </div>
 </section>
 
@@ -445,38 +450,38 @@
   </div>
 </section>
 
-<!-- LISTINO -->
+<!-- PREZZI -->
 <section class="pillar-section" id="listino-pillar">
   <div class="wrap">
-    <h2>Listino, trasparente</h2>
-    <p>Listino completo con confronto fra i due piani sul listino in homepage. Qui il riassunto operativo: due voci identiche per entrambi i piani, una terza che cambia in base al livello scelto.</p>
+    <h2>Prezzi: fisso, variabile, stimato</h2>
+    <p>Il prezzo non è nascosto, ma nemmeno finto. Qui trovi le voci che contano; il preventivo finale si calcola sui volumi reali di chiamate, minuti, picchi e integrazioni.</p>
 
     <div class="listino-recap">
       <div class="listino-item">
         <div class="label">01 · Setup iniziale</div>
         <div class="price">€1.500</div>
-        <div class="note">Una tantum, identico per entrambi i piani. Configurazione, integrazione centralino, addestramento sui flussi specifici.</div>
+        <div class="note">Una tantum, valido per entrambi i piani. Configurazione, integrazione centralino, addestramento sui flussi specifici.</div>
       </div>
       <div class="listino-item">
-        <div class="label">02 · Canone mensile</div>
-        <div class="price">€250<span style="font-size:15px;color:var(--ink-mute)">/mese</span></div>
-        <div class="note">Identico per entrambi i piani. Infrastruttura cloud, manutenzione, aggiornamenti. Per il Piano A include tutta l'elaborazione dei messaggi.</div>
+        <div class="label">02 · Canone operativo</div>
+        <div class="price">da ~€250<span style="font-size:15px;color:var(--ink-mute)">/mese</span></div>
+        <div class="note">Ordine di grandezza per casi semplici. Include infrastruttura cloud, manutenzione e aggiornamenti; cambia con volumi, integrazioni e requisiti dati.</div>
       </div>
       <div class="listino-item">
         <div class="label">03 · Modalità di utilizzo</div>
         <div class="price">Piano A o B</div>
-        <div class="note">Piano A: nessun costo aggiuntivo (fair-use 1.000 msg/mese). Piano B: €0,15-0,20/min sulla conversazione realtime.</div>
+        <div class="note">Piano A: stima sui messaggi elaborati. Piano B: consumo realtime indicativo €0,20-0,25/min sui minuti effettivi.</div>
       </div>
     </div>
 
     <div class="pricing-cross">
       <div class="pricing-cross-eyebrow">Standard incluso · Custom a progetto</div>
       <h3>La logica vale per tutti i servizi del catalogo</h3>
-      <p>Il Piano A e i pacchetti del Piano B (Standard e con post-analisi) coprono i flussi tipici del mondo automotive con il listino sopra. <strong>Il report standard è incluso nel costo a consumo del Piano B</strong> e nel canone del Piano A: niente sovrapprezzi sul singolo report, niente sorprese in fattura.</p>
-      <p>Per pipeline su misura — integrazioni con DMS o gestionali specifici della rete, modelli costruiti sui dati del singolo concessionario, analisi longitudinali sulla pipeline vendite — il costo si concorda a progetto secondo listino enterprise. È la stessa logica trasversale del catalogo Bintware.</p>
+      <p>Il Piano A e il Piano B coprono i flussi tipici del mondo automotive con la logica sopra: setup fisso, canone operativo stimato e consumo realtime solo quando serve. Niente sovrapprezzi opachi sul singolo report, niente sorprese in fattura.</p>
+      <p>Per pipeline su misura — integrazioni con DMS o gestionali specifici della rete, modelli costruiti sui dati del singolo concessionario, analisi longitudinali sulla pipeline vendite — il costo si concorda a progetto.</p>
     </div>
 
-    <p style="margin-top:24px"><a href="index.html#listino">Vedi il listino completo in homepage</a> con il dettaglio dei due pacchetti del Piano B (Standard e con post-analisi).</p>
+    <p style="margin-top:24px"><a href="index.html#listino">Vedi come stimiamo i prezzi in homepage</a>.</p>
   </div>
 </section>
 
@@ -498,7 +503,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>Qual è la differenza tra Piano A e Piano B?</summary>
-        <div class="answer">Setup (€1.500) e canone (€250/mese) sono identici. Cambia cosa fa il sistema quando il telefono squilla. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background, recapitandovi un ticket pronto. Nel Piano B l'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti — qui si paga in più €0,15-0,20 al minuto di conversazione effettiva. Il Piano A è il punto di ingresso, il Piano B è l'evoluzione tecnologica.</div>
+        <div class="answer">Il setup iniziale è fisso (€1.500). Cambia cosa fa il sistema quando il telefono squilla e quindi cambia la stima mensile. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background. Nel Piano B l'AI risponde dal primo squillo e dialoga col chiamante: qui si aggiunge un consumo indicativo di circa €0,20-0,25/min sui minuti effettivi.</div>
       </details>
 
       <details class="faq-item">
@@ -508,7 +513,7 @@
 
       <details class="faq-item">
         <summary>Quanto costa al mese?</summary>
-        <div class="answer">Setup di €1.500 una tantum + canone fisso di €250/mese, identici per entrambi i piani. Nel Piano A non si paga nient'altro: l'elaborazione dei messaggi è inclusa, fino a 1.000 messaggi voicemail/mese di fair-use. Nel Piano B si pagano in più €0,15/min (Standard) o €0,20/min (con post-analisi) sulla conversazione effettiva. Per un'azienda media nella fascia di fair-use il Piano A si stabilizza intorno ai €4.500/anno.</div>
+        <div class="answer">Il setup iniziale è fisso: €1.500 una tantum. Il canone operativo parte indicativamente da circa €250/mese per casi semplici, ma viene stimato sui volumi reali: numero di messaggi, minuti, integrazioni, requisiti dati e livello di automazione. Nel Piano B si aggiunge il consumo realtime, nell'ordine di grandezza di circa €0,20-0,25/min sui minuti effettivi.</div>
       </details>
 
       <details class="faq-item">
@@ -544,7 +549,7 @@
   <div class="wrap">
     <h2>Parliamone 30 minuti.</h2>
     <p>Una conversazione gratuita per analizzare insieme i numeri della vostra azienda — chiamate al giorno, picchi, fuori orario, tempi di richiamo — e decidere se ha più senso partire dal Piano A o dal Piano B. Risponde un founder, non un commerciale: niente qualifica, si parla del problema.</p>
-    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Prenota la discovery call</a>
+    <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Prenota la valutazione gratuita</a>
   </div>
 </section>
 
