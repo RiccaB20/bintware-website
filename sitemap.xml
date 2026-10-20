@@ -65,11 +65,17 @@
   <url>
     <loc>https://bintware.com/blog/alloydb-ricerca-ai-documenti.html</loc>
     <lastmod>2026-05-15</lastmod>
+    <image:image>
+      <image:loc>https://bintware.com/asset/img/diagramma-ricerca-ai.webp</image:loc>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bintware.com/blog/cos-e-interprete-vocale-sip-ai.html</loc>
     <lastmod>2026-05-15</lastmod>
+    <image:image>
+      <image:loc>https://bintware.com/asset/img/diagramma-interprete-sip-ai.webp</image:loc>
+    </image:image>
   </url>
 
   <url>

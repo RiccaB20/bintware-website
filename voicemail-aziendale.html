@@ -55,34 +55,36 @@
         "@type": "BusinessAudience",
         "audienceType": "Concessionarie auto, officine, carrozzerie, ricambisti"
       },
-      "description": "Voicemail intelligente in due livelli: Piano A (analisi asincrona) per chi vuole un punto di ingresso nell'AI senza ribaltare il centralino esistente; Piano B (realtime conversazionale) per chi ha picchi di chiamate o urgenze che non possono attendere callback. Il setup è fisso; canone e consumo si stimano sui volumi reali.",
+      "description": "Voicemail intelligente in due livelli: Piano A (analisi asincrona delle segreterie e registrazioni, Linea 2 del listino) per chi vuole un punto di ingresso nell'AI senza ribaltare il centralino esistente; Piano B (realtime conversazionale, Linea 1 del listino) per chi ha picchi di chiamate o urgenze che non possono attendere callback. Setup standard 0 € con impegno minimo 6 mesi; esempi chiavi in mano soggetti a verifica tecnica e suscettibili di modifiche.",
       "offers": [
         {
           "@type": "Offer",
-          "name": "Setup iniziale",
-          "price": "1500",
+          "name": "Setup Tecnico Standard (Promozione Impegno 6 Mesi = Setup 0 €)",
+          "price": "0",
           "priceCurrency": "EUR",
-          "description": "Una tantum, valido per entrambi i piani. Configurazione, integrazione col centralino esistente, addestramento sui flussi specifici dell'azienda."
+          "description": "Contributo standard una tantum di 200 € (Piano A · Trascrizione/Analisi) o 600 € (Piano B · Voce AI Realtime), interamente azzerato (0,00 €) sottoscrivendo un impegno minimo di 6 mesi."
         },
         {
           "@type": "Offer",
-          "name": "Canone operativo",
+          "name": "Piano A · Voicemail analisi asincrona (Linea 2)",
           "priceSpecification": {
             "@type": "PriceSpecification",
+            "price": "212.50",
             "priceCurrency": "EUR",
-            "description": "Canone unico che include infrastruttura cloud e gestione: viene presentato in fase di valutazione perché dipende dalla complessità del progetto."
+            "description": "Esempio indicativo IVA esclusa per 500 min/mese in Piano Flat (Slot Cloud 190,00 €/mese + 0,045 €/min; 222,50 €/mese con indicizzazione semantica), soggetto a verifica tecnica."
           },
-          "description": "Mensile, stimato su volumi, canali, integrazioni e requisiti dati. Include infrastruttura cloud GCP, manutenzione e aggiornamenti."
+          "description": "Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese) più 0,045 €/min in Flat (0,060 €/min a Consumo) e opzione indicizzazione semantica (+0,020 €/min in Flat)."
         },
         {
           "@type": "Offer",
-          "name": "Piano B · consumo realtime",
+          "name": "Piano B · Voicemail conversazionale realtime Suite Completa (Linea 1)",
           "priceSpecification": {
             "@type": "PriceSpecification",
+            "price": "441.00",
             "priceCurrency": "EUR",
-            "description": "Ordine di grandezza: circa €0,25/min sui minuti di conversazione effettiva."
+            "description": "Esempio indicativo IVA esclusa per 500 min/mese in Piano Flat Suite Completa (Slot Cloud 190,00 €/mese + 0,502 €/min, con Dashboard Essential inclusa), soggetto a verifica tecnica."
           },
-          "description": "Solo per il Piano B realtime. La stima dipende dai minuti di conversazione effettiva e dal livello di post-analisi richiesto. Avvisi di soglia configurabili, mai blocchi automatici del servizio."
+          "description": "L'AI risponde dal primo squillo, dialoga col chiamante, trascrive, genera Report AI e indicizza. Tariffe da 0,362 €/min (Solo Voce Base) a 0,502 €/min (Suite Completa) in Piano Flat."
         }
       ]
     },
@@ -95,7 +97,7 @@
           "name": "Qual è la differenza tra Piano A e Piano B?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Il setup iniziale è fisso (€1.500). Cambia cosa fa il sistema quando il telefono squilla e quindi cambia la stima mensile. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background. Nel Piano B l'AI risponde dal primo squillo e dialoga col chiamante: qui si aggiunge un consumo indicativo di circa €0,25/min sui minuti effettivi."
+            "text": "Nel Piano A (Voicemail analisi asincrona · Linea 2) il chiamante lascia un messaggio in segreteria e l'AI in pochi secondi lo trascrive, ne estrae i campi strutturati e prepara il ticket (da 0,045 €/min in Flat oltre allo Slot Cloud da 190,00 €/mese; es. 500 min/mese a 212,50 €/mese). Nel Piano B (Voicemail realtime · Linea 1) l'AI risponde dal primo squillo e dialoga col chiamante in tempo reale: nella Suite Completa (0,502 €/min in Flat + Slot Cloud da 190,00 €/mese, con Dashboard Essential gratuita; es. 500 min/mese a 441,00 €/mese) include conversazione live, trascrizione, Report AI e ricerca semantica. Il setup standard (200 € per Piano A, 600 € per Piano B) è azzerato a 0 € con impegno minimo di 6 mesi."
           }
         },
         {
@@ -111,15 +113,15 @@
           "name": "Quanto costa al mese?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Il setup iniziale è fisso: €1.500 una tantum. Il canone operativo è un'unica voce mensile che include infrastruttura cloud e gestione: dipende dalla complessità del progetto — volumi, integrazioni, requisiti dati e livello di automazione — e viene presentato in fase di valutazione. Nel Piano B si aggiunge il consumo realtime, nell'ordine di grandezza di circa €0,25/min sui minuti effettivi."
+            "text": "Il nostro modello non prevede alcuna tassa per postazione utente: si basa su 1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese, capace di gestire fino a 7.560 min/mese) più i minuti del piano scelto. A titolo di esempio indicativo IVA esclusa per 500 min/mese in Piano Flat: il Piano A costa 212,50 €/mese (222,50 €/mese con indicizzazione semantica), mentre il Piano B in Suite Completa (con Dashboard Essential per 3 utenti inclusa) costa 441,00 €/mese (190,00 € di Slot Cloud + 251,00 € per 500 min a 0,502 €/min). Il setup tecnico standard (200 € per Piano A, 600 € per Piano B) è 0,00 € con impegno minimo di 6 mesi. Tutti gli esempi sono soggetti a verifica tecnica e suscettibili di modifiche."
           }
         },
         {
           "@type": "Question",
-          "name": "Cosa succede se supero la soglia di fair-use o il budget di consumo?",
+          "name": "Cosa succede se supero i minuti inclusi nel Piano Flat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Il servizio non si interrompe, mai. Vale per entrambi i piani. Il sistema invia avvisi quando il consumo del mese in corso raggiunge il 70% e il 90% della soglia configurata (numero di messaggi per il Piano A, importo in euro per il Piano B). Al superamento, una notifica esplicita: 'hai superato la soglia, il servizio è attivo, vuoi alzarla, mantenerla, abbassarla?'. Decisione del cliente, mai automatismi che spengono il telefono."
+            "text": "Nei Piani Flat è sempre il cliente a scegliere in anticipo tra due opzioni trasparenti: Opzione A (Blocco Automatico a Soglia «Budget Protetto / Zero Sorprese»), che ferma automaticamente l'erogazione al 100% dei minuti inclusi fino al rinnovo o a uno sblocco manuale per non spendere mai un euro oltre il budget; oppure Opzione B (Continuità Operativa H24 con Switch Automatico a Consumo), che mantiene attivo il servizio senza interruzioni tariffando i soli minuti eccedenti a consumo (0,653 €/min per Voce Suite Completa, 0,060 €/min per Trascrizione, 0,020 €/min per Indicizzazione semantica)."
           }
         },
         {
@@ -276,6 +278,30 @@
       <a href="https://calendar.app.google/iP1uWr61k3mFBDKR7" target="_blank" rel="noopener" class="btn primary"><span class="dot"></span>Valuta il tuo caso · 30 min</a>
       <a href="#due-livelli" class="btn ghost">Vedi i due livelli</a>
     </div>
+    <figure class="pillar-visual">
+      <div class="pillar-visual-bar">
+        <span class="pillar-visual-status"><span class="live-dot"></span>Pipeline Voicemail Attiva · Google Cloud europe-west8 (Milano)</span>
+        <span class="pillar-visual-meta"><span>Modalità: <strong>Analisi &amp; Realtime</strong></span><span>Output: <strong>Ticket prioritizzati</strong></span></span>
+      </div>
+      <div class="live-visual-stage">
+        <img src="asset/img/scenario-voicemail.webp" alt="Flusso della voicemail intelligente Bintware: dalla chiamata persa al ticket strutturato in italiano per il referente" width="1200" height="868" fetchpriority="high" decoding="async">
+        <svg class="live-visual-overlay" viewBox="0 0 1200 868" aria-hidden="true">
+          <circle class="vm-ring vm-ring-1" cx="162" cy="162" r="46" fill="none" stroke="oklch(0.78 0.16 55)" stroke-width="3"/>
+          <circle class="vm-ring vm-ring-2" cx="232" cy="315" r="46" fill="none" stroke="oklch(0.78 0.16 55)" stroke-width="3"/>
+          <circle class="vm-ring vm-ring-3" cx="132" cy="492" r="46" fill="none" stroke="oklch(0.78 0.16 55)" stroke-width="3"/>
+          <g style="color: oklch(0.78 0.16 55)">
+            <circle class="vm-pkt vm-pkt-1" cx="290" cy="465" r="7" fill="currentColor"/>
+            <circle class="vm-pkt vm-pkt-2" cx="290" cy="465" r="7" fill="currentColor"/>
+            <circle class="vm-pkt vm-pkt-3" cx="290" cy="465" r="7" fill="currentColor"/>
+          </g>
+          <rect class="ticket-scan ticket-scan-1" x="684" y="88" width="484" height="122" rx="14" fill="none" stroke="oklch(0.78 0.16 55)" stroke-width="4"/>
+          <rect class="ticket-scan ticket-scan-2" x="684" y="240" width="484" height="122" rx="14" fill="none" stroke="oklch(0.72 0.12 240)" stroke-width="4"/>
+          <rect class="ticket-scan ticket-scan-3" x="684" y="392" width="484" height="122" rx="14" fill="none" stroke="oklch(0.72 0.12 240)" stroke-width="4"/>
+          <rect class="ticket-scan ticket-scan-4" x="684" y="544" width="484" height="122" rx="14" fill="none" stroke="oklch(0.78 0.16 55)" stroke-width="4"/>
+          <rect class="ticket-scan ticket-scan-5" x="684" y="696" width="484" height="122" rx="14" fill="none" stroke="oklch(0.78 0.14 155)" stroke-width="4"/>
+        </svg>
+      </div>
+    </figure>
   </div>
 </header>
 
@@ -342,55 +368,57 @@
 <!-- DUE LIVELLI -->
 <section class="pillar-section" id="due-livelli">
   <div class="wrap">
-    <h2>Due livelli, una stessa logica di stima</h2>
-    <p>Il setup iniziale è fisso: <strong>€1.500 una tantum</strong>. Il canone operativo e l'eventuale consumo realtime dipendono dai vostri numeri: messaggi, minuti, picchi, integrazioni e livello di analisi richiesto. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione che è giusto per la sua azienda.</p>
+    <h2>Due livelli, la stessa architettura su Google Cloud</h2>
+    <p>Il nostro modello economico non applica alcuna tassa per postazione utente: si basa su <strong>1 Slot Cloud dedicato su Google Cloud (regione di Milano, 190,00 € / mese, fino a 7.560 min/mese)</strong> più i minuti del piano scelto. E con un impegno minimo di 6 mesi, <strong>il contributo di attivazione standard (200 € per il Piano A, 600 € per il Piano B) è interamente azzerato a 0,00 €</strong>.</p>
 
-    <p>Il <strong>Piano A — voicemail analisi</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama: il chiamante sente una segreteria normale, ma quello che succede dietro è completamente diverso. Il canone operativo — un'unica voce mensile che include infrastruttura cloud e gestione — dipende dalla complessità del progetto e viene presentato in fase di valutazione.</p>
+    <p>Il <strong>Piano A — Voicemail analisi asincrona (Linea 2)</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama: il chiamante sente una segreteria normale, e in pochi secondi il sistema trascrive il messaggio, estrae i campi strutturati e prepara il ticket. La tariffa in Piano Flat è di <strong>0,045 € / min</strong> (più eventuale indicizzazione semantica a <strong>+0,020 € / min</strong>): ad esempio, uno scenario chiavi in mano da <strong>500 min/mese</strong> costa <strong>212,50 € / mese</strong> (190,00 € di Slot Cloud + 22,50 € di minuti; <strong>222,50 € / mese</strong> con indicizzazione semantica).</p>
 
-    <p>Il <strong>Piano B — voicemail realtime</strong> è il salto evolutivo. Quando i volumi crescono, quando i picchi non si gestiscono più con un richiamo entro un'ora, quando il cliente che non riceve risposta immediata chiama il concorrente di fronte. L'AI risponde dal primo squillo, dialoga, conferma appuntamenti, prequalifica. Qui si aggiunge il consumo realtime: ordine di grandezza <strong>€0,25/min</strong> sui minuti effettivi.</p>
+    <p>Il <strong>Piano B — Voicemail conversazionale realtime (Linea 1)</strong> è il salto evolutivo. Quando i volumi crescono, quando i picchi non si gestiscono più con un richiamo entro un'ora, l'AI risponde dal primo squillo anche in ambienti rumorosi, dialoga col chiamante nel rispetto delle regole di business, conferma appuntamenti e prequalifica. La tariffa AI in Piano Flat parte da <strong>0,362 € / min</strong> (profilo <em>Solo Voce Base</em>) e arriva a <strong>0,502 € / min</strong> nella <strong>Suite Completa Consigliata</strong> (che include Voce Realtime + Trascrizione + Report Analitico AI + Ricerca Semantica + Dashboard Essential per 3 utenti): sommando lo Slot Cloud da <strong>190,00 € / mese</strong>, uno scenario chiavi in mano da <strong>500 min/mese in Suite Completa</strong> costa <strong>441,00 € / mese</strong> (con soli +70,00 €/mese di differenza rispetto al Solo Voce Base a 371,00 €/mese).</p>
 
+    <div class="table-scroll" role="region" aria-label="Confronto Piano A e Piano B" tabindex="0">
     <table class="compare-table">
       <thead>
         <tr>
           <th class="row-label">&nbsp;</th>
-          <th>Piano A · Voicemail analisi</th>
-          <th>Piano B · Voicemail realtime</th>
+          <th>Piano A · Voicemail analisi (Linea 2)</th>
+          <th>Piano B · Voicemail realtime (Linea 1)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="row-label">Cosa fa quando il telefono squilla</td>
-          <td>Il chiamante lascia un messaggio come a una segreteria normale. L'AI lavora in background.</td>
-          <td>L'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti, prequalifica.</td>
+          <td data-label="Piano A · Voicemail analisi">Il chiamante lascia un messaggio come a una segreteria normale. L'AI elabora l'audio in pochi secondi.</td>
+          <td data-label="Piano B · Voicemail realtime">L'AI risponde dal primo squillo con dialogo contestuale guidato dalle regole aziendali, conferma appuntamenti e prequalifica.</td>
         </tr>
         <tr>
           <td class="row-label">Cosa cambia per chi chiama</td>
-          <td>Niente di percepibile: sente una voce umana di benvenuto e lascia il messaggio. Esperienza familiare.</td>
-          <td>Risposta immediata in linguaggio naturale. L'attesa è zero, il cliente percepisce attenzione subito.</td>
+          <td data-label="Piano A · Voicemail analisi">Niente di percepibile: sente una voce umana di benvenuto e lascia il messaggio. Esperienza familiare.</td>
+          <td data-label="Piano B · Voicemail realtime">Risposta immediata in linguaggio naturale, anche se chiama da un'officina o per strada grazie al filtro acustico anti-rumore.</td>
         </tr>
         <tr>
           <td class="row-label">Cosa cambia per voi</td>
-          <td>Ticket strutturato in email/dashboard, già categorizzato per priorità. Richiamate con un quadro chiaro.</td>
-          <td>Tutto del Piano A, in più: conferme appuntamenti senza intervento umano, riduzione drastica dell'abbandono di chiamata nei picchi.</td>
+          <td data-label="Piano A · Voicemail analisi">Ticket strutturato in email/dashboard, già categorizzato per priorità e tracciato col centralino.</td>
+          <td data-label="Piano B · Voicemail realtime">Tutto del Piano A, in più: gestione diretta della richiesta in chiamata e riduzione drastica dell'abbandono nei picchi.</td>
         </tr>
         <tr>
-          <td class="row-label">Costo aggiuntivo</td>
-          <td>Canone operativo unico (infrastruttura cloud + gestione), presentato in fase di valutazione.</td>
-          <td>Canone operativo + consumo realtime indicativo: circa €0,25/min sui minuti effettivi.</td>
+          <td class="row-label">Struttura di costo (Flat)</td>
+          <td data-label="Piano A · Voicemail analisi">Slot Cloud (190,00 €/mese) + <strong>0,045 €/min</strong> (+0,020 €/min indicizzazione). Es. 500 min/mese: <strong>212,50 €/mese</strong>. Setup standard 200 € (<strong>0 € con 6 mesi</strong>).</td>
+          <td data-label="Piano B · Voicemail realtime">Slot Cloud (190,00 €/mese) + da <strong>0,362 €/min</strong> (Solo Voce) a <strong>0,502 €/min</strong> (Suite Completa con Dashboard Essential inclusa). Es. 500 min/mese Suite Completa: <strong>441,00 €/mese</strong>. Setup standard 600 € (<strong>0 € con 6 mesi</strong>).</td>
         </tr>
         <tr>
           <td class="row-label">Quando ha senso</td>
-          <td>Volumi medi, picchi gestibili, cultura conservativa rispetto all'AI, urgenze gestibili in callback entro 1-2 ore.</td>
-          <td>Volumi alti o picchi frequenti, urgenze immediate (sinistro, recall stagionali), apertura culturale al dialogo con AI.</td>
+          <td data-label="Piano A · Voicemail analisi">Volumi medi, picchi gestibili, cultura conservativa rispetto all'AI, urgenze gestibili in callback entro 1-2 ore.</td>
+          <td data-label="Piano B · Voicemail realtime">Volumi alti o picchi frequenti, urgenze immediate (sinistro, recall stagionali), apertura culturale al dialogo con AI.</td>
         </tr>
         <tr>
-          <td class="row-label">Si può passare da A a B?</td>
-          <td colspan="2">Sì, in qualunque momento. Tutto il backend è condiviso: si attiva l'infrastruttura realtime sull'integrazione esistente.</td>
+          <td class="row-label">Si può passare da A a B (o usarli insieme)?</td>
+          <td colspan="2">Sì, in qualunque momento, oppure combinare entrambi nella <strong>Linea 3 · Offerta Combinata</strong> (es. 500 min Voce Suite Completa + 500 min Trascrizione a <strong>653,50 € / mese</strong> in Flat).</td>
         </tr>
       </tbody>
     </table>
+    </div>
 
-    <p>Una nota onesta sui costi annuali: il Piano A è prevedibile quando i volumi sono chiari; il Piano B cresce con i minuti di conversazione realtime. Per volumi contenuti la differenza può essere modesta; per volumi alti — concessionarie con picchi importanti, recall stagionali — il Piano B costa di più, ma recupera molte più chiamate. Nella valutazione gratuita analizziamo i vostri numeri reali e vediamo quale livello ha senso.</p>
+    <p>Una nota onesta sui costi: tutti gli scenari indicati sono in Euro (IVA esclusa) per configurazioni standard, soggetti a verifica tecnica e suscettibili di modifiche sul caso reale. Nella valutazione gratuita di 30 minuti analizziamo insieme i vostri volumi e calcoliamo lo scenario esatto.</p>
   </div>
 </section>
 
@@ -453,35 +481,35 @@
 <!-- PREZZI -->
 <section class="pillar-section" id="listino-pillar">
   <div class="wrap">
-    <h2>Prezzi: fisso, variabile, stimato</h2>
-    <p>Il prezzo non è nascosto, ma nemmeno finto. Qui trovi le voci che contano; il preventivo finale si calcola sui volumi reali di chiamate, minuti, picchi e integrazioni.</p>
+    <h2>Prezzi: esempi chiavi in mano e zero tassa per utente</h2>
+    <p>Il listino si basa sulla capacità effettiva (1 Slot Cloud dedicato da <strong>190,00 € / mese</strong> + i minuti del piano scelto), senza alcun canone per singola postazione dipendente. Qui trovi i riferimenti principali (IVA esclusa, per configurazioni standard); in homepage trovi la tabella completa di tutte le taglie di volume.</p>
 
     <div class="listino-recap">
       <div class="listino-item">
-        <div class="label">01 · Setup iniziale</div>
-        <div class="price">€1.500</div>
-        <div class="note">Una tantum, valido per entrambi i piani. Configurazione, integrazione centralino, addestramento sui flussi specifici.</div>
+        <div class="label">01 · Setup Tecnico Standard</div>
+        <div class="price">0,00 € <small style="font-size:14px;color:var(--ink-mute);font-weight:400">(con 6 mesi)</small></div>
+        <div class="note">Contributo standard (200 € per Piano A, 600 € per Piano B, 800 € Combinata) interamente azzerato sottoscrivendo un impegno minimo di 6 mesi.</div>
       </div>
       <div class="listino-item">
-        <div class="label">02 · Canone operativo</div>
-        <div class="price">su misura</div>
-        <div class="note">Un'unica voce mensile: infrastruttura cloud, manutenzione e aggiornamenti. Dipende dalla complessità del progetto; lo presentiamo in fase di valutazione.</div>
+        <div class="label">02 · Piano A · Analisi (Linea 2)</div>
+        <div class="price">da 212,50 €<small style="font-size:14px;color:var(--ink-mute);font-weight:400">/mese</small></div>
+        <div class="note">Esempio Flat 500 min/mese (Slot Cloud 190,00 € + 0,045 €/min; 222,50 €/mese con indicizzazione semantica).</div>
       </div>
       <div class="listino-item">
-        <div class="label">03 · Modalità di utilizzo</div>
-        <div class="price">Piano A o B</div>
-        <div class="note">Piano A: stima sui messaggi elaborati. Piano B: consumo realtime indicativo €0,25/min sui minuti effettivi.</div>
+        <div class="label">03 · Piano B · Realtime (Linea 1)</div>
+        <div class="price">da 441,00 €<small style="font-size:14px;color:var(--ink-mute);font-weight:400">/mese</small></div>
+        <div class="note">Esempio Flat 500 min/mese in <strong>Suite Completa</strong> (Slot Cloud 190,00 € + 500 min × 0,502 €/min, con Dashboard Essential per 3 utenti inclusa; oppure da 0,362 €/min per il Solo Voce Base).</div>
       </div>
     </div>
 
     <div class="pricing-cross">
-      <div class="pricing-cross-eyebrow">Standard incluso · Custom a progetto</div>
-      <h3>La logica vale per tutti i servizi del catalogo</h3>
-      <p>Il Piano A e il Piano B coprono i flussi tipici del mondo automotive con la logica sopra: setup fisso, canone operativo stimato e consumo realtime solo quando serve. Niente sovrapprezzi opachi sul singolo report, niente sorprese in fattura.</p>
-      <p>Per pipeline su misura — integrazioni con DMS o gestionali specifici della rete, modelli costruiti sui dati del singolo concessionario, analisi longitudinali sulla pipeline vendite — il costo si concorda a progetto.</p>
+      <div class="pricing-cross-eyebrow">Gestione Extra-Soglia a scelta del Cliente · Riserva su caso reale</div>
+      <h3>Tu decidi tra Budget Protetto (Opzione A) o Continuità H24 (Opzione B)</h3>
+      <p>Nei Piani Flat scegli in anticipo cosa succede se superi i minuti mensili: <strong>Opzione A (Blocco Automatico a Soglia «Zero Sorprese»)</strong> per non spendere mai un euro oltre il budget concordato, oppure <strong>Opzione B (Continuità Operativa H24 con Switch Automatico a Consumo)</strong> per non perdere nessuna chiamata nei picchi (con i soli minuti extra tariffati a consumo: 0,653 €/min Voce Suite Completa, 0,060 €/min Trascrizione).</p>
+      <p><strong>Nota di riserva:</strong> tutti i prezzi indicati sono esempi indicativi in Euro (IVA esclusa) per configurazioni standard, soggetti a verifica tecnica e suscettibili di modifiche. Eventuali integrazioni con DMS proprietari o sviluppi custom fuori standard vengono quotati a progetto.</p>
     </div>
 
-    <p style="margin-top:24px"><a href="index.html#listino">Vedi come stimiamo i prezzi in homepage</a>.</p>
+    <p style="margin-top:24px"><a href="index.html#listino">Vedi il listino completo con tutte le 4 linee e gli scenari in homepage →</a></p>
   </div>
 </section>
 
@@ -503,7 +531,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>Qual è la differenza tra Piano A e Piano B?</summary>
-        <div class="answer">Il setup iniziale è fisso (€1.500). Cambia cosa fa il sistema quando il telefono squilla e quindi cambia la stima mensile. Nel Piano A il chiamante lascia un messaggio come a una segreteria normale e l'AI lo trascrive e struttura in background. Nel Piano B l'AI risponde dal primo squillo e dialoga col chiamante: qui si aggiunge un consumo indicativo di circa €0,25/min sui minuti effettivi.</div>
+        <div class="answer">Nel Piano A (Voicemail analisi asincrona · Linea 2) il chiamante lascia un messaggio in segreteria e l'AI in pochi secondi lo trascrive, ne estrae i campi strutturati e prepara il ticket (da 0,045 €/min in Flat oltre allo Slot Cloud da 190,00 €/mese; es. 500 min/mese a 212,50 €/mese). Nel Piano B (Voicemail realtime · Linea 1) l'AI risponde dal primo squillo e dialoga col chiamante in tempo reale: nella Suite Completa (0,502 €/min in Flat + Slot Cloud da 190,00 €/mese, con Dashboard Essential gratuita; es. 500 min/mese a 441,00 €/mese) include conversazione live, trascrizione, Report AI e ricerca semantica. Il setup standard (200 € per Piano A, 600 € per Piano B) è azzerato a 0 € con impegno minimo di 6 mesi.</div>
       </details>
 
       <details class="faq-item">
@@ -513,12 +541,12 @@
 
       <details class="faq-item">
         <summary>Quanto costa al mese?</summary>
-        <div class="answer">Il setup iniziale è fisso: €1.500 una tantum. Il canone operativo è un'unica voce mensile che include infrastruttura cloud e gestione: dipende dalla complessità del progetto — volumi, integrazioni, requisiti dati e livello di automazione — e viene presentato in fase di valutazione. Nel Piano B si aggiunge il consumo realtime, nell'ordine di grandezza di circa €0,25/min sui minuti effettivi.</div>
+        <div class="answer">Il nostro modello non prevede alcuna tassa per postazione utente: si basa su 1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese, capace di gestire fino a 7.560 min/mese) più i minuti del piano scelto. A titolo di esempio indicativo IVA esclusa per 500 min/mese in Piano Flat: il Piano A costa 212,50 €/mese (222,50 €/mese con indicizzazione semantica), mentre il Piano B in Suite Completa (con Dashboard Essential per 3 utenti inclusa) costa 441,00 €/mese (190,00 € di Slot Cloud + 251,00 € per 500 min a 0,502 €/min). Il setup tecnico standard (200 € per Piano A, 600 € per Piano B) è 0,00 € con impegno minimo di 6 mesi. Tutti gli esempi sono soggetti a verifica tecnica e suscettibili di modifiche.</div>
       </details>
 
       <details class="faq-item">
-        <summary>Cosa succede se supero la soglia di fair-use o il budget di consumo?</summary>
-        <div class="answer">Il servizio non si interrompe, mai. Vale per entrambi i piani. Il sistema invia avvisi quando il consumo del mese in corso raggiunge il 70% e il 90% della soglia configurata (numero di messaggi per il Piano A, importo in euro per il Piano B). Al superamento, una notifica esplicita: "hai superato la soglia, il servizio è attivo, vuoi alzarla, mantenerla, abbassarla?". Decisione del cliente, mai automatismi che spengono il telefono.</div>
+        <summary>Cosa succede se supero i minuti inclusi nel Piano Flat?</summary>
+        <div class="answer">Nei Piani Flat è sempre il cliente a scegliere in anticipo tra due opzioni trasparenti: <strong>Opzione A (Blocco Automatico a Soglia «Budget Protetto / Zero Sorprese»)</strong>, che ferma automaticamente l'erogazione al 100% dei minuti inclusi fino al rinnovo o a uno sblocco manuale per non spendere mai un euro oltre il budget; oppure <strong>Opzione B (Continuità Operativa H24 con Switch Automatico a Consumo)</strong>, che mantiene attivo il servizio senza interruzioni tariffando i soli minuti eccedenti a consumo (0,653 €/min per Voce Suite Completa, 0,060 €/min per Trascrizione, 0,020 €/min per Indicizzazione semantica).</div>
       </details>
 
       <details class="faq-item">
@@ -573,6 +601,6 @@
   </div>
 </footer>
 
-<script src="js/app.js"></script>
+<script defer src="js/app.js"></script>
 </body>
 </html>
