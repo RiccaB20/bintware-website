@@ -86,10 +86,10 @@
         },
         {
           "@type": "Question",
-          "name": "Dove finiscono i dati di salute dei pazienti?",
+          "name": "Dove finiscono i dati di salute dei pazienti e come vengono anonimizzati?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Su Google Cloud `europe-west8` (datacenter di Milano). Data residency UE garantita per architettura, non per policy: i dati non escono dall'Unione Europea. Conformità GDPR e dati sanitari (categoria particolare ex art. 9 GDPR), modello DPA (Data Processing Agreement) standard fornito alla firma del contratto. Per studi che ne hanno bisogno, valutiamo anche infrastruttura dedicata (VM e database esclusivi) come opzione di potenziamento."
+            "text": "Su Google Cloud europe-west8 (datacenter di Milano), con data residency UE garantita per architettura e contratto enterprise Vertex AI che vieta qualsiasi utilizzo dei dati per l'addestramento dei modelli (Zero Training). Inoltre, per la tutela delle categorie particolari di dati (Art. 9 e Art. 25 GDPR), integriamo pipeline di anonimizzazione e pseudonimizzazione pre-AI che mascherano automaticamente gli identificativi diretti e indiretti del paziente (nomi, cognomi, codici fiscali, recapiti, date) prima che il testo clinico venga elaborato dal modello linguistico, separando l'identità anagrafica dal ragionamento semantico."
           }
         },
         {
@@ -97,7 +97,7 @@
           "name": "L'AI Act regola questo tipo di servizio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sì, e l'inquadramento è coerente col nostro posizionamento: il sistema è un AI di supporto al medico, non un dispositivo medico né un sistema decisionale autonomo. Non emette diagnosi, non prescrive terapie, non triagia pazienti senza supervisione. Per questo non ricade nelle categorie 'high-risk' dell'AI Act riservate a sistemi che operano in modo autonomo. Forniamo una scheda di conformità dettagliata in fase di proposta scritta."
+            "text": "Sì, e l'inquadramento è coerente col nostro posizionamento di Cloud Architect e System Integrator: realizziamo un'integrazione tecnologica su Google Cloud di supporto documentale e informativo al medico, non un dispositivo medico né un sistema decisionale autonomo. Non emette diagnosi, non prescrive terapie, non effettua triage autonomo di pazienti. Opera come compito preparatorio e di miglioramento della documentazione di un'attività umana ai sensi dell'Art. 6(3) del Regolamento (UE) 2024/1689 (AI Act), restando escluso dalle categorie 'high-risk' riservate a sistemi clinici autonomi (Art. 25(2) AI Act), mentre lo studio medico conserva la piena titolarità del trattamento (Art. 24 GDPR) e del ruolo di Deployer (Art. 25(1)(c) AI Act)."
           }
         },
         {
@@ -117,13 +117,20 @@
           }
         }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bintware.com/secondo-paio-orecchie.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bintware", "item": "https://bintware.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Un secondo paio d'orecchie per il medico", "item": "https://bintware.com/secondo-paio-orecchie.html" }
+      ]
     }
   ]
 }
 </script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -133,12 +140,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -353,8 +368,8 @@
           <h3 class="level-title">Analisi longitudinali su dati storici</h3>
         </div>
         <div class="level-body">
-          <p>L'orizzonte naturale del Livello 02. Quando il database ha accumulato uno storico significativo — almeno 3-6 mesi di visite per i primi pattern, anni per analisi più robuste — diventano possibili analisi che richiedono una serie storica: regressione semplice sui valori chiave, confronti tra coorti di pazienti con caratteristiche analoghe, indicatori di trend e segnalazioni precoci di evoluzione clinica.</p>
-          <p>Le tecniche di Machine Learning più avanzate sono possibili a questo stadio, ma vanno costruite su misura — sui dati reali dello studio, sulla domanda clinica concreta, con validazione clinica al fianco. Non sono prodotti pre-confezionati: rientrano nel listino "custom a progetto" del catalogo Bintware.</p>
+          <p>L'orizzonte naturale del Livello 02. Quando il database ha accumulato uno storico significativo — almeno 3-6 mesi di visite per i primi pattern, anni per analisi più robuste — diventano possibili aggregazioni statistiche descrittive sulla serie storica: regressione semplice sui valori chiave definiti dal professionista, confronti statistici tra coorti e visualizzazione dell'andamento dei parametri nel tempo.</p>
+          <p>Eventuali elaborazioni statistiche avanzate vengono progettate su misura — sui parametri indicati dallo studio, sotto l'esclusiva validazione e interpretazione clinica del professionista (Art. 6(3) AI Act). Non sono dispositivi diagnostici pre-confezionati: rientrano nei servizi di ingegneria dei dati su misura del catalogo Bintware.</p>
           <p>L'utilità del Livello 03 dipende interamente dalla qualità del Livello 02 sotto. Per questo definire bene i campi all'inizio è il singolo investimento di tempo che ripaga di più nel medio periodo.</p>
         </div>
       </div>
@@ -478,6 +493,24 @@
         </div>
       </div>
     </div>
+
+    <div class="cap-grid" style="margin-top:40px">
+      <div class="cap-card">
+        <div class="cap-num">Privacy-by-Design · Art. 9 e 25 GDPR</div>
+        <h3>Pipeline di Anonimizzazione Pre-AI</h3>
+        <p>Prima che il testo di una visita, di un referto o di un diario clinico venga sottoposto al modello linguistico, la nostra pipeline intercetta e maschera automaticamente gli identificativi diretti e indiretti (nomi, cognomi, codici fiscali, indirizzi, recapiti, date specifiche) sostituendoli con token neutri. Il modello AI elabora solo il quadro clinico de-identificato, senza mai conoscere l'identità anagrafica del paziente.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">Google Cloud Milano · Vertex AI</div>
+        <h3>Zero Addestramento e Zero Persistenza</h3>
+        <p>Tutte le elaborazioni avvengono esclusivamente su infrastruttura enterprise Google Cloud nella regione europea di Milano (<code>europe-west8</code>), dove per contratto nessun dato clinico, vocale o testuale viene mai trattenuto o utilizzato per addestrare modelli di intelligenza artificiale. Sui dispositivi mobili i token risiedono solo nel Keychain cifrato, senza archivi clinici salvati in chiaro sul telefono.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-num">EU AI Act · Art. 6(3) e Art. 25</div>
+        <h3>Supporto Preparatorio e Ruoli Chiari</h3>
+        <p>La piattaforma nasce come strumento non ad alto rischio di supporto documentale e preparatorio sotto supervisione esclusiva del professionista (<em>Human-in-the-Loop</em>, Art. 6(3) AI Act). Lo studio medico conserva la piena titolarità dei dati (Art. 24 GDPR) e del giudizio clinico, con chiara ripartizione delle responsabilità normative lungo l'intera catena del valore (Art. 25 AI Act).</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -502,7 +535,7 @@
       </div>
       <div class="target-card">
         <h3>Centri di analisi e diagnostica</h3>
-        <p>Estrazione e archiviazione di valori da referti scritti o discussi a voce, costruzione di profili longitudinali, segnalazione precoce di pattern anomali sui pazienti che fanno controlli regolari.</p>
+        <p>Estrazione e archiviazione di valori da referti scritti o discussi a voce, costruzione di profili storici strutturati e visualizzazione ordinata delle variazioni dei parametri sui pazienti che effettuano controlli regolari.</p>
       </div>
     </div>
   </div>
@@ -547,41 +580,42 @@
     <h2>Domande che ci fanno spesso</h2>
 
     <div class="faq-list">
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>L'AI sostituisce il medico nella valutazione clinica?</summary>
         <div class="answer">No, mai. Il sistema affianca il medico nel ragionamento clinico — non sostituisce il giudizio. Tutto ciò che il sistema produce (sintesi, osservazioni, suggerimenti) ha valore di secondo punto di vista informato sul testo della visita. La decisione clinica resta sempre, integralmente, del medico.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>Come si integra il sistema in studio medico?</summary>
         <div class="answer">L'AI ascolta la visita tramite microfono o registrazione audio. Durante o dopo la visita, il sistema produce trascrizione strutturata, estrazione dei dati clinici concordati in fase di setup, e — su richiesta del medico — risposte a domande qualitative sul caso. I dati sono accessibili dalla console web e dalle app desktop, Android e iOS Bintware (con dizionario etichette cliniche dedicato) oppure via API REST nel gestionale medico.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>Quanto costa il servizio?</summary>
         <div class="answer">Non c'è alcuna tassa per singolo medico o postazione: il listino si basa su 1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese, fino a 7.560 min/mese) più i minuti effettivi secondo la modalità scelta. Per trascrizione e indicizzazione asincrona delle visite (Linea 2) si parte da 212,50 €/mese in Piano Flat per 500 min/mese (222,50 €/mese con indicizzazione semantica); per l'assistenza interattiva in Suite Completa (Linea 1, con Dashboard Essential inclusa) si parte da 441,00 €/mese in Piano Flat per 500 min/mese (190,00 € di Slot Cloud + 251,00 € per 500 min a 0,502 €/min). Il setup tecnico standard (200 € o 600 €) è azzerato a 0,00 € con impegno minimo di 6 mesi. Tutti i prezzi sono esempi indicativi IVA esclusa per configurazioni standard, soggetti a verifica tecnica e suscettibili di modifiche.</div>
       </details>
 
-      <details class="faq-item">
-        <summary>Dove finiscono i dati di salute dei pazienti?</summary>
-        <div class="answer">Su Google Cloud <code>europe-west8</code> (datacenter di Milano). Data residency UE garantita per architettura, non per policy: i dati non escono dall'Unione Europea. Conformità GDPR e dati sanitari (categoria particolare ex art. 9 GDPR), modello DPA (Data Processing Agreement) standard fornito alla firma del contratto. Per studi che ne hanno bisogno, valutiamo anche infrastruttura dedicata (VM e database esclusivi) come opzione di potenziamento.</div>
+      <details class="faq-item" name="medical-faq">
+        <summary>Dove finiscono i dati di salute dei pazienti e come vengono anonimizzati?</summary>
+        <div class="answer">Su Google Cloud <code>europe-west8</code> (datacenter di Milano), con data residency UE garantita per architettura e contratto enterprise Vertex AI che vieta qualsiasi utilizzo dei dati per l'addestramento dei modelli (<em>Zero Training</em>). Inoltre, per la tutela delle categorie particolari di dati (Art. 9 e Art. 25 GDPR), integriamo pipeline di <strong>anonimizzazione e pseudonimizzazione pre-AI</strong> che mascherano automaticamente gli identificativi diretti e indiretti del paziente (nomi, cognomi, codici fiscali, recapiti, date) prima che il testo clinico venga elaborato dal modello linguistico, separando l'identità anagrafica dal ragionamento semantico.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>L'AI Act regola questo tipo di servizio?</summary>
-        <div class="answer">Sì, e l'inquadramento è coerente col nostro posizionamento: il sistema è un AI di supporto al medico, non un dispositivo medico né un sistema decisionale autonomo. Non emette diagnosi, non prescrive terapie, non triagia pazienti senza supervisione. Per questo non ricade nelle categorie "high-risk" dell'AI Act riservate a sistemi che operano in modo autonomo. Forniamo una scheda di conformità dettagliata in fase di proposta scritta.</div>
+        <div class="answer">Sì, e l'inquadramento è coerente col nostro posizionamento di Cloud Architect e System Integrator: realizziamo un'integrazione tecnologica su Google Cloud di supporto documentale e informativo al medico, non un dispositivo medico né un sistema decisionale autonomo. Non emette diagnosi, non prescrive terapie, non effettua triage autonomo di pazienti. Opera come compito preparatorio e di miglioramento della documentazione di un'attività umana ai sensi dell'Art. 6(3) del Regolamento (UE) 2024/1689 (AI Act), restando escluso dalle categorie "high-risk" riservate a sistemi clinici autonomi (Art. 25(2) AI Act), mentre lo studio medico conserva la piena titolarità del trattamento (Art. 24 GDPR) e del ruolo di Deployer (Art. 25(1)(c) AI Act). Forniamo una scheda di conformità dettagliata in fase di proposta scritta.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>Posso provare il sistema su un caso mio prima di firmare?</summary>
         <div class="answer">Sì. In discovery call (30 min, gratuita) possiamo guardare insieme — su un caso anonimizzato che porti tu — il tipo di sintesi e di osservazioni che il sistema produrrebbe. È il modo più efficace per capire se la qualità è quella che ti serve, senza promesse generiche.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="medical-faq">
         <summary>Quanto ci vuole per partire?</summary>
         <div class="answer">Tipicamente 2-4 settimane dalla firma a operativo, dipende dal livello scelto. Il Livello 01 (dialogo con l'AI sulla visita) è il più rapido. Il Livello 02 (estrazione strutturata in database) richiede 1-2 settimane in più per concordare i campi specifici della specialità medica e fare il fine-tuning. Il Livello 03 (analisi longitudinali) si attiva successivamente, quando il database ha accumulato uno storico significativo.</div>
       </details>
     </div>
+    <p style="margin-top:24px;font-size:15px;color:var(--ink-mute)">Approfondimenti correlati dal blog: <a href="blog/alloydb-ricerca-ai-documenti.html">AlloyDB e AI: strutturare e interrogare i documenti clinici e aziendali</a> · <a href="blog/interprete-sip-vertex-ai.html">Architettura streaming voce su Google Cloud Vertex AI Milano</a>.</p>
   </div>
 </section>
 

@@ -46,16 +46,38 @@
       "founder": [
         {
           "@type": "Person",
+          "@id": "https://bintware.com/#riccardo",
           "name": "Riccardo Baldacci",
           "jobTitle": "Co-founder · Strategia & Architettura",
-          "email": "r.baldacci@bintware.com"
+          "email": "r.baldacci@bintware.com",
+          "url": "https://bintware.com/#riccardo",
+          "sameAs": [
+            "https://www.linkedin.com/in/riccardo-baldacci/"
+          ]
         },
         {
           "@type": "Person",
+          "@id": "https://bintware.com/#luca",
           "name": "Luca Baldacci",
           "jobTitle": "Co-founder · Engineering & Cloud",
-          "email": "l.baldacci@bintware.com"
+          "email": "l.baldacci@bintware.com",
+          "url": "https://bintware.com/#luca",
+          "sameAs": [
+            "https://www.linkedin.com/in/luca-baldacci/"
+          ]
         }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/riccardo-baldacci/",
+        "https://www.linkedin.com/in/luca-baldacci/"
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Google Cloud Vertex AI",
+        "SIP Voice Gateway",
+        "AlloyDB RAG",
+        "Anonimizzazione e Pseudonimizzazione Dati GDPR (Art. 9 e 25)",
+        "EU AI Act Compliance (Reg. UE 2024/1689)"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -160,7 +182,6 @@
 </script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -170,12 +191,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -265,7 +294,7 @@
 
         <div class="voice-foot">
           <div class="cell"><span class="k">Intent</span><span class="v">Prenotazione</span></div>
-          <div class="cell"><span class="k">Sentiment</span><span class="v ok">● Positivo</span></div>
+          <div class="cell"><span class="k">Priorità</span><span class="v ok">● Standard</span></div>
           <div class="cell"><span class="k">Azione</span><span class="v">Calendario</span></div>
         </div>
       </div>
@@ -282,7 +311,7 @@
         <h2>Oltre l'AI da scrivania: <em style="font-style:normal;color:var(--accent)">impianti AI per i processi core.</em></h2>
       </div>
       <p class="lede">
-        Non vendiamo chatbot generici né licenze individuali da ufficio. Costruiamo infrastruttura software su Google Cloud che ascolta, legge, capisce le vostre regole di business e aggiorna gli strumenti che usate già: centralino SIP, CRM, ERP, calendari, ticketing e database aziendali.
+        Siamo architetti cloud e system integrator: non addestriamo modelli proprietari né vendiamo licenze individuali da ufficio, ma mettiamo insieme e orchestriamo tecnologie enterprise esistenti su Google Cloud (Vertex AI, AlloyDB, Cloud Run) per collegarle agli strumenti che usate già — centralino SIP, CRM, ERP, calendari, ticketing e database aziendali.
       </p>
     </div>
 
@@ -383,7 +412,7 @@
             <div class="ic">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M9 14s1 2 3 2 3-2 3-2M9 10h.01M15 10h.01"/></svg>
             </div>
-            <div><div class="t">Modulazione del tono</div><div class="d">Tono e ritmo si adattano allo stato del chiamante.</div></div>
+            <div><div class="t">Cadenza conversazionale naturale</div><div class="d">Ritmo e chiarezza d'eloquio progettati per una comprensione agevole al telefono.</div></div>
           </div>
         </div>
       </div>
@@ -420,14 +449,14 @@
             <div class="avatar">U</div>
             <div class="body">
               Aspetti un attimo, non la trovo… ah eccola.
-              <div class="meta">Pausa naturale 1.9s <span class="tag warn">affective: paziente</span></div>
+              <div class="meta">Pausa naturale 1.9s <span class="tag warn">turn-taking: attesa attiva</span></div>
             </div>
           </div>
           <div class="line ai">
             <div class="avatar">AI</div>
             <div class="body">
               Con calma. Sono qui quando ce l'ha.
-              <div class="meta">Risposta empatica generata</div>
+              <div class="meta">Risposta contestuale generata</div>
             </div>
           </div>
         </div>
@@ -494,7 +523,7 @@
           </div>
           <div class="personas">
             <div class="persona"><span class="swatch" style="background:var(--accent)"></span>Aria · Concierge</div>
-            <div class="persona"><span class="swatch" style="background:var(--cool)"></span>Dott. Vox · Triage</div>
+            <div class="persona"><span class="swatch" style="background:var(--cool)"></span>Segreteria · Studio Medico</div>
             <div class="persona"><span class="swatch" style="background:var(--ok)"></span>Noa · Sales</div>
             <div class="persona"><span class="swatch" style="background:oklch(0.75 0.14 320)"></span>Max · Support</div>
           </div>
@@ -619,7 +648,7 @@
               <div class="field"><span class="k">product</span><span class="v">caldaia</span></div>
               <div class="field"><span class="k">issue</span><span class="v">rumore_anomalo</span></div>
               <div class="field"><span class="k">duration</span><span class="v">2_settimane</span></div>
-              <div class="field"><span class="k">sentiment</span><span class="v" style="color:var(--accent)">preoccupato</span></div>
+              <div class="field"><span class="k">urgenza_testuale</span><span class="v" style="color:var(--accent)">alta</span></div>
             </div>
           </div>
           <div class="data-card data-card-wide">
@@ -791,7 +820,31 @@
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Permessi a doppio anello (Gerarchia + Sede/Commessa)</span>
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Protezione perimetrale WAF</span>
           <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Isolamento dati per cliente</span>
-          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>GDPR-by-design &amp; Audit log</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>Anonimizzazione Pre-AI &amp; Zero Training</span>
+          <span class="chip"><span class="swatch" style="background:var(--accent)"></span>GDPR &amp; EU AI Act Ready (Art. 6(3), 25 &amp; 50 · Human-in-the-Loop)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approfondimento: Anonimizzazione Pre-AI, Dati Aziendali/Medici e Conformità GDPR & EU AI Act -->
+    <div style="margin-top:48px">
+      <span class="mono" style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute)">Privacy-by-Design · Dati Aziendali, Sanitari e Sensibili</span>
+      <h3 style="font-family:var(--display);font-size:clamp(22px,2.8vw,30px);font-weight:500;letter-spacing:-0.015em;margin:8px 0 0">Come proteggiamo i dati aziendali e anonimizziamo i dati medici secondo GDPR e AI Act europeo</h3>
+      <div class="obstacle-grid">
+        <div class="obstacle-card">
+          <span class="ob-num">Tutela 01 · Ambito Medico &amp; Sensibile (Art. 9 e 25 GDPR)</span>
+          <h4>Pipeline di Anonimizzazione e De-identificazione Pre-AI</h4>
+          <p>Quando trattiamo flussi in ambito medico, clinico o socio-assistenziale, una pipeline di <strong>de-identificazione automatica alla fonte</strong> intercetta e maschera nomi, cognomi, codici fiscali, recapiti, date e riferimenti anagrafici sostituendoli con token neutri <em>prima</em> dell'invio al modello AI. Il modello su Google Cloud elabora solo il testo clinico o operativo anonimizzato, separando l'identità della persona dal ragionamento semantico.</p>
+        </div>
+        <div class="obstacle-card">
+          <span class="ob-num">Tutela 02 · Dati Aziendali &amp; App Mobile (Vertex AI Milano)</span>
+          <h4>Zero Addestramento sui vostri dati e Zero Persistenza locale</h4>
+          <p>Non usiamo API consumer gratuite: operiamo esclusivamente su <strong>Google Cloud Vertex AI nella regione UE di Milano (<code>europe-west8</code>)</strong>, dove per contratto enterprise <strong>nessun dato, documento, telefonata o biglietto da visita viene mai usato per addestrare i modelli</strong>. Sulle nostre app mobili (iOS e Android), le credenziali risiedono solo nel Keychain hardware cifrato e nessun database CRM resta salvato in chiaro sul telefono.</p>
+        </div>
+        <div class="obstacle-card">
+          <span class="ob-num">Tutela 03 · Conformità EU AI Act (Reg. UE 2024/1689)</span>
+          <h4>Supporto Preparatorio (Art. 6(3)) e Ruoli Certificati (Art. 25)</h4>
+          <p>I nostri impianti nascono come sistemi <strong>non ad alto rischio</strong> per compiti preparatori e di redazione documentale sotto supervisione umana (<em>Human-in-the-Loop</em>), con trasparenza vocale nativa (Art. 50 AI Act) ed esclusione di qualsiasi monitoraggio dei lavoratori. Il cliente conserva la piena titolarità dei dati (Art. 24 GDPR) con confini di responsabilità chiari e documentati lungo tutta la catena del valore (Art. 25 AI Act).</p>
         </div>
       </div>
     </div>
@@ -819,7 +872,7 @@
         <div>
           <span class="use-num">Scenario · 01 · Scuola / Supporto sociale</span>
           <h4>Report giornalieri parlati, non scritti.</h4>
-          <p class="use-desc">Gli operatori che seguono studenti con difficoltà passano ogni giorno mezz'ora o più a redigere report. Con un'AI con cui parlare per 6–7 minuti in forma anonima sui ragazzi, restituiamo un report strutturato e i parametri pronti per essere analizzati nel tempo.</p>
+          <p class="use-desc">Gli operatori che seguono studenti o assistiti con fragilità passano ogni giorno mezz'ora o più a redigere diari e relazioni. Dettando a voce per 6–7 minuti i propri appunti con <strong>anonimizzazione e mascheramento automatico dei dati identificativi (Art. 9 e 25 GDPR)</strong>, il sistema svolge il lavoro preparatorio di redazione (Art. 6(3) AI Act) restituendo una bozza strutturata pronta per la revisione dell'operatore, senza alcuna profilazione o decisione automatizzata sulle persone.</p>
         </div>
         <div>
           <div class="use-result"><span class="arrow">→</span> ~10 min con AI · contro ≥30 min manuali, ogni giorno per operatore</div>
@@ -895,7 +948,7 @@
         <div>
           <div class="use-result"><span class="arrow">→</span> Visite più ordinate · secondo punto di vista in tempo reale</div>
           <div class="use-tags">
-            <span class="t">Sanità</span><span class="t">Affective</span><span class="t">Supporto cognitivo</span>
+            <span class="t">Sanità</span><span class="t">Accoglienza SIP</span><span class="t">Supporto documentale</span>
           </div>
           <a href="secondo-paio-orecchie.html" class="use-cta">Vedi l'AI per studi medici →</a>
         </div>
@@ -1201,8 +1254,8 @@
           <div class="plan plan-evolution">
             <div class="plan-head">
               <span class="plan-eyebrow">Linea 3 · Offerta Combinata (Voce AI + Trascrizione Centralino)</span>
-              <h4 class="plan-title">Copertura totale: l'AI risponde quando serve e trascrive anche le chiamate degli operatori umani</h4>
-              <p class="plan-desc">Ideale per aziende che vogliono sia l'Assistente Vocale AI per i picchi e il fuori orario, sia la trascrizione automatica delle telefonate gestite internamente dal proprio team commerciale o tecnico.</p>
+              <h4 class="plan-title">Copertura totale: l'AI risponde quando serve e trascrive le chiamate per il CRM aziendale</h4>
+              <p class="plan-desc">Ideale per aziende che vogliono sia l'Assistente Vocale AI per i picchi e il fuori orario, sia la trascrizione automatica delle telefonate a fini di documentazione nel CRM e passaggio di consegne tra colleghi (con esclusione di qualsiasi monitoraggio o valutazione delle prestazioni individuali dei lavoratori).</p>
             </div>
             <div class="plan-cost">
               <span class="plan-cost-label">Esempio Combinato Flat · 500 min Voce Suite Completa (441,00 €) + 500 min Trascrizione (212,50 €)</span>
@@ -1382,7 +1435,7 @@
         <div class="module-card">
           <span class="mod-num">Modulo 01</span>
           <h4>Trascrizioni, Audio &amp; Report AI</h4>
-          <p>Ascolto sincronizzato col testo, sintesi esecutiva, sentiment del chiamante e campi estratti in JSON secondo le vostre regole.</p>
+          <p>Ascolto sincronizzato col testo, sintesi esecutiva, priorità emersa dal testo e campi estratti in JSON secondo le vostre regole.</p>
         </div>
         <div class="module-card">
           <span class="mod-num">Modulo 02</span>

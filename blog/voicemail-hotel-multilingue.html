@@ -42,12 +42,15 @@
   "dateModified": "2026-07-06",
   "author": {
     "@type": "Person",
+    "@id": "https://bintware.com/#riccardo",
     "name": "Riccardo Baldacci",
     "jobTitle": "Co-founder · Strategia & Architettura",
-    "url": "https://bintware.com/#riccardo"
+    "url": "https://bintware.com/#riccardo",
+    "sameAs": ["https://www.linkedin.com/in/riccardo-baldacci/"]
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://bintware.com/#organization",
     "name": "Bintware",
     "logo": {
       "@type": "ImageObject",
@@ -63,9 +66,19 @@
   "keywords": "voicemail hotel, chiamate perse hotel, assistente vocale hotel, AI per hotel, prenotazioni telefoniche hotel, hotel ospiti stranieri telefono, interprete telefonico hotel"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Bintware", "item": "https://bintware.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bintware.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Hotel e chiamate perse: voicemail multilingue", "item": "https://bintware.com/blog/voicemail-hotel-multilingue.html" }
+  ]
+}
+</script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -75,12 +88,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,11 +266,11 @@
 
     <h2>Due livelli, una stessa infrastruttura</h2>
 
-    <p>Il setup è <strong>identico per entrambi i livelli</strong>: €1.500 una tantum. Il canone mensile — un'unica voce che include infrastruttura cloud e gestione — si definisce sulla singola struttura, perché dipende dalla complessità del progetto. Non si sceglie fra «economico» e «caro»: si sceglie il grado di automazione adatto alla struttura, e si può partire dal livello 1 e salire quando i numeri lo giustificano — l'infrastruttura sotto è la stessa.</p>
+    <p>Il modello economico è trasparente e senza tassa per postazione reception: si basa su <strong>1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese</strong>, capace di gestire fino a 7.560 min/mese) più i minuti del piano scelto. Il contributo di setup tecnico standard (200 € per il livello 1, 600 € per il livello 2) è <strong>interamente azzerato a 0,00 € con impegno minimo di 6 mesi</strong>. Non si sceglie fra «economico» e «caro»: si sceglie il grado di automazione adatto alla struttura, e si può partire dal livello 1 e salire quando i numeri lo giustificano — l'infrastruttura sotto è la stessa.</p>
 
-    <p>Il <strong>livello 1 — voicemail multilingue</strong> è il punto di ingresso: nessun cambiamento per chi chiama quando la reception risponde, e una rete di sicurezza intelligente quando non può. L'elaborazione è inclusa nel canone, con fair-use mensile definito in setup: niente costi a sorpresa.</p>
+    <p>Il <strong>livello 1 — voicemail multilingue (Linea 2)</strong> è il punto di ingresso: nessun cambiamento per chi chiama quando la reception risponde, e una rete di sicurezza intelligente quando non può (da <strong>0,045 €/min in Piano Flat</strong>, es. 500 min/mese a <strong>212,50 €/mese</strong> tutto incluso, con scelta tra Blocco Automatico a Soglia «Zero Sorprese» e Continuità H24).</p>
 
-    <p>Il <strong>livello 2 — assistente vocale realtime</strong> aggiunge la conversazione dal primo squillo e la funzione interprete per il personale. Stesso setup, stesso canone, più un costo a consumo di circa €0,25 al minuto sulla conversazione effettiva. Costa di più nei mesi di alta stagione — cioè esattamente quando ogni chiamata gestita vale di più.</p>
+    <p>Il <strong>livello 2 — assistente vocale realtime (Linea 1)</strong> aggiunge la conversazione dal primo squillo e la funzione interprete per il personale, con una tariffa da <strong>0,362 €/min</strong> (Solo Voce Base) a <strong>0,502 €/min</strong> nella <strong>Suite Completa</strong> (es. 500 min/mese in Piano Flat a <strong>441,00 €/mese</strong>, con Dashboard Essential per 3 utenti inclusa). Accompagna i mesi di alta stagione esattamente quando ogni chiamata gestita vale di più.</p>
 
     <h3>Quando il livello 1 basta</h3>
     <ul>
@@ -279,7 +300,7 @@
 
     <h2>Quanto costa, e quanto si ripaga</h2>
 
-    <p>Per l'hotel della tabella sopra (mancato ricavo annuo €25.000-80.000), il conto è rapido: fra setup (€1.500) e canone annuale, basta recuperare anche solo una prenotazione da weekend al mese perché l'investimento si ripaghi da solo — senza contare le commissioni OTA evitate sulle prenotazioni tornate dirette. I dettagli di listino e il confronto fra i due livelli sono nella <a href="../voicemail-aziendale.html">pagina dedicata alla voicemail intelligente</a>.</p>
+    <p>Per l'hotel della tabella sopra (mancato ricavo annuo €25.000-80.000; vedi anche l'analisi su <a href="economia-chiamate-perse.html">l'economia delle chiamate perse e la regola dei 5 minuti</a>), il conto è rapido: con <strong>Setup 0,00 €</strong> (su impegno minimo 6 mesi) e un canone da <strong>212,50 €/mese</strong> (Livello 1 Flat 500 min) o <strong>441,00 €/mese</strong> (Livello 2 Suite Completa Flat 500 min, IVA esclusa, soggetti a verifica tecnica), basta recuperare anche solo una prenotazione da weekend al mese perché l'investimento si ripaghi da solo — senza contare le commissioni OTA evitate sulle prenotazioni tornate dirette. I dettagli di listino e il confronto fra i due livelli sono nella <a href="../voicemail-aziendale.html">pagina dedicata alla voicemail intelligente</a>.</p>
 
     <h2>Quando ha senso parlarne</h2>
 

@@ -42,12 +42,15 @@
   "dateModified": "2026-05-04",
   "author": {
     "@type": "Person",
+    "@id": "https://bintware.com/#riccardo",
     "name": "Riccardo Baldacci",
     "jobTitle": "Co-founder · Strategia & Architettura",
-    "url": "https://bintware.com/#riccardo"
+    "url": "https://bintware.com/#riccardo",
+    "sameAs": ["https://www.linkedin.com/in/riccardo-baldacci/"]
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://bintware.com/#organization",
     "name": "Bintware",
     "logo": {
       "@type": "ImageObject",
@@ -63,9 +66,19 @@
   "keywords": "voicemail concessionaria auto, chiamate perse concessionario, segreteria virtuale automotive, IA conversazionale concessionarie, gestione chiamate fuori orario concessionaria"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Bintware", "item": "https://bintware.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bintware.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Voicemail per concessionarie auto", "item": "https://bintware.com/blog/voicemail-concessionarie-auto.html" }
+  ]
+}
+</script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -75,12 +88,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,7 +243,7 @@
     <p>Tramite API dedicate il sistema dialoga col centralino aziendale o col CRM esistente. Sa in tempo reale se un cliente che ha lasciato un messaggio è stato effettivamente richiamato, e da chi. Il risultato è il primo dato gestionale che molte concessionarie non hanno mai avuto: quante chiamate sono state effettivamente seguite, in quanti minuti, con che esito.</p>
 
     <h3>4. Reportistica direzionale</h3>
-    <p>Tutti questi dati alimentano un report automatico — HTML, dashboard, export Excel a richiesta. Il responsabile vendite e il titolare vedono inequivocabilmente: chiamate ricevute per giorno, distribuzione per categoria (vendite, post-vendita, urgenze), tempi di reazione (SLA) sui richiami, performance dei singoli commerciali. Statistiche su cui prendere decisioni, non sensazioni.</p>
+    <p>Tutti questi dati alimentano un report automatico — HTML, dashboard, export Excel a richiesta. Il responsabile vendite e il titolare vedono inequivocabilmente: chiamate ricevute per giorno, distribuzione per categoria (vendite, post-vendita, urgenze), tempi di reazione (SLA) del team sui richiami e stato di lavorazione dei lead per reparto (senza valutazione delle prestazioni individuali dei lavoratori). Statistiche operative su cui organizzare i flussi, non sensazioni.</p>
 
     <blockquote style="margin:32px 0;padding:20px 28px;border-left:3px solid var(--accent, rgba(255,255,255,.4));font-style:italic;color:var(--ink);font-size:18px;line-height:1.6;background:rgba(255,255,255,.02);border-radius:0 8px 8px 0">L'AI non sostituisce il personale: gli toglie il lavoro di trascrizione e smistamento, così il tempo umano resta sui clienti. È quello che cambia la conversazione.</blockquote>
 
@@ -249,11 +270,11 @@
 
     <h2>Due livelli, una stessa infrastruttura</h2>
 
-    <p>Il setup è <strong>identico per entrambi i piani</strong>: €1.500 una tantum. Il canone mensile — un'unica voce che include infrastruttura cloud e gestione — si definisce sul caso reale, perché dipende dalla complessità del progetto. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione adatto alla sua azienda. È una progressione naturale, non una scelta fra prodotti diversi.</p>
+    <p>Il modello economico è trasparente e senza costi per singolo utente: si basa su <strong>1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese</strong>, capace di gestire fino a 7.560 min/mese) più i minuti effettivi secondo il piano scelto. Inoltre, il contributo di setup tecnico standard (200 € per il Piano A, 600 € per il Piano B) è <strong>interamente azzerato a 0,00 € sottoscrivendo un impegno minimo di 6 mesi</strong>. Il cliente non sceglie fra "economico" e "caro": sceglie il livello di automazione adatto alla sua azienda. È una progressione naturale, non una scelta fra prodotti diversi.</p>
 
-    <p>Il <strong>Piano A — voicemail analisi</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama. Il chiamante sente una segreteria normale, ma quello che succede dietro è diverso: trascrizione, estrazione dati, ticket strutturato, reportistica. Tutta l'elaborazione è inclusa nel canone, fino a 1.000 messaggi al mese di fair-use. Niente costi a consumo, niente sorprese in bolletta.</p>
+    <p>Il <strong>Piano A — voicemail analisi (Linea 2)</strong> è il punto di ingresso. È pensato per chi vuole avvicinarsi all'AI senza ribaltare il proprio centralino o cambiare l'esperienza di chi chiama. Il chiamante sente una segreteria normale, ma quello che succede dietro è diverso: trascrizione, estrazione dati, ticket strutturato, reportistica, con una tariffa da <strong>0,045 €/min in Piano Flat</strong> (e scelta tra Blocco Automatico a Soglia «Zero Sorprese» oppure Continuità H24 a Consumo).</p>
 
-    <p>Il <strong>Piano B — voicemail realtime</strong> è il salto evolutivo. L'AI risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti, prequalifica le richieste. Stesso setup, stesso canone, in più circa €0,25 al minuto sulla conversazione effettiva. Costa di più sui mesi attivi, ma riduce drasticamente l'abbandono di chiamata e consente di reggere i picchi senza ampliare l'organico.</p>
+    <p>Il <strong>Piano B — voicemail realtime (Linea 1)</strong> è il salto evolutivo. L'AI si presenta in modo trasparente a nome della concessionaria (Art. 50 AI Act) e risponde dal primo squillo, dialoga col chiamante, conferma appuntamenti e prequalifica le richieste. Si attiva sullo stesso Slot Cloud dedicato con una tariffa da <strong>0,362 €/min</strong> (Solo Voce Base) a <strong>0,502 €/min</strong> nella <strong>Suite Completa</strong> (che include conversazione live, trascrizione, Report AI, ricerca semantica e Dashboard Essential per 3 utenti gratuita). Riduce drasticamente l'abbandono di chiamata e consente di reggere i picchi senza ampliare l'organico.</p>
 
     <h3>Quando il Piano A basta</h3>
     <ul>
@@ -283,11 +304,11 @@
 
     <h2>Quanto costa, e quanto si ripaga</h2>
 
-    <p>Per la concessionaria della tabella sopra (mancato margine annuo €60.000-120.000), il calcolo si fa rapidamente:</p>
+    <p>Per la concessionaria della tabella sopra (mancato margine annuo €60.000-120.000; vedi anche la nostra guida su <a href="economia-chiamate-perse.html">l'economia delle chiamate perse e la regola dei 5 minuti</a>), il calcolo si fa rapidamente (esempi indicativi IVA esclusa per 500 min/mese in Piano Flat, soggetti a verifica tecnica):</p>
 
     <ul>
-      <li><strong>Piano A</strong>: setup fisso €1.500 più il canone annuale definito sul caso reale. Recuperando anche solo il 5% del mancato margine annuo, l'investimento si ripaga in pochi mesi.</li>
-      <li><strong>Piano B</strong>: stesse voci, più il consumo a minuto sul realtime (circa €0,25/min). Per un consumo realistico di 200-300 minuti di conversazione AI al mese (pari al 30-40% delle chiamate medie gestite in modalità realtime) parliamo di €50-75/mese di consumo. Anche qui il ROI rapidissimo: bastano due appuntamenti vendita aggiuntivi/anno recuperati.</li>
+      <li><strong>Piano A (Analisi asincrona · Linea 2)</strong>: <strong>212,50 €/mese</strong> per 500 min/mese in Piano Flat (190,00 € di Slot Cloud dedicato + 22,50 € di minuti a 0,045 €/min; 222,50 €/mese con indicizzazione semantica), con <strong>Setup 0,00 €</strong> su impegno minimo di 6 mesi. Recuperando anche solo una frazione minima del mancato margine annuo, l'investimento si ripaga fin dal primo mese.</li>
+      <li><strong>Piano B (Voicemail Realtime Suite Completa · Linea 1)</strong>: <strong>441,00 €/mese</strong> per 500 min/mese in Piano Flat Suite Completa (190,00 € di Slot Cloud dedicato + 251,00 € per 500 min a 0,502 €/min, con Dashboard Essential per 3 utenti inclusa; oppure da 0,362 €/min per il Solo Voce Base) e <strong>Setup 0,00 €</strong> su impegno minimo di 6 mesi. Anche qui il ROI è immediato: basta un singolo veicolo venduto o un paio di passaggi in officina recuperati in un anno.</li>
     </ul>
 
     <p>I dettagli di listino, il confronto piano per piano, le FAQ specifiche del settore automotive sono nella <a href="../voicemail-aziendale.html">pagina dedicata alla voicemail intelligente per il mondo automotive</a>.</p>

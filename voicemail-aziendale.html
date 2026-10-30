@@ -145,7 +145,7 @@
           "name": "Dove finiscono i dati di chi lascia un messaggio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Su Google Cloud `europe-west8` (datacenter di Milano). Data residency UE garantita per architettura, non per policy: i dati non escono dall'Unione Europea. Conformità GDPR, conservazione configurabile, modello DPA (Data Processing Agreement) standard fornito alla firma del contratto."
+            "text": "Su Google Cloud europe-west8 (datacenter di Milano). Data residency UE garantita per architettura, non per policy: i dati non escono dall'Unione Europea. Conformità GDPR, conservazione configurabile, modello DPA (Data Processing Agreement) standard fornito alla firma del contratto."
           }
         },
         {
@@ -157,13 +157,20 @@
           }
         }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bintware.com/voicemail-aziendale.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bintware", "item": "https://bintware.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Voicemail intelligente per aziende automotive", "item": "https://bintware.com/voicemail-aziendale.html" }
+      ]
     }
   ]
 }
 </script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -173,12 +180,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -357,7 +372,7 @@
       <div class="cap-card">
         <div class="cap-num">04 · Reportistica direzionale</div>
         <h3>Cruscotto per il responsabile</h3>
-        <p>Tutti i dati alimentano un report automatico (HTML, dashboard o export). Il titolare e il responsabile di filiale vedono in tempo reale: chiamate ricevute, distribuzione per categoria, tempi di reazione (SLA), performance dei commerciali, chiamate ancora da richiamare. Statistiche inequivocabili su cui prendere decisioni.</p>
+        <p>Tutti i dati alimentano un report automatico (HTML, dashboard o export). Il titolare e il responsabile di filiale vedono in tempo reale: chiamate ricevute, distribuzione per categoria, tempi di reazione aziendali (SLA), stato di presa in carico dei lead per reparto e chiamate ancora da richiamare (con esclusione di qualsiasi monitoraggio delle prestazioni individuali dei lavoratori).</p>
       </div>
     </div>
 
@@ -392,8 +407,8 @@
         </tr>
         <tr>
           <td class="row-label">Cosa cambia per chi chiama</td>
-          <td data-label="Piano A · Voicemail analisi">Niente di percepibile: sente una voce umana di benvenuto e lascia il messaggio. Esperienza familiare.</td>
-          <td data-label="Piano B · Voicemail realtime">Risposta immediata in linguaggio naturale, anche se chiama da un'officina o per strada grazie al filtro acustico anti-rumore.</td>
+          <td data-label="Piano A · Voicemail analisi">Sente il messaggio di benvenuto dello studio/azienda (con informativa sulla raccolta del messaggio) e lascia la richiesta. Esperienza familiare.</td>
+          <td data-label="Piano B · Voicemail realtime">L'assistente vocale si presenta in modo trasparente a nome dell'azienda (Art. 50 AI Act) e risponde subito in linguaggio naturale, anche da ambienti rumorosi grazie al filtro acustico.</td>
         </tr>
         <tr>
           <td class="row-label">Cosa cambia per voi</td>
@@ -519,7 +534,7 @@
     <h2>Funziona col centralino che hai già</h2>
     <p>La voicemail Bintware si innesta sul centralino esistente via SIP trunk standard. Nessuna sostituzione hardware, nessun cambio di operatore telefonico. Vale per entrambi i piani.</p>
     <p>Compatibilità verificata con: <strong>3CX, Wildix, NFON, FreePBX, Cisco, Avaya, Fastweb Business, TIM Business</strong>. Per centralini meno comuni, l'integrazione si valuta in fase di setup (è quasi sempre possibile, raramente significa SIP trunk a parte).</p>
-    <p>Il referente IT del cliente trova in fase di proposta una scheda tecnica dedicata con dettagli su: protocolli, codec audio, requisiti di rete, modello di data residency UE (Google Cloud `europe-west8`, Milano), conformità GDPR e modello DPA standard.</p>
+    <p>Il referente IT del cliente trova in fase di proposta una scheda tecnica dedicata con dettagli su: protocolli, codec audio, requisiti di rete, modello di data residency UE (Google Cloud <code>europe-west8</code>, Milano), conformità GDPR e modello DPA standard.</p>
   </div>
 </section>
 
@@ -529,46 +544,47 @@
     <h2>Domande che ci fanno spesso</h2>
 
     <div class="faq-list">
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Qual è la differenza tra Piano A e Piano B?</summary>
         <div class="answer">Nel Piano A (Voicemail analisi asincrona · Linea 2) il chiamante lascia un messaggio in segreteria e l'AI in pochi secondi lo trascrive, ne estrae i campi strutturati e prepara il ticket (da 0,045 €/min in Flat oltre allo Slot Cloud da 190,00 €/mese; es. 500 min/mese a 212,50 €/mese). Nel Piano B (Voicemail realtime · Linea 1) l'AI risponde dal primo squillo e dialoga col chiamante in tempo reale: nella Suite Completa (0,502 €/min in Flat + Slot Cloud da 190,00 €/mese, con Dashboard Essential gratuita; es. 500 min/mese a 441,00 €/mese) include conversazione live, trascrizione, Report AI e ricerca semantica. Il setup standard (200 € per Piano A, 600 € per Piano B) è azzerato a 0 € con impegno minimo di 6 mesi.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Funziona col centralino che ho già?</summary>
         <div class="answer">Sì. La voicemail Bintware si innesta sul centralino VoIP o tradizionale esistente via SIP trunk standard: 3CX, Wildix, NFON, FreePBX, Cisco, Avaya, Fastweb Business, TIM Business. Nessuna sostituzione hardware, nessun cambio di operatore telefonico. Vale per entrambi i piani.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Quanto costa al mese?</summary>
         <div class="answer">Il nostro modello non prevede alcuna tassa per postazione utente: si basa su 1 Slot Cloud dedicato su Google Cloud Milano (190,00 €/mese, capace di gestire fino a 7.560 min/mese) più i minuti del piano scelto. A titolo di esempio indicativo IVA esclusa per 500 min/mese in Piano Flat: il Piano A costa 212,50 €/mese (222,50 €/mese con indicizzazione semantica), mentre il Piano B in Suite Completa (con Dashboard Essential per 3 utenti inclusa) costa 441,00 €/mese (190,00 € di Slot Cloud + 251,00 € per 500 min a 0,502 €/min). Il setup tecnico standard (200 € per Piano A, 600 € per Piano B) è 0,00 € con impegno minimo di 6 mesi. Tutti gli esempi sono soggetti a verifica tecnica e suscettibili di modifiche.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Cosa succede se supero i minuti inclusi nel Piano Flat?</summary>
         <div class="answer">Nei Piani Flat è sempre il cliente a scegliere in anticipo tra due opzioni trasparenti: <strong>Opzione A (Blocco Automatico a Soglia «Budget Protetto / Zero Sorprese»)</strong>, che ferma automaticamente l'erogazione al 100% dei minuti inclusi fino al rinnovo o a uno sblocco manuale per non spendere mai un euro oltre il budget; oppure <strong>Opzione B (Continuità Operativa H24 con Switch Automatico a Consumo)</strong>, che mantiene attivo il servizio senza interruzioni tariffando i soli minuti eccedenti a consumo (0,653 €/min per Voce Suite Completa, 0,060 €/min per Trascrizione, 0,020 €/min per Indicizzazione semantica).</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Sostituisce la mia segretaria o il front-office?</summary>
         <div class="answer">No: integra, non sostituisce. Il Piano A filtra il rumore (recapita ticket strutturati al referente giusto), così la persona in front-office gestisce solo le chiamate di valore. Il Piano B aggiunge una risposta immediata dal primo squillo per gestire i picchi e ridurre l'abbandono di chiamata. In entrambi i casi il personale umano resta al centro: il sistema lavora per liberargli tempo, non per sostituirlo.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Posso passare dal Piano A al Piano B in un secondo momento?</summary>
         <div class="answer">Sì. Il Piano B è progettato come evoluzione tecnologica del Piano A: tutto il backend di analisi (trascrizione, estrazione dati, ticket, reportistica) è identico, in più si attiva il dialogo realtime. Il passaggio da A a B non comporta un nuovo setup completo: si attiva l'infrastruttura realtime sull'integrazione esistente. Tipicamente avviene quando i numeri reali (volumi, picchi, abbandono di chiamata) suggeriscono che la conversazione realtime aggiunge valore.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Dove finiscono i dati di chi lascia un messaggio?</summary>
         <div class="answer">Su Google Cloud <code>europe-west8</code> (datacenter di Milano). Data residency UE garantita per architettura, non per policy: i dati non escono dall'Unione Europea. Conformità GDPR, conservazione configurabile, modello DPA (Data Processing Agreement) standard fornito alla firma del contratto.</div>
       </details>
 
-      <details class="faq-item">
+      <details class="faq-item" name="voicemail-faq">
         <summary>Quanto ci vuole per partire?</summary>
         <div class="answer">Tipicamente 2-4 settimane dalla firma a operativo, dipende dalla complessità del centralino e dalle integrazioni richieste (CRM, gestionale, email). Il Piano A è leggermente più rapido perché non c'è voice tuning, il Piano B richiede 1-2 settimane in più per il fine-tuning del comportamento conversazionale sui flussi specifici dell'azienda.</div>
       </details>
     </div>
+    <p style="margin-top:24px;font-size:15px;color:var(--ink-mute)">Approfondimenti correlati dal blog: <a href="blog/voicemail-concessionarie-auto.html">Voicemail per concessionarie auto: casi e numeri reali</a> · <a href="blog/economia-chiamate-perse.html">L'economia delle chiamate perse e la regola dei 5 minuti</a> · <a href="blog/cos-e-interprete-vocale-sip-ai.html">Cos'è un interprete vocale SIP↔AI</a>.</p>
   </div>
 </section>
 

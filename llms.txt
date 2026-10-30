@@ -1,0 +1,45 @@
+# Bintware · Studio AI su Google Cloud (Italia · UE)
+
+> Bintware (ditta individuale di Riccardo Baldacci, P.IVA IT 07207160487, co-fondata con Luca Baldacci) è uno studio italiano di Architettura Cloud e System Integration specializzato in sistemi di Intelligenza Artificiale su Google Cloud (regione europea `europe-west8`, Milano) per telefonia SIP/VoIP, documenti aziendali, processi B2B e strutturazione dati in ambito clinico, medico e professionale.
+
+## Cosa costruiamo e cosa ci distingue
+
+- **Voice Gateway SIP ↔ Google Cloud Vertex AI Real-Time:** interprete vocale bidirezionale a bassa latenza che si innesta sui centralini aziendali esistenti (3CX, Wildix, NFON, FreePBX, Cisco, Avaya, TIM, Fastweb) via SIP trunk standard, con filtro acustico anti-rumore e gestione naturale delle interruzioni (barge-in).
+- **Voicemail Intelligente in due livelli:**
+  - **Piano A (Analisi asincrona · Linea 2):** trascrizione neurale dei messaggi lasciati in segreteria, estrazione strutturata JSON, creazione ticket per priorità e tracciamento automatico dei richiami (da 0,045 €/min in Piano Flat + Slot Cloud dedicato da 190,00 €/mese; es. 500 min/mese a 212,50 €/mese).
+  - **Piano B (Conversazionale Realtime · Linea 1):** risposta immediata dal primo squillo 24/7, dialogo naturale multilingue, prequalifica, gestione appuntamenti e Suite Completa con Dashboard Essential per 3 utenti inclusa (da 0,362 €/min per Solo Voce Base a 0,502 €/min per Suite Completa + Slot Cloud da 190,00 €/mese; es. 500 min/mese a 441,00 €/mese).
+  - **Setup Tecnico Standard:** 0,00 € sottoscrivendo un impegno minimo di 6 mesi (contributo standard 200 € per Linea 2, 600 € per Linea 1).
+- **Ricerca Documentale Ibrida & Estrazione Dati su AlloyDB:** ricerca per significato (vettoriale) + ricerca esatta per codici/clausole/targhe con citazione puntuale della fonte, estrazione in schemi JSON rigorosi e database relazionale ACID su Google Cloud AlloyDB.
+- **Pipeline di Anonimizzazione e Pseudonimizzazione Pre-AI (GDPR Art. 9, 25, 32 & EU AI Act Reg. UE 2024/1689):**
+  - Per flussi sensibili, sanitari, clinici e socio-assistenziali, Bintware ingegnerizza pipeline di *Privacy-by-Design* che intercettano e mascherano automaticamente gli identificativi personali diretti e indiretti (nomi, cognomi, codici fiscali, recapiti, date) sostituendoli con token neutri *prima* che il testo venga inviato ai modelli linguistici su Google Cloud.
+  - Residenza forzata dei dati in Unione Europea (`europe-west8`, Milano) e garanzia contrattuale **Zero Training** (nessun dato, audio, testo o immagine dei clienti viene mai utilizzato per addestrare modelli Google Gemini).
+  - Conformità nativa **EU AI Act (Reg. UE 2024/1689)**: sistemi progettati come supporto preparatorio e documentale sotto supervisione umana (*Human-in-the-Loop*, Art. 6(3)), trasparenza vocale nativa (Art. 50), esclusione di qualsiasi monitoraggio delle prestazioni individuali dei lavoratori e chiara ripartizione dei ruoli lungo la catena del valore (Art. 25(1)(c) e Art. 25(2)).
+- **Suite Multi-Piattaforma & Integrazione Headless:** fruibile tramite Console Web, App Desktop nativa (Windows) e App Mobile (iOS e Android, incluso *EaseAccess AI* con assistente Gemini, lettura ottica biglietti da visita e minimizzazione dei dati sul dispositivo tramite Keychain cifrato) oppure via API REST e Webhook nel CRM/ERP esistente.
+
+## Pagine principali e Guide Pilastro
+
+- [Homepage · Architettura, Soluzioni, Casi d'uso e Listino](https://bintware.com/): Panoramica completa dello stack Google Cloud Milano, delle 4 linee di listino trasparente e dei 10 moduli operativi.
+- [Voicemail Intelligente per Aziende e Settore Automotive](https://bintware.com/voicemail-aziendale.html): Confronto dettagliato tra Piano A (analisi asincrona) e Piano B (conversazionale realtime) per concessionarie, officine, carrozzerie e PMI.
+- [Un Secondo Paio d'Orecchie per il Medico (Sanità & Studi Medici)](https://bintware.com/secondo-paio-orecchie.html): Strutturazione delle visite mediche, dialogo clinico sul referto, pipeline di anonimizzazione pre-AI (Art. 9 e 25 GDPR), inquadramento EU AI Act (Art. 6(3)) e analisi longitudinali.
+- [Blog Bintware · Guide, Casi d'Uso e Note Tecniche](https://bintware.com/blog.html): Indice degli approfondimenti divulgativi e architetturali.
+
+## Articoli di approfondimento (Blog)
+
+- [L'economia delle chiamate perse: quanto costa un telefono che squilla a vuoto](https://bintware.com/blog/economia-chiamate-perse.html): Statistiche sul comportamento di chi chiama, la regola dei 5 minuti e la formula per calcolare il mancato ricavo nelle PMI.
+- [Voicemail per concessionarie auto: dal punto di ingresso all'IA conversazionale](https://bintware.com/blog/voicemail-concessionarie-auto.html): Numeri reali del settore automotive e guida alla scelta tra Piano A e Piano B.
+- [Hotel e chiamate perse: la voicemail che capisce le lingue dei tuoi ospiti](https://bintware.com/blog/voicemail-hotel-multilingue.html): Recupero delle prenotazioni telefoniche dirette ed eliminazione delle barriere linguistiche in strutture ricettive.
+- [Cos'è un interprete vocale SIP↔AI (spiegato semplice)](https://bintware.com/blog/cos-e-interprete-vocale-sip-ai.html): Guida non tecnica al funzionamento del traduttore simultaneo tra linea telefonica e intelligenza artificiale.
+- [Costruire un interprete simultaneo SIP ↔ Vertex AI](https://bintware.com/blog/interprete-sip-vertex-ai.html): Note di ingegneria su streaming audio bidirezionale RTP/PCM/Opus, latenza sub-secondo e gestione barge-in su Google Cloud.
+- [AlloyDB e AI: perché non basta installarli](https://bintware.com/blog/alloydb-ricerca-ai-documenti.html): Perché la ricerca AI sui documenti aziendali richiede ingegneria del dato e architettura ibrida.
+
+## Privacy, Governance AI Act e Documentazione App Mobile (EaseAccess AI)
+
+- [Informativa Privacy & Governance AI Act del Sito](https://bintware.com/privacy.html): Informativa GDPR (Art. 13), gestione Cookie Consent Mode v2 e clausole di conformità EU AI Act (Art. 6(3), 10, 25, 50).
+- [Informativa sulla Privacy · App EaseAccess AI](https://bintware.com/easeaccess/privacy.html): Trasparenza per Apple App Store e Google Play su dati trattati, condivisione con Google Gemini (Vertex AI UE Milano, Zero Training), permessi iOS/Android e assenza di database locali sul telefono.
+- [Supporto e Assistenza Tecnica · App EaseAccess AI](https://bintware.com/easeaccess/supporto.html): Requisiti di accesso B2B, 2FA/VPN, FAQ e canali di assistenza per gli utenti dell'app EaseAccess AI.
+
+## Contatti Fondatori
+
+- **Riccardo Baldacci** (Co-founder · Strategia & Architettura): `r.baldacci@bintware.com` · [LinkedIn](https://www.linkedin.com/in/riccardo-baldacci/)
+- **Luca Baldacci** (Co-founder · Engineering & Cloud): `l.baldacci@bintware.com` · [LinkedIn](https://www.linkedin.com/in/luca-baldacci/)
+- **Prenotazione valutazione gratuita (30 min):** https://calendar.app.google/iP1uWr61k3mFBDKR7

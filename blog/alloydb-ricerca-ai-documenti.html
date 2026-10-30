@@ -42,12 +42,15 @@
   "dateModified": "2026-05-15",
   "author": {
     "@type": "Person",
+    "@id": "https://bintware.com/#luca",
     "name": "Luca Baldacci",
     "jobTitle": "Co-founder · Engineering & Cloud",
-    "url": "https://bintware.com/#luca"
+    "url": "https://bintware.com/#luca",
+    "sameAs": ["https://www.linkedin.com/in/luca-baldacci/"]
   },
   "publisher": {
     "@type": "Organization",
+    "@id": "https://bintware.com/#organization",
     "name": "Bintware",
     "logo": {
       "@type": "ImageObject",
@@ -63,9 +66,19 @@
   "keywords": "ricerca AI documenti, ricerca semantica aziendale, AlloyDB Vertex AI, AI sui propri dati, motore di ricerca intelligente"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Bintware", "item": "https://bintware.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bintware.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "AlloyDB e AI: perché non basta installarli", "item": "https://bintware.com/blog/alloydb-ricerca-ai-documenti.html" }
+  ]
+}
+</script>
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -75,12 +88,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,7 +197,7 @@
 
     <p>Non vendiamo l'AI come una scatola magica. La costruiamo come si costruisce un'infrastruttura: pezzo per pezzo, misurando i risultati, correggendo gli errori, documentando ogni scelta. La complessità non è un vezzo da ingegneri: è quella necessaria perché i risultati reggano sul lavoro vero, non solo nella dimostrazione.</p>
 
-    <p>Se stai pensando a una ricerca AI sui tuoi documenti, <a href="../index.html#capacita">guarda le soluzioni AI di Bintware</a>. Quasi certamente il tuo caso è più complesso di quello che sembra. Per fortuna, anche la nostra esperienza.</p>
+    <p>Se stai pensando a una ricerca AI sui tuoi documenti, <a href="../index.html#capacita">guarda le soluzioni AI di Bintware</a> (o scopri come applichiamo questa architettura documentale e relazionale anche in ambito sanitario e sensibile con <a href="../secondo-paio-orecchie.html">anonimizzazione pre-AI e strutturazione delle visite mediche</a>). Quasi certamente il tuo caso è più complesso di quello che sembra. Per fortuna, anche la nostra esperienza.</p>
 
   </div>
 </article>

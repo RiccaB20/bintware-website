@@ -3,21 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Informativa Privacy · Bintware</title>
-<meta name="description" content="Informativa sul trattamento dei dati personali ex art. 13 GDPR del sito Bintware.">
+<title>Informativa Privacy &amp; Governance AI Act · Bintware</title>
+<meta name="description" content="Informativa sul trattamento dei dati personali ex art. 13 GDPR e governance AI Act (Reg. UE 2024/1689) del sito Bintware.">
 <meta name="robots" content="noindex,nofollow">
-<meta property="og:title" content="Informativa Privacy · Bintware">
-<meta property="og:description" content="Informativa sul trattamento dei dati personali ex art. 13 GDPR del sito Bintware.">
+<meta property="og:title" content="Informativa Privacy &amp; Governance AI Act · Bintware">
+<meta property="og:description" content="Informativa sul trattamento dei dati personali ex art. 13 GDPR e governance AI Act (Reg. UE 2024/1689) del sito Bintware.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bintware.com/privacy.html">
 <meta property="og:site_name" content="Bintware">
 <meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://bintware.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Informativa Privacy &amp; Governance AI Act · Bintware">
+<meta name="twitter:description" content="Informativa sul trattamento dei dati personali ex art. 13 GDPR e governance AI Act (Reg. UE 2024/1689) del sito Bintware.">
+<meta name="twitter:image" content="https://bintware.com/og-image.png">
 <link rel="canonical" href="https://bintware.com/privacy.html">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <meta name="theme-color" content="#272a3a">
 
 <!-- Google tag (gtag.js) — Consent Mode v2, default denied per GDPR -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -27,12 +33,20 @@
     'ad_user_data': 'denied',
     'ad_personalization': 'denied',
     'analytics_storage': 'denied',
+    'ads_data_redaction': true,
+    'url_passthrough': false,
     'wait_for_update': 500
   });
+  try {
+    if (localStorage.getItem('bw_consent') === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  } catch(e) {}
 
   gtag('js', new Date());
   gtag('config', 'G-8D715JET3M', { 'anonymize_ip': true });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8D715JET3M"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,10 +83,10 @@
     <div class="article-meta">
       <span class="category">Pagina legale</span>
       <span class="sep">·</span>
-      <span>Ultimo aggiornamento: 29 aprile 2026</span>
+      <span>Ultimo aggiornamento: 30 ottobre 2026</span>
     </div>
-    <h1>Informativa Privacy.</h1>
-    <p class="article-dek">Modalità di trattamento dei dati personali raccolti tramite questo sito ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR).</p>
+    <h1>Informativa Privacy &amp; Governance AI Act.</h1>
+    <p class="article-dek">Modalità di trattamento dei dati personali raccolti tramite questo sito ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) e principi di conformità al Regolamento UE 2024/1689 (AI Act).</p>
   </div>
 </header>
 
@@ -86,7 +100,7 @@
     Contatto privacy: <a href="mailto:r.baldacci@bintware.com">r.baldacci@bintware.com</a></p>
 
     <h2>Oggetto dell'informativa</h2>
-    <p>La presente informativa descrive le modalità di trattamento dei dati personali raccolti tramite il sito Bintware e le pagine ad esso collegate.</p>
+    <p>La presente informativa descrive le modalità di trattamento dei dati personali raccolti tramite il sito Bintware e le pagine ad esso collegate, nonché il quadro di governance applicato ai servizi B2B di architettura cloud e system integration.</p>
 
     <h2>Dati raccolti</h2>
     <p>Il Titolare può trattare i seguenti dati personali:</p>
@@ -117,16 +131,32 @@
     <p>Tali soggetti hanno aderito al <strong>EU-US Data Privacy Framework</strong> e garantiscono un livello adeguato di protezione dei dati personali secondo la decisione di adeguatezza della Commissione Europea del 10 luglio 2023.</p>
 
     <h2>Trasferimenti extra-UE</h2>
-    <p>I servizi sopra elencati comportano un trasferimento di dati personali negli Stati Uniti. Tali trasferimenti sono leciti in forza della decisione di adeguatezza UE-USA (Data Privacy Framework, Decisione di Esecuzione (UE) 2023/1795 della Commissione).</p>
+    <p>I servizi sopra elencati per il sito web pubblico comportano un trasferimento di dati personali negli Stati Uniti. Tali trasferimenti sono leciti in forza della decisione di adeguatezza UE-USA (Data Privacy Framework, Decisione di Esecuzione (UE) 2023/1795 della Commissione).</p>
 
-    <h2>Cookie</h2>
-    <p>Il sito utilizza due categorie di cookie:</p>
+    <h2>Cookie e risorse tecniche</h2>
+    <p>Il sito utilizza le seguenti categorie di risorse e cookie:</p>
     <ul>
-      <li><strong>Cookie tecnici</strong> (essenziali) — necessari al funzionamento del sito (servizi Google Fonts e GitHub Pages). Esenti dall'obbligo di consenso ai sensi dell'art. 122 del Codice Privacy.</li>
+      <li><strong>Risorse tecniche essenziali</strong> — necessarie al caricamento e al funzionamento del sito (hosting GitHub Pages e caricamento tipografico tramite Google Fonts). Non installano cookie di profilazione e sono esenti dall'obbligo di consenso preventivo.</li>
       <li><strong>Cookie analitici</strong> (Google Analytics 4) — installati <em>solo previo consenso esplicito</em> dell'utente, raccolto attraverso l'apposito banner. Servono a misurare in forma aggregata l'utilizzo del sito. In assenza di consenso, Google Analytics opera in modalità Consent Mode v2 con archiviazione bloccata: nessun cookie viene installato e Google riceve esclusivamente segnali anonimi e modellati. Il sito <strong>non utilizza cookie di profilazione</strong> né di marketing.</li>
     </ul>
-    <p>L'utente può modificare in qualsiasi momento la propria scelta cliccando sul pulsante seguente:</p>
+    <p>L'utente può modificare o revocare in qualsiasi momento la propria scelta cliccando sul pulsante seguente (o sul collegamento «Preferenze cookie» presente nel piè di pagina di ogni pagina del sito); in caso di rifiuto o revoca, il sistema disattiva immediatamente la raccolta analitica e cancella attivamente eventuali cookie <code>_ga</code> / <code>_ga_*</code> precedentemente memorizzati nel browser:</p>
     <p><button type="button" class="btn" onclick="if(window.bwCookieReset){window.bwCookieReset()}else{localStorage.removeItem('bw_consent');location.reload()}">Modifica preferenze cookie</button></p>
+
+    <h2>Governance AI Act (Regolamento UE 2024/1689), Anonimizzazione Pre-AI e Ruolo di System Integration</h2>
+    <p>Nell'erogazione dei servizi professionali B2B descritti sul sito, <strong>Bintware</strong> (ditta individuale di Riccardo Baldacci) opera come studio di <strong>Architettura Cloud e System Integration</strong>: progetta, assembla e orchestra infrastrutture tecnologiche basate su servizi enterprise certificati di terze parti — in particolare <strong>Google Cloud EMEA Limited (Vertex AI, AlloyDB, Cloud Run)</strong> ospitati nella regione europea <code>europe-west8</code> (Milano) con garanzia contrattuale <em>Zero Training</em> (nessun dato o prompt dei clienti viene mai utilizzato per addestrare modelli di intelligenza artificiale) — integrandoli con i sistemi telefonici (SIP) e gestionali del cliente committente.</p>
+    <ul>
+      <li><strong>Natura nativa non ad alto rischio e Supervisione Umana (Human-in-the-Loop, Art. 6(3) AI Act):</strong> le trascrizioni, le sintesi e i report strutturati prodotti dai modelli probabilistici su Google Cloud hanno natura esclusivamente preparatoria, organizzativa e di supporto documentale, soggetti alla verifica e alla responsabilità decisionale esclusiva degli operatori umani del cliente, senza decisioni automatizzate sulle persone fisiche (Art. 22 GDPR) e con esclusione di qualsiasi monitoraggio o valutazione delle prestazioni individuali dei lavoratori.</li>
+      <li><strong>Pipeline di Anonimizzazione e Pseudonimizzazione Pre-AI per Dati Aziendali e Sensibili/Sanitari (Art. 9, 25 e 32 GDPR · Art. 10 AI Act):</strong> per i flussi documentali, clinici, medici e socio-assistenziali che coinvolgono dati particolari o riservati, Bintware ingegnerizza pipeline di <em>Privacy-by-Design</em> che intercettano e mascherano automaticamente alla fonte gli identificativi personali diretti e indiretti (nomi, cognomi, codici fiscali, recapiti, date e riferimenti anagrafici) sostituendoli con token neutri prima che il testo raggiunga il modello linguistico su Google Cloud UE. In questo modo il motore AI elabora esclusivamente il contesto semantico de-identificato, garantendo la minimizzazione del dato (Art. 5.1.c GDPR) e la separazione tra identità anagrafica e analisi testuale.</li>
+      <li><strong>Titolare, Deployer ed Esonero di Responsabilità su usi ad alto rischio (Art. 3(4), Art. 25(1)(c), Art. 25(2) ultimo periodo e Art. 26 AI Act · Art. 24 GDPR):</strong> il cliente committente (azienda, studio professionale, struttura medica o ente) che definisce le regole operative, i prompt di dominio e mette in servizio la soluzione sotto il proprio nome conserva la piena ed esclusiva titolarità del trattamento dei dati (Titolare ex Art. 24 GDPR) e il ruolo di <em>Deployer</em>. Ai sensi dell'<strong>Art. 25(2), ultimo periodo, del Regolamento (UE) 2024/1689</strong>, Bintware specifica espressamente che le proprie piattaforme e applicazioni non sono destinate a essere trasformate o impiegate come sistemi di IA ad alto rischio di cui all'Art. 6 e all'Allegato III. Qualora il cliente committente, debitamente informato da Bintware, decida autonomamente di disattivare le cautele di anonimizzazione/revisione umana o di modificare la destinazione d'uso impiegando la piattaforma per attività ad alto rischio, <strong>ai sensi dell'Art. 25(1)(c) del Regolamento (UE) 2024/1689 è il cliente stesso a divenire per legge l'unico Fornitore (<em>Provider</em>) e responsabile di tale sistema ad alto rischio</strong>, con pieno esonero di responsabilità per Bintware.</li>
+      <li><strong>Trasparenza (Art. 50 AI Act):</strong> le integrazioni vocali interattive sono progettate per dichiarare in modo trasparente all'interlocutore la natura virtuale dell'assistente fin dal primo turno di conversazione.</li>
+    </ul>
+
+    <h2>Applicazioni Mobile e Desktop B2B (EaseAccess AI)</h2>
+    <p>Per gli utenti aziendali che utilizzano l'applicazione mobile e desktop <strong>EaseAccess AI</strong> (iOS, Android e Windows, pacchetto <code>com.baldacci.easeaccessv2</code>), sono disponibili le pagine dedicate con il dettaglio dei permessi di sistema, della minimizzazione dei dati sul dispositivo e dei canali di assistenza:</p>
+    <ul>
+      <li><a href="easeaccess/privacy.html">Informativa sulla Privacy · App EaseAccess AI</a></li>
+      <li><a href="easeaccess/supporto.html">Supporto e Assistenza Tecnica · App EaseAccess AI</a></li>
+    </ul>
 
     <h2>Diritti dell'interessato</h2>
     <p>L'interessato può esercitare in qualsiasi momento i diritti previsti dagli artt. 15-22 GDPR:</p>
